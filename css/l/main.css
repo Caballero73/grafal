@@ -1,0 +1,11 @@
+html{height:100%}body{min-height:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}
+.file-caption-info {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;    
+}
+
+.file-preview-frame {
+    max-width: 200px;
+}

@@ -1,0 +1,90 @@
+
+body {
+
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding-top: 80px;
+    background: url('../img/login/fondo.jpg') no-repeat top left;
+}
+
+.panel {
+    margin: 0 auto;
+    background: url('../img/login/fondo-panel-login.png') no-repeat center bottom;
+    width: 389px;
+    height: 400px;
+    padding: 20px 0 40px 0;
+}
+
+.logo {
+    background: url('../img/Logo.png') no-repeat center center;
+    height: 108px;
+    width: 305px;
+    margin: 0 auto;
+}
+
+.fields {
+    margin-top: 70px;
+    text-align: center;
+    padding-left: 18px;
+}
+
+.fields div {
+    margin: 20px 0px;
+    border: 0px none;
+    height: 60px;
+    width: 344px;
+    background: url('../img/login/fondo-campos.png') no-repeat scroll right bottom transparent;
+}
+
+.fields i {
+    display: inline-block;
+    width: 42px;
+    height: 52px;
+    margin: 2px 0 0 14px;
+    float: left;
+}
+
+.fields i.icon-username {
+    background: url('../img/login/icono-user.png') no-repeat center center;
+}
+
+.fields i.icon-password {
+    background: url('../img/login/icono-pass.png') no-repeat center center;
+}
+
+.fields input:not([type="button"]):not([type="submit"])  {
+    border: 0px none !important;
+    outline: medium none !important;
+    height: 40px;
+    width: 257px;
+    margin: 6px 12px 0 0;
+    font-size: 18px;
+}
+
+.actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.actions input {
+    background: url('../img/login/fondo-boton-login.png') no-repeat center center;
+    color: #FFF;
+    width: 332px;
+    height: 64px;
+    border: medium none;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.error {
+    margin-top: 30px;
+    margin-bottom: -50px;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #BF0000;
+}

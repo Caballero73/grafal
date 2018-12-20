@@ -1,0 +1,529 @@
+
+#search-bar {
+    height: 0px;
+}
+
+#content {
+    padding-top: 20px;
+}
+
+#content .orders.form {
+}
+
+#content #left-col,
+#content #right-col,
+#content #mid-col { 
+    height: 580px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#content #left-col {
+    /*background-color: red;*/
+    width: 320px;
+}
+
+#content #right-col {
+    /*background-color: green;*/ 
+    width: 240px;
+    margin-left: 10px;
+}
+
+#content #mid-col {
+    /*background-color: blue;*/ 
+    width: 630px;
+    margin-left: 10px;
+}
+
+#content .col-inner > .row.r1 {
+    /*background-color: #000;*/
+}
+
+#content .col-inner > .row.r2 {
+    /*height: 100px;*/
+    /*background-color: #888;*/
+}
+
+#content .col-inner > .row.r3 {
+    /*height: 80px;*/
+    /*background-color: #444;*/
+}
+
+/*****************************************************/
+/*  Panels: global config                            */
+/*****************************************************/
+
+#content .panel .panel-body {
+}
+
+#content .panel .panel-content {
+    /*display: table;*/
+}
+
+#content .panel .panel-content > .input,
+#content .panel .panel-content > .trabajo,
+#content .panel .panel-content > .trabajo > div > .input {
+    display: table-row;
+}
+
+#content .panel .panel-content > .trabajo > div {
+    display: table;
+    width: 100%;
+}
+
+#content .panel .panel-body .input > * {
+    margin: 5px 2px;
+}
+
+#content .panel .panel-body .input > label {
+    width: auto;
+    padding-left: 3px;
+}
+
+#content .panel .panel-body .input > input {
+    /*width: 30px;*/
+}
+
+/*
+#content .panel .panel-body .panel-content input:not([type="button"]), 
+#content .panel .panel-body .panel-content select {
+    float: none;
+}
+*/
+
+#content .panel .panel-body .panel-content input:not([type="button"]).r-float, 
+#content .panel .panel-body .panel-content .dropdown.r-float,
+#content .panel .panel-body .panel-content .ui-datepicker-trigger {
+    float: right;
+}
+
+#content .panel .panel-body .input > label.shrink,
+#content .panel .panel-body .input > input.shrink {
+    margin: 1px;
+}
+
+/*****************************************************/
+/*  Panel: Datos Orden                               */
+/*****************************************************/
+
+#content .panel.datos-orden {
+    height: 100%;
+}
+
+#content .panel.datos-order label[for="OrderNombreFantasia"] {
+    margin-left: 0;
+}
+
+#OrderTipo {
+    width: 188px;
+}
+
+#OrderMetodoEntrega {
+    width: 110px;
+}
+
+#content .panel.datos-orden .panel-content {
+    max-height: 550px;
+}
+
+#content .panel.datos-orden .panel-body #OrderNombreFantasia { 
+    width: 153px;
+}
+#content .panel.datos-orden .panel-body #OrderNumero,
+#content .panel.datos-orden .panel-body #OrderOrdenCompra {
+    width: 180px;
+}
+#content .panel.datos-orden .panel-body #OrderUserId,
+#content .panel.datos-orden .panel-body #OrderContactId {
+    width: 143px;
+}
+#content .panel.datos-orden .panel-body #OrderContactEmail,
+#content .panel.datos-orden .panel-body #OrderContactTelefono {
+    width: 139px;
+}
+#content .panel.datos-orden .panel-body #OrderWorkTypeId,
+#content .panel.datos-orden .panel-body #OrderWorkSubtypeId {
+    width: 210px;
+}
+#content .panel.datos-orden .panel-body #OrderDescripcion {
+    width: 205px;
+}
+#content .panel.datos-orden .panel-body #OrderTodo8 {
+    width: 100px;
+}
+#content .panel.datos-orden .panel-body #OrderEntregaEn {
+    width: 181px;
+}
+#content .panel.datos-orden .panel-body #OrderPriceSenia {
+    width: 60px;
+}
+#content .panel.datos-orden .remito-numero,
+#content .panel.datos-orden .remito-cantidad {
+    width: 96px;
+}
+#content .panel.datos-orden .panel-body #OrderPaymentTypeId {
+    width: 145px;
+}
+#content .panel.datos-orden .panel-body #ClientColor {
+    width: 144px;
+}
+#content .panel.datos-orden .panel-body #OrderTodo7 {
+    width: 50px;
+}
+#content .panel.datos-orden .panel-body #OrderTodo10 {
+    width: 200px;
+}
+#create-btn {
+    margin-left: 50px !important;
+}
+#duplicate-btn, #create-presupuesto {
+    margin-left: 10px !important;
+}
+
+/*****************************************************/
+/*  Panel: Detalle Orden                             */
+/*****************************************************/
+
+.work-detail-loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000000;
+    background: #FFF url('../img/loading.gif') no-repeat 50% 50%;
+    opacity: 0.85;
+    display: none;
+}
+#content .work-detail-number {
+    display: inline-block;
+    min-width: 23px;
+    height: 23px;
+    border-radius: 15px;
+    background-color: #FFBD73;
+    margin-right: 20px;
+    text-align: center;
+}
+#content .work-detail-number label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff !important;
+    display: block;
+    margin-top: 1px;
+}
+#content .panel.detalles-orden .measure {
+    width: 25px;
+    margin-left: 1px;
+}
+#content .panel.detalles-orden #OrderPagsPorPliego,
+#content #OrderJuegos {
+    margin-left: 2px;
+    margin-right: 8px;
+    width: 25px;
+}
+#content .panel.detalles-orden #OrderPresentationTypeId {
+    width: 166px;
+}
+#content .panel.detalles-orden #OrderCantidadCopias {
+    width: 45px;
+    margin-left:0px;
+}
+#content .panel.detalles-orden .especificacion {
+    width: 70px;
+}
+#content .panel.detalles-orden .combo-materiales {
+    width: 220px;
+}
+#content .panel.detalles-orden .label-formato,
+#content .panel.detalles-orden .label-forma-de {
+    margin-left: 20px;
+}
+#content .panel.detalles-orden .label-frente-dorso,
+#content .panel.detalles-orden .label-sobrante {
+    margin-left: 12px;
+}
+#content .panel.detalles-orden .label-doble-corte {
+    /*margin-left: 37px;*/
+}
+#content .panel.detalles-orden #OrderCantidad {
+    width: 22px;
+    margin-left:7px;
+}
+#content .panel.detalles-orden #OrderVias {
+    width: 70px;
+}
+#content .panel.detalles-orden #OrderFormatoFinalX,
+#content .panel.detalles-orden #OrderFormatoFinalY,
+#content .panel.detalles-orden #OrderFormatoFinalZ {
+    width: 30px;
+}
+#content .panel.detalles-orden .color-selector {
+    vertical-align: top;
+    text-align: center;
+}
+#content .panel.detalles-orden .color-selector label,
+#content .panel.detalles-orden .color-selector button,
+#content .panel.detalles-orden .color-selector img {
+    margin: 5px;
+}
+#content .panel.detalles-orden .calculator {
+    height: 70px;
+    width: 263px;
+    border: 1px solid #DDD;
+    margin: 10px 0 10px 10px;
+}
+#content .panel.detalles-orden .fyd,
+#content .panel.detalles-orden .fyd > select {
+    width: 150px;
+}
+#content .panel.detalles-orden #OrderOrganizadoEn {
+    width: 75px;
+}
+#content .panel.detalles-orden .impresora select {
+    width: 130px;
+    /*margin-left: 30px;*/
+}
+#content .panel.detalles-orden label.label-comentario {
+    vertical-align: top;
+    word-wrap: break-word;
+    width: 58px;
+    display: inline-block;
+}
+
+#content .panel.detalles-orden .color-selector,
+#content .panel.detalles-orden .calculator {
+    display: inline-block;
+    text-align: center;
+}
+
+/*****************************************************/
+/*  Panel: Tareas y Diseño Orden                     */
+/*****************************************************/
+
+.ui-tabs {
+    padding: 0px;
+}
+
+#tabs-disenio {
+    /*padding: 10px 6px !important;*/
+    padding: 0px;
+}
+
+#content .panel.disenio-orden.opened {
+    /*height: 100%;*/
+    height: 170px;
+}
+
+#content .panel.tareas-orden .panel-content ul {
+    margin-left: -46px;
+}
+#content .panel.tareas-orden .panel-content ul li {
+    float: left;
+    margin-left: 20px;
+}
+#content .panel.tareas-orden .panel-content ul li .name {
+    font-weight: bold;
+}
+
+#content .panel.disenio-orden label[for="OrderVencimiento"] {
+    margin-left: 16px;
+}
+#content .panel.disenio-orden #OrderDesignDireccion {
+    width: 200px;
+}
+#content .panel.disenio-orden #OrderDesignConstancia {
+    width: 69px;
+}
+#content .panel.disenio-orden #OrderDesignSerieDesde,
+#content .panel.disenio-orden #OrderDesignNumeroDesde,
+#content .panel.disenio-orden #OrderDesignSerieHasta,
+#content .panel.disenio-orden #OrderDesignNumeroHasta {
+    margin-left: 2px;
+    width: 35px;
+}
+#content .panel.disenio-orden #OrderVencimiento {
+    width: 56px;
+}
+#content .panel.disenio-orden #OrderDesignModelo {
+    width: 83px;
+}
+#content .panel.disenio-orden #OrderNotificarTelefono {
+    width: 60px;
+}
+#OrderDesignTipoAutDgi {
+    width: 100px;
+}
+#content .panel.disenio-orden #OrderNotificarEmail {
+    width: 107px;
+}
+#content .panel.disenio-orden #OrderDesignAclaracion {
+    width: 380px;
+}
+#content .panel.disenio-orden #OrderDesignTieneDisenio {
+    width: 109px;
+}
+#content .panel.disenio-orden #OrderNotifyContactId {
+    width: 131px;
+}
+
+
+/*****************************************************/
+/*  Panel: Calculos Orden                            */
+/*****************************************************/
+
+#content .panel.calculos-orden {
+    width: 240px;
+}
+
+#content .panel.calculos-orden.opened {
+    height: 100%;
+}
+
+#content .panel.calculos-orden .panel-content {
+    display: block;
+    height: 365px;
+}
+
+#content .panel.calculos-orden .panel-body .input {
+    display: table-row;
+}
+
+#content .panel.calculos-orden .panel-body .input > * {
+    display: table-cell;
+    padding: 8px 0;
+}
+
+#content .panel.calculos-orden .panel-body .input > label {
+    min-width: 50px;
+    max-width: 200px;
+    width: auto;
+}
+
+#content .panel.calculos-orden .panel-body .input > input {
+    width: auto;
+}
+
+#content .panel.calculos-orden .panel-body .panel-content input:not([type="button"]), 
+#content .panel.calculos-orden .panel-body .panel-content select {
+    float: right;
+    width: 70px;
+}
+
+#content .panel.calculos-orden .panel-body .panel-content .calculation_table {
+    width: 100%;
+}
+
+#content .panel.calculos-orden .panel-body .panel-content .symbol {
+    float: right;
+}
+
+#content .panel.calculos-orden #work_detail_calculation {
+    margin-top: 5px;
+}
+
+/*****************************************************/
+/*  Panel: Comentarios Orden                         */
+/*****************************************************/
+
+#content .panel.comentarios-orden {
+    width: 240px;
+}
+
+#content .panel.comentarios-orden.opened {
+    height: 160px;
+}
+
+#content .panel.comentarios-orden #OrderComentarios {
+    border: none;
+    outline: none;
+}
+
+/******************************************/
+/**  Color Selecion box                  **/
+/******************************************/
+
+div.color-selection-box .box {
+    width: 330px;
+    margin: 180px auto 0 auto;
+}
+
+div.color-selection-box table {
+    width: 100%;
+}
+
+div.color-selection-box table th:first-child,
+div.color-selection-box table td:first-child {
+    text-align: left;
+}
+
+div.color-selection-box table td {
+    margin: 5px;
+}
+
+div.color-selection-box table th:last-child,
+div.color-selection-box table td:last-child {
+    text-align: right;
+}
+
+/******************************************/
+/**  Popup definicion de tareas          **/
+/******************************************/
+
+.popup.tareas .box {
+    margin: 150px auto;
+    width: 400px;
+}
+
+.popup.tareas .box .titles span.title {
+    margin: 8px;
+    background-color: #FFF;
+    padding: 5px;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #C5C5C5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.popup.tareas .box .titles span.title.selected {
+    background-color: #006dcc;
+    color: #FFF !important;
+    border: none;
+}
+
+.popup.tareas .box .titles span.del {
+    color: #D5D5D5;
+    padding: 0px 4px 0px 2px;
+}
+.popup.tareas .box .titles span.del:hover {
+    color: #FFF;
+}
+
+.popup.tareas .task-divs {
+    position: absolute;
+    width: 358px;
+}
+
+.popup.tareas .task {
+    padding: 20px;
+    position: relative;
+    border: solid 2px #005a83;
+    background-color: #FFF;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    top: -163px;
+    display: none;
+}
+
+.popup.tareas .task-mask-layer {
+    position: absolute;
+    background-color: #FFF;
+    opacity: 0.8;
+    display: none;
+    top: 26px;
+    width: 400px;
+    height: 286px;
+    left: 0px;
+}

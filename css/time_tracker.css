@@ -1,0 +1,352 @@
+#Form_TaskName, #Form_JobName {
+    width: 184px !important;
+}
+#AddTaskButton{
+    /*margin-top: 2px;*/
+    vertical-align: middle;
+}
+
+.main_task_div {
+    cursor: pointer;
+    position: relative;
+}
+
+.close_task_div_inactive {
+    background: #a0a0a0;
+    border-radius: 4px;
+    color: #FFF !important;
+    width: 15px;
+    height: 13px;
+    line-height: 13px;
+    font-family: TitilliumWeb, sans-serif;
+    font-size: small;
+    text-align: center;
+    padding: 0px 0px 2px 0px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.close_task_div_active {
+    background: #c87018;
+    border-radius: 4px;
+    color: #FFF !important;
+    width: 15px;
+    height: 13px;
+    line-height: 13px;
+    font-family: TitilliumWeb, sans-serif;
+    font-size: small;
+    text-align: center;
+    padding: 0px 0px 2px 0px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+#TaskList {
+    height: 332px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+#TaskList .timer {
+    font-weight: bold !important;
+    font-size: 12px !important;
+    margin-top: 5px;
+}
+#TaskObservaciones {
+    height: 160px;
+}
+#TaskObservaciones textarea {
+    border: none;
+    outline: none;
+}
+.drop_target {
+    height: 5px;
+    transition: all 100ms ease;
+}
+
+.active_drop_target {
+    height: 30px;
+    transition: all 100ms ease;
+}
+
+.task_div { 
+    border-radius: 4px;
+    font-family: TitilliumWeb, sans-serif;
+    font-size: xx-large;
+    line-height: 1.1;
+    padding: 10px;
+    text-align: center;
+}
+
+.task_current {
+    width: auto;
+    background: #fca44c;
+}
+.task_current * {
+    color: #FFF !important;
+}
+.task_current_mouseover {
+    width: auto;
+    background: #fca44c;
+}
+
+.task_mouseover {
+    width: auto;
+    background: #e4e4e4;
+}
+
+.task_inactive {
+    width: auto;
+    background: #e4e4e4;
+}
+
+/* MAIN OVERRIDE */
+
+#header > div {
+    float: none !important;
+}
+
+#header-logo {
+    margin: auto !important;
+}
+
+#content #left-col, #content #right-col, #content #mid-col {
+    margin: auto;
+    display: block;
+}
+
+#content {
+    padding-top: 5px !important;
+}
+
+#header-logo {
+    width: 176px !important;
+    padding: 10px 0px !important; 
+}
+
+#TiemposForm ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#TiemposForm li {
+    float: left;
+    padding: 5px;
+}
+
+#TiemposForm li button {
+    padding: 10px 5px;
+    background-color: #e4e4e4;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+
+#TiemposForm li button.active {
+    background-color: #ffbd73;
+}
+
+#TiemposForm li button:hover {
+    background-color: #ffbd73;
+}
+
+#TiemposForm li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#TiemposForm li a:hover {
+    background-color: #111111;
+}
+
+
+
+
+
+
+/* https://icons8.com/cssload/en/horizontal-bars */
+/* https://codepen.io/collection/HtAne/ */
+
+.ballsWaveGI {
+    position:relative;
+    width:74px;
+    height:10px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.paused {
+    animation-play-state: paused;
+    display: none;
+}
+
+.ballsWaveG {
+    position:absolute;
+    top:0;
+    background-color:rgb(0,0,0);
+    width:10px;
+    height:10px;
+    animation-name:ballsWaveG;
+    -o-animation-name:ballsWaveG;
+    -ms-animation-name:ballsWaveG;
+    -webkit-animation-name:ballsWaveG;
+    -moz-animation-name:ballsWaveG;
+    animation-duration:0.975s;
+    -o-animation-duration:0.975s;
+    -ms-animation-duration:0.975s;
+    -webkit-animation-duration:0.975s;
+    -moz-animation-duration:0.975s;
+    animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    animation-direction:normal;
+    -o-animation-direction:normal;
+    -ms-animation-direction:normal;
+    -webkit-animation-direction:normal;
+    -moz-animation-direction:normal;
+    border-radius:8px;
+    -o-border-radius:8px;
+    -ms-border-radius:8px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+}
+
+#ballsWaveG_1{
+    left:0;
+    animation-delay:0.386s;
+    -o-animation-delay:0.386s;
+    -ms-animation-delay:0.386s;
+    -webkit-animation-delay:0.386s;
+    -moz-animation-delay:0.386s;
+}
+
+#ballsWaveG_2{
+    left:16px;
+    animation-delay:0.4825s;
+    -o-animation-delay:0.4825s;
+    -ms-animation-delay:0.4825s;
+    -webkit-animation-delay:0.4825s;
+    -moz-animation-delay:0.4825s;
+}
+
+#ballsWaveG_3{
+    left:31px;
+    animation-delay:0.589s;
+    -o-animation-delay:0.589s;
+    -ms-animation-delay:0.589s;
+    -webkit-animation-delay:0.589s;
+    -moz-animation-delay:0.589s;
+}
+
+#ballsWaveG_4{
+    left:47px;
+    animation-delay:0.6855s;
+    -o-animation-delay:0.6855s;
+    -ms-animation-delay:0.6855s;
+    -webkit-animation-delay:0.6855s;
+    -moz-animation-delay:0.6855s;
+}
+
+#ballsWaveG_5{
+    left:62px;
+    animation-delay:0.782s;
+    -o-animation-delay:0.782s;
+    -ms-animation-delay:0.782s;
+    -webkit-animation-delay:0.782s;
+    -moz-animation-delay:0.782s;
+}
+
+#ballsWaveG_6{
+    left:78px;
+    animation-delay:0.8785s;
+    -o-animation-delay:0.8785s;
+    -ms-animation-delay:0.8785s;
+    -webkit-animation-delay:0.8785s;
+    -moz-animation-delay:0.8785s;
+}
+
+#ballsWaveG_7{
+    left:94px;
+    animation-delay:0.975s;
+    -o-animation-delay:0.975s;
+    -ms-animation-delay:0.975s;
+    -webkit-animation-delay:0.975s;
+    -moz-animation-delay:0.975s;
+}
+
+#ballsWaveG_8{
+    left:109px;
+    animation-delay:1.0715s;
+    -o-animation-delay:1.0715s;
+    -ms-animation-delay:1.0715s;
+    -webkit-animation-delay:1.0715s;
+    -moz-animation-delay:1.0715s;
+}
+
+
+
+@keyframes ballsWaveG{
+    0%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{
+        background-color:rgb(255,255,255);
+    }
+}
+
+@-o-keyframes ballsWaveG{
+    0%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{
+        background-color:rgb(255,255,255);
+    }
+}
+
+@-ms-keyframes ballsWaveG{
+    0%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{
+        background-color:rgb(255,255,255);
+    }
+}
+
+@-webkit-keyframes ballsWaveG{
+    0%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{
+        background-color:rgb(255,255,255);
+    }
+}
+
+@-moz-keyframes ballsWaveG{
+    0%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{
+        background-color:rgb(255,255,255);
+    }
+}
+
+#flashMessageContainer {
+    position: absolute;
+    left: 50%;
+    top: -6px;
+}
+#flashMessage{
+    position: initial !important;
+}
