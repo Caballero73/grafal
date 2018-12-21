@@ -24,6 +24,12 @@ input[readonly="readonly"] {
     padding: 0;
 }
 
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #container {
     position: relative;
     min-height: 100%;
@@ -92,6 +98,13 @@ input[readonly="readonly"] {
         width: 23vw;
     }
 }
+@media (max-width: 767px) {
+    #header-logo {
+        margin: 4px 0px 0px 30px;
+        height: 44px;
+        width: 90vw;
+    }
+}
 
 #top-menu {
     width: 800px;
@@ -110,6 +123,13 @@ input[readonly="readonly"] {
         margin-top: 10px;
     }
 }
+@media (max-width: 767px) {
+    #top-menu {
+        width: 80vw;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+}
 
 #top-menu-inner {
     /*background: transparent url('../img/fondo-menu.png') no-repeat;*/
@@ -123,12 +143,7 @@ input[readonly="readonly"] {
 
 @media (max-width: 899px){
     #top-menu-inner {
-        background: #fff;
-        border-radius: 4px;
-        box-shadow: 1px 1px 2px #cacaca;
         height: 65px;
-        margin: 0;
-        text-align: center;
         padding-top: 7px;
     }
 }
@@ -156,6 +171,13 @@ input[readonly="readonly"] {
         margin-top: 6px;
     }
 }
+@media (max-width: 767px) {
+    #top-menu-inner .menu-option .caption {
+        font-size: 8px;
+        font-weight: normal;
+        margin-top: 3px;
+    }
+}
 
 #top-menu-inner .menu-option .icon {
     height: 45px;
@@ -168,6 +190,12 @@ input[readonly="readonly"] {
         background-size: auto 100%;
     }
 }
+@media (max-width: 767px) {
+    #top-menu-inner .menu-option .icon {
+        height: 28px;
+    }
+}
+
 
 #top-menu-inner .menu-option.ordenes .icon {
     background-image: url('../img/icons/icono-ordenes--inactivo.png');
@@ -265,6 +293,16 @@ input[readonly="readonly"] {
 .hidden {
     display: none !important;
 }
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+}
 
 #content {
     /*padding-top: 160px;*/
@@ -339,6 +377,10 @@ textarea {
 
 .l-float {
     float: left;
+}
+.logo-mobile {
+    height: 44px !important;
+    width: auto !important;
 }
 
 .inline-block {
