@@ -13,26 +13,7 @@
 #content #left-col,
 #content #right-col,
 #content #mid-col { 
-    height: 580px;
-    display: inline-block;
     vertical-align: top;
-}
-
-#content #left-col {
-    /*background-color: red;*/
-    width: 320px;
-}
-
-#content #right-col {
-    /*background-color: green;*/ 
-    width: 240px;
-    margin-left: 10px;
-}
-
-#content #mid-col {
-    /*background-color: blue;*/ 
-    width: 630px;
-    margin-left: 10px;
 }
 
 #content .col-inner > .row.r1 {
@@ -115,15 +96,19 @@
 }
 
 #OrderTipo {
-    width: 188px;
+    /*width: 188px;*/
+}
+
+#OrderTipoWrapper, #OrderWorkTypeIdWrapper, #OrderWorkSubtypeIdWrapper {
+    margin-right: 8px !important;
 }
 
 #OrderMetodoEntrega {
-    width: 110px;
+    /*width: 110px;*/
 }
 
 #content .panel.datos-orden .panel-content {
-    max-height: 550px;
+    /*max-height: 550px;*/
 }
 
 #content .panel.datos-orden .panel-body #OrderNombreFantasia { 
@@ -131,55 +116,50 @@
 }
 #content .panel.datos-orden .panel-body #OrderNumero,
 #content .panel.datos-orden .panel-body #OrderOrdenCompra {
-    width: 180px;
+    /*width: 180px;*/
 }
 #content .panel.datos-orden .panel-body #OrderUserId,
 #content .panel.datos-orden .panel-body #OrderContactId {
-    width: 143px;
+    /*width: 143px;*/
 }
 #content .panel.datos-orden .panel-body #OrderContactEmail,
 #content .panel.datos-orden .panel-body #OrderContactTelefono {
-    width: 139px;
+    /*width: 139px;*/
+    margin-top: 7px;
 }
 #content .panel.datos-orden .panel-body #OrderWorkTypeId,
 #content .panel.datos-orden .panel-body #OrderWorkSubtypeId {
-    width: 210px;
+    /*width: 210px;*/
 }
 #content .panel.datos-orden .panel-body #OrderDescripcion {
-    width: 205px;
+    /*width: 205px;*/
 }
 #content .panel.datos-orden .panel-body #OrderTodo8 {
-    width: 100px;
+    /*width: 100px;*/
 }
 #content .panel.datos-orden .panel-body #OrderEntregaEn {
-    width: 181px;
+    /*width: 181px;*/
 }
 #content .panel.datos-orden .panel-body #OrderPriceSenia {
-    width: 60px;
+    /*width: 60px;*/
 }
 #content .panel.datos-orden .remito-numero,
 #content .panel.datos-orden .remito-cantidad {
-    width: 96px;
+    /*width: 96px;*/
 }
 #content .panel.datos-orden .panel-body #OrderPaymentTypeId {
-    width: 145px;
+    /*width: 145px;*/
 }
 #content .panel.datos-orden .panel-body #ClientColor {
-    width: 144px;
+    /*width: 144px;*/
 }
 #content .panel.datos-orden .panel-body #OrderTodo7 {
-    width: 50px;
+    /*width: 50px;*/
 }
 #content .panel.datos-orden .panel-body #OrderTodo10 {
-    width: 200px;
+    /*width: 200px;*/
 }
-#create-btn {
-    margin-left: 50px !important;
-}
-#duplicate-btn, #create-presupuesto {
-    margin-left: 10px !important;
-}
-
+#OrderUserIdWrapper, #OrderContactIdWrapper {margin-top: 7px}
 /*****************************************************/
 /*  Panel: Detalle Orden                             */
 /*****************************************************/

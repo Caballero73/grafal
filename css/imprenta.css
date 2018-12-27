@@ -163,7 +163,6 @@ input[readonly="readonly"] {
     font-style: normal !important;
     color: #333;
 }
-
 @media (max-width: 899px){
     #top-menu-inner .menu-option .caption {
         font-size: 10px;
@@ -315,6 +314,7 @@ input[readonly="readonly"] {
 #content button:not(:first-child),
 #content .dropdown:not(:first-child) {
     margin-left: 5px;
+    max-height: 24px;
 }
 
 input:not([type=button]):not([type=submit]) {
@@ -346,12 +346,12 @@ input[type=number] {
 
 .dropdown {
     border: 1px solid #008fdd !important;
-    display: inline-block !important;
+    /*display: inline-block !important;*/
     vertical-align: middle;
 
     /* La magia */
     /* Se merece un espacio muy grande */
-    overflow: hidden;
+    /*! overflow: hidden; */
     background: url('../img/icons/flecha-drop-down.png') no-repeat right #fff;
 }
 
@@ -392,7 +392,7 @@ textarea {
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .shrink {
@@ -439,11 +439,11 @@ input[enabled='0'] {
 /** Panels                               **/
 /******************************************/
 
-#content .panel-wrapper {
+/*#content .panel-wrapper {
     width: 100%;
     display: block;
     height: 100%;
-}
+}*/
 
 #content .col-inner {
     display: table;
@@ -491,8 +491,8 @@ input[enabled='0'] {
 #content .panel .panel-title {
     /*background-color: #FC0096;*/
     background-color: #ffbd73;
-    color: #000;
-    height: 15px;
+    color: #333;
+    height: 26px;
     padding: 5px 10px;
     margin: 0;
 }
@@ -596,7 +596,8 @@ input[enabled='0'] {
 }
 
 #content .panel .panel-body .panel-content .section-title {
-    margin-bottom: 7px;
+    /*! margin-bottom: 7px; */
+    margin-left: 8px;
 }
 
 #content .panel .panel-body .panel-content .inner-sep.bigger {
@@ -670,13 +671,14 @@ input[enabled='0'] {
 /******************************************/
 .action-button {
     background-color: #0097D4 !important;
-    color: #fff !important;
-    padding: 6px 8px !important;
-    outline: none;
     border: none !important;
-    -webkit-box-shadow: 1px 0px 2px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 1px 0px 2px 0px rgba(50, 50, 50, 0.75);
     box-shadow: 1px 0px 2px 0px rgba(50, 50, 50, 0.75);
+    color: #fff !important;
+    max-width: 145px;
+    outline: none;
+    /*padding: 6px 8px !important;*/
+    -moz-box-shadow: 1px 0px 2px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 1px 0px 2px 0px rgba(50, 50, 50, 0.75);
 }
 .action-button.main {
     background-color: #005B80 !important;
@@ -684,13 +686,29 @@ input[enabled='0'] {
 
 a.action-button {
     color: #fff !important;
-    padding: 7px 8px !important;
+    /*padding: 7px 8px !important;*/
     text-decoration: none !important;
+    margin: 0 3.5px 4px 3.5px !important;*/
+}
+button.action-button {
+    color: #fff !important;
+    /*padding: 7px 8px !important;*/
+    text-decoration: none !important;
+    margin: 0 3.5px 4px 3.5px !important;*/
+}
+input.action-button {
+    margin: 0 3.5px 4px 3.5px !important;*/
 }
 
 .form-actions {
     margin-top: 10px;
-    text-align: center;
+}
+@media (min-width: 575px) and (max-width: 4000px) {
+    .form-actions {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 /******************************************/
@@ -1156,4 +1174,8 @@ textarea.invalid {
 
 #content .index table.results tr:hover {
     color: #000;
+}
+
+input.gris {
+    background: #e3e3e3 !important;
 }
