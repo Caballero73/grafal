@@ -536,9 +536,18 @@ input[enabled='0'] {
 
 #content .panel .panel-body .panel-content * {
     font-size: 11px;
-    color: #444;
+    color: #333;
     font-family: sans-serif;
     font-weight: lighter;
+}
+
+@media (max-width: 576px) {
+    #content .panel .panel-body .panel-content * {
+        font-size: 13px;
+        color: #333;
+        font-family: sans-serif;
+        font-weight: normal;
+    }
 }
 
 .separator {
