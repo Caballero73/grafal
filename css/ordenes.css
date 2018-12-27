@@ -6,6 +6,12 @@
 #content {
     padding-top: 20px;
 }
+@media (max-width: 576px) {
+    #content {
+        padding-top: 7px;
+    }
+    
+}
 
 #content .orders.form {
 }
