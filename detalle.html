@@ -131,6 +131,7 @@
 
 					<div class="orders form row">
 
+						<!-- COLUMNA IZQUIERDA -->
 						<div id="left-col" class="col-sm-12 col-md-4">
 							<div class="panel-wrapper">
 								<!-- Datos de la orden -->
@@ -367,15 +368,13 @@
 								<!-- Fin datos de la orden -->
 
 							</div><!-- /*panel-wrapper -->
-						</div><!-- /*left-col -->
-						<div class="col-sm-12 col-md-5" style="background: #cacaca;border: 1px solid blue;">
+						</div><!-- /*COLUMNA IZQUIERDA -->
+						<div id="mid-col" class="col-sm-12 col-md-5" style="background: #cacaca;border: 1px solid blue;">
 							Columna del Medio
 						</div>
 						<div class="col-sm-12 col-md-3" style="background: #cacaca;border: 1px solid blue;">
 							Columna Derecha
 						</div>
-
-
 
 						<!-- Botones -->
 						<div class="col-12">
@@ -402,195 +401,14 @@
 						</div><!-- /*Botones -->
 					</div><!-- /*orders form row -->
 
-					<br><br>             
+					<HR><HR>
+
+					<!-- **************************************************
+					HASTA AQUI VA YA TERMINADO
+					*************************************************** -->             
 
 					<div class="orders form">
-						<div id="left-col">
-							<div class="panel-wrapper">
 
-								<!-- Datos de la orden -->
-								<div class="panel vertical datos-orden opened">
-									<div class="panel-body">
-										<div class="panel-title">
-											Datos de la orden                     
-										</div>           
-										<div class="panel-content">
-
-											<div class="fields-row">
-												<label for="OrderDesignId">Nombre Cliente</label>
-												<button id="search-client" type="button" onclick="openClientSearchBox();" class="r-float"></button>
-												<input name="data[Order][razon_social]" class="r-float" value="BUFFA BARBAT JUAN DIEGO (12074)" disabled="disabled" type="text" id="OrderRazonSocial">                        
-											</div>
-
-											<div class="fields-row">
-												<label for="OrderRazonSocial">Orden Nro.</label>
-												<label for="OrderNumero" class="bold">60082</label>
-												<div class="dropdown r-float" id="OrderTipoWrapper">
-													<select name="data[Order][tipo]" id="OrderTipo">
-														<option value="Comun" selected="selected">COMÚN</option>
-														<option value="Express">EXPRESS</option>
-														<option value="Urgente">URGENTE</option>
-													</select>
-												</div>                        
-											</div>
-
-											<div class="fields-row">
-												<label for="OrderOrdenCompra">Orden de Compra</label>
-												<input name="data[Order][orden_compra]" class="r-float" value="" maxlength="50" type="text" id="OrderOrdenCompra">                        
-											</div>
-
-											<div class="separator"></div>
-											<div class="section-title">Responsables</div>
-
-											<div class="fields-row">
-												<div class="dropdown inline-block" id="OrderUserIdWrapper">
-													<select name="data[Order][user_id]" id="OrderUserId">
-														<option value="">Imprenta---</option>
-														<option value="10">Andres</option>
-														<option value="12">Belen</option>
-														<option value="32">Damian</option>
-														<option value="40">Demo</option>
-														<option value="37">Gaston</option>
-														<option value="38">Gaston</option>
-														<option value="39">Gaston Cont</option>
-														<option value="34">Gerardo</option>
-														<option value="35">gnsgns</option>
-														<option value="20">Gustavo</option>
-														<option value="3">HugoA</option>
-														<option value="17">Julio</option>
-														<option value="24">Leticia</option>
-														<option value="11">Micaela</option>
-														<option value="41">Peteco</option>
-														<option value="28">Sergio</option>
-													</select></div>                            
-												<div class="dropdown inline-block" id="OrderContactIdWrapper"><select name="data[Order][contact_id]" onchange="onConctactResponsableChanged();" id="OrderContactId">
-														<option value="">Contacto ---</option>
-														<option value="13054">Juan Diego Buffa</option>
-													</select>
-												</div>                        
-											</div>
-
-											<div class="inner-sep"></div>
-
-											<div class="fields-row">
-												<input name="data[Order][contact_email]" class="inline-block" readonly="readonly" type="text" id="OrderContactEmail">
-												<input name="data[Order][contact_telefono]" class="inline-block" readonly="readonly" type="text" id="OrderContactTelefono">                        
-											</div>
-
-											<div class="inner-sep"></div>
-
-											<div class="fields-row required">
-												<label for="OrderWorkTypeId">Tipo de trabajo</label>
-												<div class="dropdown r-float" id="OrderWorkTypeIdWrapper">
-													<select name="data[Order][work_type_id]" id="OrderWorkTypeId" required="required">
-														<option value="5">Almanaques</option>
-														<option value="12">Arts. de papeleria</option>
-														<option value="11">Bolsas</option>
-														<option value="19">Carpetas</option>
-														<option value="15">Carteleria</option>
-														<option value="20">Diseño</option>
-														<option value="6">Documentos</option>
-														<option value="14">Encuadernaciones</option>
-														<option value="10">Estuches</option>
-														<option value="3">Etiquetas</option>
-														<option value="4">Folletos</option>
-														<option value="2">Impresiones</option>
-														<option value="1" selected="selected">Otros</option>
-														<option value="16">Publicaciones</option>
-														<option value="17">Serigrafía</option>
-														<option value="9">Sobres</option>
-														<option value="7">Tarjetas</option>
-														<option value="8">Tarjetones</option>
-														<option value="13">Troquel/Cuño</option>
-													</select>
-												</div>
-											</div>
-											<div class="fields-row required"><label for="OrderWorkSubtypeId">Detalle</label>
-												<div class="dropdown r-float" id="OrderWorkSubtypeIdWrapper">
-													<select name="data[Order][work_subtype_id]" cs-identifier="worksubtypes" id="OrderWorkSubtypeId" required="required">
-														<option value="1" selected="selected">Otros</option>
-													</select>
-												</div>
-											</div>
-											<div class="fields-row">
-												<label for="OrderDescripcion">Descripción</label>
-												<input name="data[Order][descripcion]" class="r-float" value="" maxlength="80" type="text" id="OrderDescripcion">
-											</div>
-											<div class="fields-row">
-												<label for="OrderPaymentTypeId">Pago</label>
-												<div class="dropdown inline-block" id="OrderPaymentTypeIdWrapper">
-													<select name="data[Order][payment_type_id]" id="OrderPaymentTypeId">
-														<option value="1" selected="selected">CONTADO</option>
-														<option value="7">CRÉDITO 0 DÍAS</option>
-													</select>
-												</div>
-												<label for="OrderPriceSenia">Seña $</label>
-												<input name="data[OrderPrice][senia]" class="inline-block" step="any" type="number" id="OrderPriceSenia">                        </div>
-
-											<div class="inner-sep"></div>
-
-											<div class="fields-row" id="remito">
-												<button type="button" id="add-remito" class="add" onclick="addRemito();"></button>
-												<label for="OrderPriceSenia">Remito</label>                        
-											</div>
-
-											<div class="fields-row" id="added-remitos">
-											</div>
-
-											<div class="separator"></div>
-
-											<div class="fields-row">
-												<div class="dropdown inline-block" id="OrderMetodoEntregaWrapper">
-													<select name="data[Order][metodo_entrega]" id="OrderMetodoEntrega">
-														<option value=""></option>
-														<option value="Retira de">Retira de</option>
-														<option value="Entrega GRAFAL">Entrega GRAFAL</option>
-														<option value="Entrega DAC">Entrega DAC</option>
-														<option value="Entrega De Punta">Entrega De Punta</option>
-														<option value="Entrega COT/COPSA">Entrega COT/COPSA</option>
-														<option value="Entrega Red Distr." selected="selected">Entrega Red Distr.</option>
-														<option value="Entrega Otro">Entrega Otro</option>
-													</select>
-												</div>
-												<div class="dropdown inline-block" id="OrderEntregaEnWrapper">
-													<select name="data[Order][entrega_en]" id="OrderEntregaEn">
-														<option value=""></option>
-													</select>
-												</div>                        
-											</div>
-
-											<div class="fields-row">
-												<label for="OrderFechaEntrega">Fecha entrega</label>
-												<input name="data[Order][fecha_entrega]" value="" class="r-float hasDatepicker" size="9" type="text" id="OrderFechaEntrega">
-												<img class="ui-datepicker-trigger" src="./img/icons/almanaque.png" alt="..." title="...">
-												<script>$('#OrderFechaEntrega').datepicker({
-													showOn: 'button',
-															buttonImage: '../../img/icons/almanaque.png',
-															buttonImageOnly: true,
-															dateFormat: 'dd/mm/yy'
-													});</script>
-											</div>
-											<div class="fields-row"><label for="OrderFechaTerminacion">Fecha terminación</label>
-												<input name="data[Order][fecha_terminacion]" value="" class="r-float hasDatepicker" size="9" type="text" id="OrderFechaTerminacion">
-												<img class="ui-datepicker-trigger" src="./img/icons/almanaque.png" alt="..." title="...">
-												<script>$('#OrderFechaTerminacion').datepicker({
-													showOn: 'button',
-															buttonImage: '../../img/icons/almanaque.png',
-															buttonImageOnly: true,
-															dateFormat: 'dd/mm/yy'
-													});</script>
-											</div>
-											<div class="fields-row">
-												<label for="OrderColorCliente">Color institucional Cliente</label>
-												<input name="data[Order][color_cliente]" class="r-float" value="" type="text" id="OrderColorCliente">
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Fin datos de la orden -->
-
-							</div>
-						</div>
 						<div id="mid-col">
 							<div class="col-inner">
 								<div class="row r1">
