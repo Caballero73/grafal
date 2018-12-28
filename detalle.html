@@ -294,19 +294,20 @@
 
 											<div class="inner-sep"></div>
 
-											<div class="fields-row" id="remito">
+											<!-- Remito -->
+											<div class="form-group fields-row" id="remito">
 												<button type="button" id="add-remito" class="add" onclick="addRemito();"></button>
 												<label for="OrderPriceSenia">Remito</label>                        
-											</div>
+											</div><!-- /*Remito -->
 
-											<div class="fields-row" id="added-remitos">
-											</div>
+											<div class="fields-row" id="added-remitos"></div>
 
 											<div class="separator"></div>
 
-											<div class="fields-row">
-												<div class="dropdown inline-block" id="OrderMetodoEntregaWrapper">
-													<select name="data[Order][metodo_entrega]" id="OrderMetodoEntrega">
+											<!-- Entrega -->
+											<div class="form-group fields-row row" style="padding: 0 7px 0 7px;">
+												<div class="dropdown col" id="OrderMetodoEntregaWrapper">
+													<select name="data[Order][metodo_entrega]" class="col" id="OrderMetodoEntrega">
 														<option value=""></option>
 														<option value="Retira de">Retira de</option>
 														<option value="Entrega GRAFAL">Entrega GRAFAL</option>
@@ -317,37 +318,48 @@
 														<option value="Entrega Otro">Entrega Otro</option>
 													</select>
 												</div>
-												<div class="dropdown inline-block" id="OrderEntregaEnWrapper">
-													<select name="data[Order][entrega_en]" id="OrderEntregaEn">
+												<div class="dropdown col-5" id="OrderEntregaEnWrapper">
+													<select name="data[Order][entrega_en]" class="col" id="OrderEntregaEn">
 														<option value=""></option>
 													</select>
 												</div>                        
-											</div>
+											</div><!-- /*Entrega -->
 
-											<div class="fields-row">
-												<label for="OrderFechaEntrega">Fecha entrega</label>
-												<input name="data[Order][fecha_entrega]" value="" class="r-float hasDatepicker" size="9" type="text" id="OrderFechaEntrega">
-												<img class="ui-datepicker-trigger" src="./img/icons/almanaque.png" alt="..." title="...">
-												<script>$('#OrderFechaEntrega').datepicker({
-													showOn: 'button',
-															buttonImage: '../../img/icons/almanaque.png',
-															buttonImageOnly: true,
-															dateFormat: 'dd/mm/yy'
-													});</script>
-											</div>
-											<div class="fields-row"><label for="OrderFechaTerminacion">Fecha terminación</label>
-												<input name="data[Order][fecha_terminacion]" value="" class="r-float hasDatepicker" size="9" type="text" id="OrderFechaTerminacion">
-												<img class="ui-datepicker-trigger" src="./img/icons/almanaque.png" alt="..." title="...">
-												<script>$('#OrderFechaTerminacion').datepicker({
-													showOn: 'button',
-															buttonImage: '../../img/icons/almanaque.png',
-															buttonImageOnly: true,
-															dateFormat: 'dd/mm/yy'
-													});</script>
-											</div>
-											<div class="fields-row">
-												<label for="OrderColorCliente">Color institucional Cliente</label>
-												<input name="data[Order][color_cliente]" class="r-float" value="" type="text" id="OrderColorCliente">
+											<!-- Fecha entrega -->
+											<div class="form-group fields-row row">
+												<label class="col-5 col-lg-4 control-label" for="OrderFechaEntrega">Fecha entrega</label>
+												<div class="col">
+													<input name="data[Order][fecha_entrega]"  value="" class="r-float hasDatepicker" style="margin: 0 0 0 5px;" size="9" type="text" id="OrderFechaEntrega">
+													<img class="ui-datepicker-trigger" src="./img/icons/almanaque.png" alt="..." title="...">
+													<script>$('#OrderFechaEntrega').datepicker({
+														showOn: 'button',
+																buttonImage: '../../img/icons/almanaque.png',
+																buttonImageOnly: true,
+																dateFormat: 'dd/mm/yy'
+														});</script>
+												</div>
+											</div><!-- /*Fecha entrega -->
+
+											<!-- Fecha terminación -->
+											<div class="form-group fields-row row">
+												<label class="col-6 col-lg-5 control-label" for="OrderFechaTerminacion">Fecha terminación</label>
+												<div class="col">
+													<input name="data[Order][fecha_terminacion]" value="" class="r-float hasDatepicker" style="margin: 0 0 0 5px;" size="9" type="text" id="OrderFechaTerminacion">
+													<img class="ui-datepicker-trigger" src="./img/icons/almanaque.png" alt="..." title="...">
+													<script>$('#OrderFechaTerminacion').datepicker({
+														showOn: 'button',
+																buttonImage: '../../img/icons/almanaque.png',
+																buttonImageOnly: true,
+																dateFormat: 'dd/mm/yy'
+														});</script>													
+												</div>
+											</div><!-- /*Fecha terminación -->
+
+											<div class="form-group fields-row row">
+												<label class="col-auto control-label" for="OrderColorCliente">Color institucional Cliente</label>
+												<div class="col">
+													<input name="data[Order][color_cliente]" class="form-control" value="" type="text" id="OrderColorCliente">													
+												</div>
 											</div>
 										</div>
 									</div>
