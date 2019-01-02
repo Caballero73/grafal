@@ -22,6 +22,10 @@
     vertical-align: top;
 }
 
+#mid-col .panel-content {
+    max-height: 400px !important;
+}
+
 #content .col-inner > .row.r1 {
     /*background-color: #000;*/
 }
@@ -64,7 +68,7 @@
 
 #content .panel .panel-body .input > label {
     width: auto;
-    padding-left: 3px;
+    padding-left: 0;
 }
 
 #content .panel .panel-body .input > input {
@@ -213,27 +217,29 @@
 #content .panel.detalles-orden #OrderCantidadCopias {
     width: 45px;
     margin-left:0px;
+    max-height: 24px;
+    margin-bottom: 7px;
 }
 #content .panel.detalles-orden .especificacion {
     width: 70px;
 }
-#content .panel.detalles-orden .combo-materiales {
-    width: 220px;
-}
 #content .panel.detalles-orden .label-formato,
 #content .panel.detalles-orden .label-forma-de {
-    margin-left: 20px;
+    margin-left: 7px;
 }
-#content .panel.detalles-orden .label-frente-dorso,
+#content .panel.detalles-orden,
 #content .panel.detalles-orden .label-sobrante {
     margin-left: 12px;
 }
 #content .panel.detalles-orden .label-doble-corte {
-    /*margin-left: 37px;*/
+    margin-left: 7px;
+    margin-bottom: 7px;
 }
 #content .panel.detalles-orden #OrderCantidad {
     width: 22px;
     margin-left:7px;
+    max-height: 24px;
+    margin-bottom: 7px;
 }
 #content .panel.detalles-orden #OrderVias {
     width: 70px;
@@ -242,6 +248,7 @@
 #content .panel.detalles-orden #OrderFormatoFinalY,
 #content .panel.detalles-orden #OrderFormatoFinalZ {
     width: 30px;
+    margin-bottom: 7px;
 }
 #content .panel.detalles-orden .color-selector {
     vertical-align: top;
@@ -260,13 +267,14 @@
 }
 #content .panel.detalles-orden .fyd,
 #content .panel.detalles-orden .fyd > select {
-    width: 150px;
+    width: auto;
+    margin-bottom: 7px;
 }
 #content .panel.detalles-orden #OrderOrganizadoEn {
-    width: 75px;
+    height: 24px !important;
 }
 #content .panel.detalles-orden .impresora select {
-    width: 130px;
+    width: auto;
     /*margin-left: 30px;*/
 }
 #content .panel.detalles-orden label.label-comentario {
@@ -512,4 +520,8 @@ div.color-selection-box table td:last-child {
     width: 400px;
     height: 286px;
     left: 0px;
+}
+#WorkDetail0NoField0Wrapper, #WorkDetail0MaterialIdWrapper, #WorkDetail0NoField1Wrapper, #OrderPresentationTypeIdWrapper, #WorkDetail0Especificacion, #WorkDetail0Recomendado, #WorkDetail0Chapas, #WorkDetail0FormaDe {
+    max-height: 24px !important;
+    margin-bottom: 7px;
 }

@@ -369,47 +369,9 @@
 
 							</div><!-- /*panel-wrapper -->
 						</div><!-- /*COLUMNA IZQUIERDA -->
-						<div id="mid-col" class="col-sm-12 col-md-5" style="background: #cacaca;border: 1px solid blue;">
-							Columna del Medio
-						</div>
-						<div class="col-sm-12 col-md-3" style="background: #cacaca;border: 1px solid blue;">
-							Columna Derecha
-						</div>
 
-						<!-- Botones -->
-						<div class="col-12">
-							<div class="form-actions text-center row">
-								<input name="save" class="btn btn-lg action-button col main" id="save-btn" type="submit" value="Guardar">                                    
-								<a href="#orders/main" class="btn btn-lg action-button col" id="create-btn">Crear orden</a>   
-								<a href="#orders/toPresupuesto/59738" class="btn btn-lg action-button" id="create-presupuesto">Pasar a Presupuesto</a>
-								<a href="#orders/duplicate/59738" class="btn btn-lg action-button col" id="duplicate-btn">Duplicar orden</a>                              
-								<a class="btn btn-lg action-button col" data-fancybox="" data-type="iframe" data-src="/archivos/uploader/59738/0" href="javascript:;">Adjuntos</a>
-								<a class="btn btn-lg action-button col" data-fancybox="" data-type="iframe" data-src="/archivos/uploader/59738/1" href="javascript:;">Muestras</a>
-									<script type="text/javascript">
-										$(function() {
-										$('[data-fancybox]').fancybox({
-										toolbar  : false,
-												smallBtn : true,
-												iframe : {
-												preload : true
-												}
-										});
-										});
-									</script>
-								<button name="Imprimir" type="button" class="btn btn-lg action-button col" onclick="Order.print_order();">Imprimir</button>
-							</div>                            
-						</div><!-- /*Botones -->
-					</div><!-- /*orders form row -->
-
-					<HR><HR>
-
-					<!-- **************************************************
-					HASTA AQUI VA YA TERMINADO
-					*************************************************** -->             
-
-					<div class="orders form">
-
-						<div id="mid-col">
+						<!-- COLUMNA DEL MEDIO -->
+						<div id="mid-col" class="col-sm-12 col-md-6">
 							<div class="col-inner">
 								<div class="row r1">
 									<div class="panel-wrapper">
@@ -420,29 +382,42 @@
 												<div class="panel-title">
 													Detalles de la orden                             
 												</div>
-												<div class="panel-content" style="height: 354px;">
 
+												<div class="panel-content">
 													<div class="work-detail-loading"></div>
-
-													<div class="fields-row">
-														<label for="OrderCantidadCopias">Cant.</label>
-														<input name="data[Order][cantidad_copias]" class="exnumeric" title="A1" size="7" value="100" onchange="calculoJuegos();" type="text" id="OrderCantidadCopias" required="required">
-														<div class="dropdown inline-block" id="OrderOrganizadoEnWrapper">
-															<select name="data[Order][organizado_en]" title="A2" id="OrderOrganizadoEn">
-																<option value="Vias" selected="selected">Vías</option>
-																<option value="Cambios">Cambios</option>
-																<option value="Paginas">Páginas</option>
-															</select>
+													
+													<!-- Cantidad, vias, tipo -->
+													<div class="form-group fields-row row">
+														<!-- Cantidad -->
+														<div class="col-6 col-sm-auto">
+															<label class="control-label" for="OrderCantidadCopias">Cant.</label>
+															<input name="data[Order][cantidad_copias]" class="exnumeric" title="A1" size="7" value="100" onchange="calculoJuegos();" type="text" id="OrderCantidadCopias" required="required">															
+														</div><!-- /*Cantidad -->
+														<div class="col-6 col-sm-auto">
+															<!-- Organizado en -->
+															<div class="dropdown inline-block" id="OrderOrganizadoEnWrapper" style="height: 24px !important;margin-top: -3px">
+																<select class="col" name="data[Order][organizado_en]" title="A2" id="OrderOrganizadoEn">
+																	<option value="Vias" selected="selected">Vías</option>
+																	<option value="Cambios">Cambios</option>
+																	<option value="Paginas">Páginas</option>
+																</select>
+															</div><!-- /*Organizado en -->
+															<!-- Cantidad de pliegos -->
+															<input name="data[Order][cantidad]" class="form-control inline-block" title="A3" value="2" onchange="cantPliego()" type="number" id="OrderCantidad" required="required" readonly="readonly">															
+															<!-- /*Cantidad de pliegos -->															
 														</div>
-														<input name="data[Order][cantidad]" class="inline-block" title="A3" value="2" onchange="cantPliego()" type="number" id="OrderCantidad" required="required" readonly="readonly">
-														<label for="OrderFormatoFinalX">F.Final(cms)</label>
-														<input name="data[Order][formato_final_x]" class="" title="A4" value="14" size="2" step="any" type="number" id="OrderFormatoFinalX">
-							<label for="OrderFormatoFinalY" class="shrink">;</label>
-														<input name="data[Order][formato_final_y]" class="" title="A5" value="20.5" size="2" step="any" type="number" id="OrderFormatoFinalY">
-														<label for="OrderFormatoFinalZ" class="shrink">;</label>
-														<input name="data[Order][formato_final_z]" class="" title="A6" size="2" step="any" type="number" id="OrderFormatoFinalZ">
-														<div class="dropdown inline-block" id="OrderPresentationTypeIdWrapper">
-															<select name="data[Order][presentation_type_id]" title="A7" cs-identifier="presentationtypes" id="OrderPresentationTypeId" required="required">
+														<!-- Formato final -->
+														<div class="col-12 col-sm-auto">
+															<label for="OrderFormatoFinalX">F.Final(cms)</label>
+															<input name="data[Order][formato_final_x]" class="no-margin" title="A4" value="14" size="2" step="any" type="number" id="OrderFormatoFinalX">
+															<label for="OrderFormatoFinalY" class="shrink no-margin">;</label>
+															<input name="data[Order][formato_final_y]" class="no-margin" title="A5" value="20.5" size="2" step="any" type="number" id="OrderFormatoFinalY">
+															<label for="OrderFormatoFinalZ" class="shrink no-margin">;</label>
+															<input name="data[Order][formato_final_z]" class="no-margin" title="A6" size="2" step="any" type="number" id="OrderFormatoFinalZ">
+														</div><!-- /*Formato final -->
+														<!-- Tipo -->
+														<div class="dropdown col-12 col-sm-4 col-md-3" id="OrderPresentationTypeIdWrapper">
+															<select class="col" name="data[Order][presentation_type_id]" title="A7" cs-identifier="presentationtypes" id="OrderPresentationTypeId" required="required">
 																<option value="16">ABIERTO</option>
 																<option value="19">BARNIZ AL AGUA</option>
 																<option value="21">BARNIZ SECTORIZADO</option>
@@ -472,360 +447,485 @@
 																<option value="28">TROQUELADO</option>
 																<option value="11">TROQUELADO AL MEDIO</option>
 															</select>
-														</div>
-													</div>
-													<div class="fields-row">
-														<label for="OrderPresentationTypeId" class="vias switchable">Definir Vías</label>
-														<button type="button" id="definir-vias" class="popup switchable vias" onclick="SelectorVias.open();"></button>
-														<label for="OrderPresentationTypeId" class="paginas switchable hidden">Pág. x Pliego</label>
-														<input name="data[Order][pags_por_pliego]" class="paginas switchable hidden" onchange="cantPliego();" type="number" id="OrderPagsPorPliego" required="required">
-														<label for="OrderPagsPorPliego" class="paginas switchable hidden">son</label>
-														<input name="data[Order][cant_pliego]" class="paginas switchable hidden" size="3" step="any" type="number" id="OrderCantPliego">
-														<label for="OrderCantPliego" class="paginas switchable hidden">pliegos</label>                                
-													</div>
+														</div><!-- /*Tipo -->
+														<!-- Definir Vías -->
+														<div class="col-auto col-sm-8">
+															<div class="row">
+																<label for="OrderPresentationTypeId" class="vias switchable col-auto">Definir Vías</label>
+																<button type="button" id="definir-vias" class="popup switchable vias" onclick="SelectorVias.open();"></button>
+																<label for="OrderPresentationTypeId" class="paginas switchable hidden col-auto">Pág. x Pliego</label>
+																<input name="data[Order][pags_por_pliego]" class="paginas switchable hidden col-auto" onchange="cantPliego();" type="number" id="OrderPagsPorPliego" required="required">
+																<label for="OrderPagsPorPliego" class="paginas switchable hidden col-auto">son</label>
+																<input name="data[Order][cant_pliego]" class="paginas switchable hidden" style="max-width: 55px" size="3" step="any" type="number" id="OrderCantPliego">
+																<label for="OrderCantPliego" class="paginas switchable hidden col-auto">pliegos</label>
+															</div>
+														</div><!-- /*Definir Vías -->
+													</div><!--/*Cantidad, vias, tipo -->
 
 													<div class="separator"></div>                        
-													<div class="trabajo">
+													
+													<!-- Trabajo -->
+													<div class="trabajo">														
 														<input type="hidden" name="data[WorkDetail][0][id]" class="inline-block" value="85353" id="WorkDetail0Id">    
 														<input type="hidden" name="data[WorkDetail][0][nombre]" class="inline-block" value="" id="WorkDetail0Nombre">    
 														<input type="hidden" name="data[WorkDetail][0][deleted]" class="inline-block" value="0" id="WorkDetail0Deleted">
+														
+														
+														<!-- Nombre, material y color -->
 														<div>
-															<div class="input">
 
+															<!-- Definición inicial del trabajo -->
+															<div class="input">																
+																<!-- Nombre trabajo -->
 																<div class="work-detail-number">
 																	<label class="edit editable editable-click" data-index="0" data-pk="85353" data-name="nombre" data-url="/workDetails/ajaxUpdateValue">1</label>
 																</div>
 																<button type="button" onclick="addNewWorkDetail(0);" class="add"></button>
-																<button type="button" onclick="deleteWorkDetail(0);" class="remove hidden"></button>            
+																<button type="button" onclick="deleteWorkDetail(0);" class="remove hidden"></button>																	
+																<!--/*Nombre trabajo -->            
+																
 																<div class="separator"></div>
 
-																<div class="dropdown combo-materiales" id="WorkDetail0NoField0Wrapper">
-																	<select name="data[WorkDetail][0][NoField0]" title="A8" cs-identifier="material-0" id="WorkDetail0NoField0">
-																		<option value=""></option>
-																		<option value="AFICHE">AFICHE</option>
-																		<option value="AUTOADH. ADESTOR BR. C/C DEEP FREEZE">AUTOADH. ADESTOR BR. C/C DEEP FREEZE</option>
-																		<option value="AUTOADH. ADESTOR BR. C/C.">AUTOADH. ADESTOR BR. C/C.</option>
-																		<option value="AUTOADH. ADESTOR BR. S/C.">AUTOADH. ADESTOR BR. S/C.</option>
-																		<option value="AUTOADH. ADESTOR MATE">AUTOADH. ADESTOR MATE</option>
-																		<option value="AUTOADH. AM. FLUO">AUTOADH. AM. FLUO</option>
-																		<option value="AUTOADH. FASSON MATE S/C">AUTOADH. FASSON MATE S/C</option>
-																		<option value="AUTOADH. FIXTER BR.">AUTOADH. FIXTER BR.</option>
-																		<option value="AUTOADH. FIXTER BR. C/C">AUTOADH. FIXTER BR. C/C</option>
-																		<option value="AUTOADH. FIXTER MATE C/C">AUTOADH. FIXTER MATE C/C</option>
-																		<option value="AUTOADH. OJILABEL BR. C/C.">AUTOADH. OJILABEL BR. C/C.</option>
-																		<option value="AUTOADH. OJILABEL BR. S/C">AUTOADH. OJILABEL BR. S/C</option>
-																		<option value="AUTOADH. ORO">AUTOADH. ORO</option>
-																		<option value="AUTOADH. PLATA">AUTOADH. PLATA</option>
-																		<option value="AUTOADH. PLATA SEGURIDAD">AUTOADH. PLATA SEGURIDAD</option>
-																		<option value="AUTOADH. ROJO FARMACIA">AUTOADH. ROJO FARMACIA</option>
-																		<option value="AUTOADH. ROJO FLUO">AUTOADH. ROJO FLUO</option>
-																		<option value="AUTOADH. VERDE FLUO">AUTOADH. VERDE FLUO</option>
-																		<option value="AUTOCOPIANTE" selected="selected">AUTOCOPIANTE</option>
-																		<option value="AUTOCOPIANTE 1&#39;C2&#39;AA">AUTOCOPIANTE 1'C2'AA</option>
-																		<option value="AUTOCOPIANTE INTER. AM.">AUTOCOPIANTE INTER. AM.</option>
-																		<option value="AUTOCOPIANTE INTER. BL.">AUTOCOPIANTE INTER. BL.</option>
-																		<option value="AUTOCOPIANTE INTER. CE.">AUTOCOPIANTE INTER. CE.</option>
-																		<option value="AUTOCOPIANTE INTER. RO.">AUTOCOPIANTE INTER. RO.</option>
-																		<option value="AUTOCOPIANTE INTER. VE.">AUTOCOPIANTE INTER. VE.</option>
-																		<option value="AUTOCOPIANTE ULT. AM.">AUTOCOPIANTE ULT. AM.</option>
-																		<option value="AUTOCOPIANTE ULT. BL.">AUTOCOPIANTE ULT. BL.</option>
-																		<option value="AUTOCOPIANTE ULT. CE.">AUTOCOPIANTE ULT. CE.</option>
-																		<option value="AUTOCOPIANTE ULT. RO.">AUTOCOPIANTE ULT. RO.</option>
-																		<option value="AUTOCOPIANTE ULT. VE.">AUTOCOPIANTE ULT. VE.</option>
-																		<option value="BOOKCEL CREMA">BOOKCEL CREMA</option>
-																		<option value="BOOKCELL">BOOKCELL</option>
-																		<option value="CART. BL.">CART. BL.</option>
-																		<option value="CART. CREMA">CART. CREMA</option>
-																		<option value="CART. MAULE B/B">CART. MAULE B/B</option>
-																		<option value="CHROMOLUX">CHROMOLUX</option>
-																		<option value="COTEADO BRILLO">COTEADO BRILLO</option>
-																		<option value="COTEADO MATE">COTEADO MATE</option>
-																		<option value="DUPLEX XP B/G">DUPLEX XP B/G</option>
-																		<option value="ECO - SAHARA">ECO - SAHARA</option>
-																		<option value="ECO. COLORPOST LINEAL MAIZ">ECO. COLORPOST LINEAL MAIZ</option>
-																		<option value="ECO. ESSE BLACK">ECO. ESSE BLACK</option>
-																		<option value="ECO. GAINSBO. SPICE IVORY">ECO. GAINSBO. SPICE IVORY</option>
-																		<option value="ECO. GAISBO. WHEAT">ECO. GAISBO. WHEAT</option>
-																		<option value="ECO. SIRIO PEARL - MERIDA CREAM">ECO. SIRIO PEARL - MERIDA CREAM</option>
-																		<option value="ECOPACK DUPLEX B/G">ECOPACK DUPLEX B/G</option>
-																		<option value="ETIQUETAS HERMA">ETIQUETAS HERMA</option>
-																		<option value="FICHA ANARANJADO">FICHA ANARANJADO</option>
-																		<option value="FICHA ARENA">FICHA ARENA</option>
-																		<option value="FICHA CANARIO">FICHA CANARIO</option>
-																		<option value="FICHA CELESTE">FICHA CELESTE</option>
-																		<option value="FICHA GRIS">FICHA GRIS</option>
-																		<option value="FICHA ROSADO">FICHA ROSADO</option>
-																		<option value="FICHA VERDE">FICHA VERDE</option>
-																		<option value="FICHE CELESTE">FICHE CELESTE</option>
-																		<option value="FOTOCOPIA">FOTOCOPIA</option>
-																		<option value="FOTOCOPIA AM.">FOTOCOPIA AM.</option>
-																		<option value="FOTOCOPIA CARTA">FOTOCOPIA CARTA</option>
-																		<option value="FOTOCOPIA CE.">FOTOCOPIA CE.</option>
-																		<option value="FOTOCOPIA OFICIO">FOTOCOPIA OFICIO</option>
-																		<option value="FOTOCOPIA RO.">FOTOCOPIA RO.</option>
-																		<option value="FOTOCOPIA TROQ. AL 1/2">FOTOCOPIA TROQ. AL 1/2</option>
-																		<option value="FOTOCOPIA VERDE">FOTOCOPIA VERDE</option>
-																		<option value="GALAXIA CHARA">GALAXIA CHARA</option>
-																		<option value="GOFRADO CASCARA DE HUEVO">GOFRADO CASCARA DE HUEVO</option>
-																		<option value="GOFRADO MARTELEC">GOFRADO MARTELEC</option>
-																		<option value="GOFRADO TELADO">GOFRADO TELADO</option>
-																		<option value="GOMA IMANTADA">GOMA IMANTADA</option>
-																		<option value="IBEMA ESPECIAL">IBEMA ESPECIAL</option>
-																		<option value="IBEMA SUPERA GC2 CAT 30 B/G">IBEMA SUPERA GC2 CAT 30 B/G</option>
-																		<option value="KLAFOLD DUPLEX B/G">KLAFOLD DUPLEX B/G</option>
-																		<option value="KRAFT">KRAFT</option>
-																		<option value="KRAFT MONOLUCIDO">KRAFT MONOLUCIDO</option>
-																		<option value="KRISTALPOST TELADO LINO S/BL.">KRISTALPOST TELADO LINO S/BL.</option>
-																		<option value="lana">lana</option>
-																		<option value="MEDIO HILO">MEDIO HILO</option>
-																		<option value="MONOCOTE">MONOCOTE</option>
-																		<option value="OBRA">OBRA</option>
-																		<option value="OPALINA">OPALINA</option>
-																		<option value="OPALINA TELADA">OPALINA TELADA</option>
-																		<option value="OPALINA TELADA BL.">OPALINA TELADA BL.</option>
-																		<option value="OPALINA TELADA MARFIL">OPALINA TELADA MARFIL</option>
-																		<option value="OPALINA TELADO">OPALINA TELADO</option>
-																		<option value="OTRO">OTRO</option>
-																		<option value="PAPEL VEGETAL">PAPEL VEGETAL</option>
-																		<option value="SOBRE 1/2 OF. C/VENTANA">SOBRE 1/2 OF. C/VENTANA</option>
-																		<option value="SOBRE 1/2 OFICIO">SOBRE 1/2 OFICIO</option>
-																		<option value="SOBRE 3/4 OF. C/VENTANA">SOBRE 3/4 OF. C/VENTANA</option>
-																		<option value="SOBRE 3/4 OFICIO">SOBRE 3/4 OFICIO</option>
-																		<option value="SOBRE COMERCIAL AZUL">SOBRE COMERCIAL AZUL</option>
-																		<option value="SOBRE OFICIO">SOBRE OFICIO</option>
-																		<option value="SOBRE PARTICIPACION">SOBRE PARTICIPACION</option>
-																		<option value="SOBRE REVISTA BL.">SOBRE REVISTA BL.</option>
-																		<option value="SOBRE REVISTA MANILA">SOBRE REVISTA MANILA</option>
-																		<option value="SYNPAP">SYNPAP</option>
-																		<option value="TRIPLEX B/B">TRIPLEX B/B</option>
-																		<option value="TRIPLEX B/B BOARD">TRIPLEX B/B BOARD</option>
-																	</select>
-																</div>
-																<label for="WorkDetail0NoField0">grs.</label>
-																<div class="dropdown inline-block" id="WorkDetail0NoField1Wrapper">
-																	<select name="data[WorkDetail][0][NoField1]" title="A9" cs-identifier="gramos-0" id="WorkDetail0NoField1">
-																		<option value="60" selected="selected">60</option>
-																	</select>
-																</div>
-																<label for="WorkDetail0NoField1">cms.</label>
-																<div class="dropdown inline-block" id="WorkDetail0MaterialIdWrapper">
-																	<select name="data[WorkDetail][0][material_id]" title="A10" onchange="salenCalculation(0);" cs-identifier="formatos-0" id="WorkDetail0MaterialId">
-																		<option value="2" selected="selected">21 x 29.7 (stoc.)</option>
-																	</select></div><label for="WorkDetail0MaterialId">Definición de tareas</label>
-																<button type="button" id="definir-tareas" class="popup duties" onclick="seleccionTareas0.open();"></button>
-																<div id="seleccion-tareas-0" class="popup tareas">
-																	<div class="mask"></div>
-																	<div class="box">
-																		<div class="popup-title">Seleccione la Tarea</div>
-																		<div class="popup-body">
-																			<div class="titles">
-																				<span class="title selected" task="numerado" description="Numerado" tareaid="CheckedNumerado" >
-																					<span class="del">x</span>Numerado</span>
-																				<span class="title selected" task="intercalado" description="Intercalado" tareaid="Intercalado" >
-																					<span class="del">x</span>Intercalado</span>
-																				<span class="title " task="grapado" description="Grapado" tareaid="CheckedGrapado">Grapado</span><span class="title " task="perforado" description="Perforado" tareaid="CheckedPerforado" onclick="seleccionTareas0.show( & quot; perforado & quot; , & quot; Perforado & quot; , & quot; CheckedPerforado & quot; ); updateResumenTareas();">Perforado</span><span class="title " task="emblocado" description="Emblocado" tareaid="CheckedEmblocado" onclick="seleccionTareas0.show( & quot; emblocado & quot; , & quot; Emblocado & quot; , & quot; CheckedEmblocado & quot; ); updateResumenTareas();">Emblocado</span><span class="title " task="troquelado" description="Troquelado" tareaid="CheckedTroquelado" onclick="seleccionTareas0.show( & quot; troquelado & quot; , & quot; Troquelado & quot; , & quot; CheckedTroquelado & quot; ); updateResumenTareas();">Troquelado</span><span class="title " task="barniz-uv" description="Barniz UV" tareaid="CheckedBarnizUV" onclick="seleccionTareas0.show( & quot; barniz - uv & quot; , & quot; Barniz UV & quot; , & quot; CheckedBarnizUV & quot; ); updateResumenTareas();">Barniz UV</span><span class="title " task="barniz-sectorizado" description="Barniz sectorizado" tareaid="CheckedBarnizSectorizado" onclick="seleccionTareas0.show( & quot; barniz - sectorizado & quot; , & quot; Barniz sectorizado & quot; , & quot; CheckedBarnizSectorizado & quot; ); updateResumenTareas();">Barniz sectorizado</span><span class="title " task="laminado" description="Laminado" tareaid="CheckedLaminado" onclick="seleccionTareas0.show( & quot; laminado & quot; , & quot; Laminado & quot; , & quot; CheckedLaminado & quot; ); updateResumenTareas();">Laminado</span><span class="title " task="marcado" description="Marcado" tareaid="CheckedMarcado" onclick="seleccionTareas0.show( & quot; marcado & quot; , & quot; Marcado & quot; , & quot; CheckedMarcado & quot; ); updateResumenTareas();">Marcado</span><span class="title " task="doblado" description="Doblado" tareaid="Doblado" onclick="seleccionTareas0.show( & quot; doblado & quot; , & quot; Doblado & quot; , & quot; Doblado & quot; ); updateResumenTareas();">Doblado</span><span class="title selected" task="falso-cosido" description="Falso cosido" tareaid="CheckedFalsoCosido" onclick="seleccionTareas0.show( & quot; falso - cosido & quot; , & quot; Falso cosido & quot; , & quot; CheckedFalsoCosido & quot; ); updateResumenTareas();"><span class="del">x</span>Falso cosido</span><span class="title " task="espiral" description="Espiral" tareaid="CheckedEspiral" onclick="seleccionTareas0.show( & quot; espiral & quot; , & quot; Espiral & quot; , & quot; CheckedEspiral & quot; ); updateResumenTareas();">Espiral</span><span class="title " task="pegado" description="Pegado" tareaid="CheckedPegado" onclick="seleccionTareas0.show( & quot; pegado & quot; , & quot; Pegado & quot; , & quot; CheckedPegado & quot; ); updateResumenTareas();">Pegado</span><span class="title " task="plastificado" description="Plastificado" tareaid="CheckedPlastificado" onclick="seleccionTareas0.show( & quot; plastificado & quot; , & quot; Plastificado & quot; , & quot; CheckedPlastificado & quot; ); updateResumenTareas();">Plastificado</span><span class="title " task="solapa-de-stock" description="Solapa de stock" tareaid="Solapa" onclick="seleccionTareas0.show( & quot; solapa - de - stock & quot; , & quot; Solapa de stock & quot; , & quot; Solapa & quot; ); updateResumenTareas();">Solapa de stock</span><span class="title " task="hot-stamping" description="Hot stamping" tareaid="Hstamping" onclick="seleccionTareas0.show( & quot; hot - stamping & quot; , & quot; Hot stamping & quot; , & quot; Hstamping & quot; ); updateResumenTareas();">Hot stamping</span><span class="title " task="envarillado" description="Envarillado" tareaid="Envarillado" onclick="seleccionTareas0.show( & quot; envarillado & quot; , & quot; Envarillado & quot; , & quot; Envarillado & quot; ); updateResumenTareas();">Envarillado</span><span class="title " task="polipropileno" description="Polipropileno" tareaid="Polipropileno" onclick="seleccionTareas0.show( & quot; polipropileno & quot; , & quot; Polipropileno & quot; , & quot; Polipropileno & quot; ); updateResumenTareas();">Polipropileno</span><span class="title " task="tratamiento-laminado" description="Tratamiento laminado" tareaid="Tratlaminado" onclick="seleccionTareas0.show( & quot; tratamiento - laminado & quot; , & quot; Tratamiento laminado & quot; , & quot; Tratlaminado & quot; ); updateResumenTareas();">Tratamiento laminado</span>            </div>
+																<div class="row">
 
-																			<div class="task-mask-layer"></div>
+																	<!-- Materiales -->
+																	<div class="dropdown col-7 col-sm-4" id="WorkDetail0NoField0Wrapper">
+																		<select class="col" name="data[WorkDetail][0][NoField0]" title="A8" cs-identifier="material-0" id="WorkDetail0NoField0">
+																			<option value=""></option>
+																			<option value="AFICHE">AFICHE</option>
+																			<option value="AUTOADH. ADESTOR BR. C/C DEEP FREEZE">AUTOADH. ADESTOR BR. C/C DEEP FREEZE</option>
+																			<option value="AUTOADH. ADESTOR BR. C/C.">AUTOADH. ADESTOR BR. C/C.</option>
+																			<option value="AUTOADH. ADESTOR BR. S/C.">AUTOADH. ADESTOR BR. S/C.</option>
+																			<option value="AUTOADH. ADESTOR MATE">AUTOADH. ADESTOR MATE</option>
+																			<option value="AUTOADH. AM. FLUO">AUTOADH. AM. FLUO</option>
+																			<option value="AUTOADH. FASSON MATE S/C">AUTOADH. FASSON MATE S/C</option>
+																			<option value="AUTOADH. FIXTER BR.">AUTOADH. FIXTER BR.</option>
+																			<option value="AUTOADH. FIXTER BR. C/C">AUTOADH. FIXTER BR. C/C</option>
+																			<option value="AUTOADH. FIXTER MATE C/C">AUTOADH. FIXTER MATE C/C</option>
+																			<option value="AUTOADH. OJILABEL BR. C/C.">AUTOADH. OJILABEL BR. C/C.</option>
+																			<option value="AUTOADH. OJILABEL BR. S/C">AUTOADH. OJILABEL BR. S/C</option>
+																			<option value="AUTOADH. ORO">AUTOADH. ORO</option>
+																			<option value="AUTOADH. PLATA">AUTOADH. PLATA</option>
+																			<option value="AUTOADH. PLATA SEGURIDAD">AUTOADH. PLATA SEGURIDAD</option>
+																			<option value="AUTOADH. ROJO FARMACIA">AUTOADH. ROJO FARMACIA</option>
+																			<option value="AUTOADH. ROJO FLUO">AUTOADH. ROJO FLUO</option>
+																			<option value="AUTOADH. VERDE FLUO">AUTOADH. VERDE FLUO</option>
+																			<option value="AUTOCOPIANTE" selected="selected">AUTOCOPIANTE</option>
+																			<option value="AUTOCOPIANTE 1&#39;C2&#39;AA">AUTOCOPIANTE 1'C2'AA</option>
+																			<option value="AUTOCOPIANTE INTER. AM.">AUTOCOPIANTE INTER. AM.</option>
+																			<option value="AUTOCOPIANTE INTER. BL.">AUTOCOPIANTE INTER. BL.</option>
+																			<option value="AUTOCOPIANTE INTER. CE.">AUTOCOPIANTE INTER. CE.</option>
+																			<option value="AUTOCOPIANTE INTER. RO.">AUTOCOPIANTE INTER. RO.</option>
+																			<option value="AUTOCOPIANTE INTER. VE.">AUTOCOPIANTE INTER. VE.</option>
+																			<option value="AUTOCOPIANTE ULT. AM.">AUTOCOPIANTE ULT. AM.</option>
+																			<option value="AUTOCOPIANTE ULT. BL.">AUTOCOPIANTE ULT. BL.</option>
+																			<option value="AUTOCOPIANTE ULT. CE.">AUTOCOPIANTE ULT. CE.</option>
+																			<option value="AUTOCOPIANTE ULT. RO.">AUTOCOPIANTE ULT. RO.</option>
+																			<option value="AUTOCOPIANTE ULT. VE.">AUTOCOPIANTE ULT. VE.</option>
+																			<option value="BOOKCEL CREMA">BOOKCEL CREMA</option>
+																			<option value="BOOKCELL">BOOKCELL</option>
+																			<option value="CART. BL.">CART. BL.</option>
+																			<option value="CART. CREMA">CART. CREMA</option>
+																			<option value="CART. MAULE B/B">CART. MAULE B/B</option>
+																			<option value="CHROMOLUX">CHROMOLUX</option>
+																			<option value="COTEADO BRILLO">COTEADO BRILLO</option>
+																			<option value="COTEADO MATE">COTEADO MATE</option>
+																			<option value="DUPLEX XP B/G">DUPLEX XP B/G</option>
+																			<option value="ECO - SAHARA">ECO - SAHARA</option>
+																			<option value="ECO. COLORPOST LINEAL MAIZ">ECO. COLORPOST LINEAL MAIZ</option>
+																			<option value="ECO. ESSE BLACK">ECO. ESSE BLACK</option>
+																			<option value="ECO. GAINSBO. SPICE IVORY">ECO. GAINSBO. SPICE IVORY</option>
+																			<option value="ECO. GAISBO. WHEAT">ECO. GAISBO. WHEAT</option>
+																			<option value="ECO. SIRIO PEARL - MERIDA CREAM">ECO. SIRIO PEARL - MERIDA CREAM</option>
+																			<option value="ECOPACK DUPLEX B/G">ECOPACK DUPLEX B/G</option>
+																			<option value="ETIQUETAS HERMA">ETIQUETAS HERMA</option>
+																			<option value="FICHA ANARANJADO">FICHA ANARANJADO</option>
+																			<option value="FICHA ARENA">FICHA ARENA</option>
+																			<option value="FICHA CANARIO">FICHA CANARIO</option>
+																			<option value="FICHA CELESTE">FICHA CELESTE</option>
+																			<option value="FICHA GRIS">FICHA GRIS</option>
+																			<option value="FICHA ROSADO">FICHA ROSADO</option>
+																			<option value="FICHA VERDE">FICHA VERDE</option>
+																			<option value="FICHE CELESTE">FICHE CELESTE</option>
+																			<option value="FOTOCOPIA">FOTOCOPIA</option>
+																			<option value="FOTOCOPIA AM.">FOTOCOPIA AM.</option>
+																			<option value="FOTOCOPIA CARTA">FOTOCOPIA CARTA</option>
+																			<option value="FOTOCOPIA CE.">FOTOCOPIA CE.</option>
+																			<option value="FOTOCOPIA OFICIO">FOTOCOPIA OFICIO</option>
+																			<option value="FOTOCOPIA RO.">FOTOCOPIA RO.</option>
+																			<option value="FOTOCOPIA TROQ. AL 1/2">FOTOCOPIA TROQ. AL 1/2</option>
+																			<option value="FOTOCOPIA VERDE">FOTOCOPIA VERDE</option>
+																			<option value="GALAXIA CHARA">GALAXIA CHARA</option>
+																			<option value="GOFRADO CASCARA DE HUEVO">GOFRADO CASCARA DE HUEVO</option>
+																			<option value="GOFRADO MARTELEC">GOFRADO MARTELEC</option>
+																			<option value="GOFRADO TELADO">GOFRADO TELADO</option>
+																			<option value="GOMA IMANTADA">GOMA IMANTADA</option>
+																			<option value="IBEMA ESPECIAL">IBEMA ESPECIAL</option>
+																			<option value="IBEMA SUPERA GC2 CAT 30 B/G">IBEMA SUPERA GC2 CAT 30 B/G</option>
+																			<option value="KLAFOLD DUPLEX B/G">KLAFOLD DUPLEX B/G</option>
+																			<option value="KRAFT">KRAFT</option>
+																			<option value="KRAFT MONOLUCIDO">KRAFT MONOLUCIDO</option>
+																			<option value="KRISTALPOST TELADO LINO S/BL.">KRISTALPOST TELADO LINO S/BL.</option>
+																			<option value="lana">lana</option>
+																			<option value="MEDIO HILO">MEDIO HILO</option>
+																			<option value="MONOCOTE">MONOCOTE</option>
+																			<option value="OBRA">OBRA</option>
+																			<option value="OPALINA">OPALINA</option>
+																			<option value="OPALINA TELADA">OPALINA TELADA</option>
+																			<option value="OPALINA TELADA BL.">OPALINA TELADA BL.</option>
+																			<option value="OPALINA TELADA MARFIL">OPALINA TELADA MARFIL</option>
+																			<option value="OPALINA TELADO">OPALINA TELADO</option>
+																			<option value="OTRO">OTRO</option>
+																			<option value="PAPEL VEGETAL">PAPEL VEGETAL</option>
+																			<option value="SOBRE 1/2 OF. C/VENTANA">SOBRE 1/2 OF. C/VENTANA</option>
+																			<option value="SOBRE 1/2 OFICIO">SOBRE 1/2 OFICIO</option>
+																			<option value="SOBRE 3/4 OF. C/VENTANA">SOBRE 3/4 OF. C/VENTANA</option>
+																			<option value="SOBRE 3/4 OFICIO">SOBRE 3/4 OFICIO</option>
+																			<option value="SOBRE COMERCIAL AZUL">SOBRE COMERCIAL AZUL</option>
+																			<option value="SOBRE OFICIO">SOBRE OFICIO</option>
+																			<option value="SOBRE PARTICIPACION">SOBRE PARTICIPACION</option>
+																			<option value="SOBRE REVISTA BL.">SOBRE REVISTA BL.</option>
+																			<option value="SOBRE REVISTA MANILA">SOBRE REVISTA MANILA</option>
+																			<option value="SYNPAP">SYNPAP</option>
+																			<option value="TRIPLEX B/B">TRIPLEX B/B</option>
+																			<option value="TRIPLEX B/B BOARD">TRIPLEX B/B BOARD</option>
+																		</select>
+																	</div><!-- /*Materiales -->
 
-																			<div class="task-divs">
-																				<div class="task numerado" taskname="Numerado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][id]" class="inline-block" value="20337" id="WorkDetail0TaskId"><input type="hidden" name="data[WorkDetail][0][Task][checked_numerado]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedNumerado"><div class="input"><label for="WorkDetail0TaskNumeradon"></label><input name="data[WorkDetail][0][Task][numeradon]" class="inline-block" value="" type="text" id="WorkDetail0TaskNumeradon"></div><div class="input"><label for="WorkDetail0TaskNumerados"></label><select name="data[WorkDetail][0][Task][numerados]" class="inline-block" id="WorkDetail0TaskNumerados">
-																							<option value="">--select--</option>
-																							<option value="1" selected="selected">Nomerada/s</option>
-																							<option value="2">Datos Variables</option>
-																						</select></div>                </div>
-																				<div class="task intercalado" taskname="Intercalado">
-																					Hacer intercalado<input type="hidden" name="data[WorkDetail][0][Task][intercalado]" class="inputIsOn" value="1" id="WorkDetail0TaskIntercalado">                </div>
-																				<div class="task grapado" taskname="Grapado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_grapado]" class="inputIsOn" id="WorkDetail0TaskCheckedGrapado"><label for="WorkDetail0TaskGrapado">Grapado</label><select name="data[WorkDetail][0][Task][grapado]" class="inline-block" title="B1" id="WorkDetail0TaskGrapado">
-																						<option value="">--select--</option>
-																						<option value="1">Grapa en ángulo</option>
-																						<option value="2">2 grapas de lomo</option>
-																						<option value="3">2 grapas de cabeza</option>
-																						<option value="4">2 grapas de caballete</option>
-																						<option value="5">1 grapa de lomo</option>
-																						<option value="6">1 grapa de cabeza</option>
-																						<option value="7">1 grapa de caballete</option>
-																					</select><div class="input"><input type="checkbox" name="data[WorkDetail][0][Task][calculo_grapado]" class="inline-block" title="B11" value="1" id="WorkDetail0TaskCalculoGrapado"><label for="WorkDetail0TaskCalculoGrapado">calcular tapa y contratapa estandar</label></div>                </div>
-																				<div class="task perforado" taskname="Perforado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_perforado]" class="inputIsOn" id="WorkDetail0TaskCheckedPerforado"><label for="WorkDetail0TaskPerforadoTipo"></label><select name="data[WorkDetail][0][Task][perforado_tipo]" class="inline-block" title="B2" id="WorkDetail0TaskPerforadoTipo">
-																						<option value="">--select--</option>
-																						<option value="1">Archivo</option>
-																						<option value="2">Cabeza</option>
-																						<option value="3">Otro</option>
-																					</select><div class="input"><label for="WorkDetail0TaskPerforadoCantidad">Cantidad</label><input name="data[WorkDetail][0][Task][perforado_cantidad]" class="inline-block" title="B3" value="2" type="text" id="WorkDetail0TaskPerforadoCantidad"></div><div class="input"><label for="WorkDetail0TaskPerforadost">Diámetro</label><input name="data[WorkDetail][0][Task][perforadost]" class="inline-block" title="B4" value="4" type="text" id="WorkDetail0TaskPerforadost"></div><div class="input"><label for="WorkDetail0TaskPerforados"></label><input name="data[WorkDetail][0][Task][perforados]" class="inline-block" title="B5" value="" type="text" id="WorkDetail0TaskPerforados"></div>                </div>
-																				<div class="task emblocado" taskname="Emblocado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_emblocado]" class="inputIsOn" id="WorkDetail0TaskCheckedEmblocado"><div class="input"><label for="WorkDetail0TaskEmblocadoTipo">Emblocado</label><select name="data[WorkDetail][0][Task][emblocado_tipo]" class="inline-block" id="WorkDetail0TaskEmblocadoTipo">
-																							<option value="">--select--</option>
-																							<option value="cabeza">Cabeza</option>
-																							<option value="lomo">Lomo</option>
-																							<option value="pie">Pie</option>
-																						</select></div><div class="input"><input type="checkbox" name="data[WorkDetail][0][Task][calculo_emblocado]" class="inline-block" title="B12" value="1" id="WorkDetail0TaskCalculoEmblocado"><label for="WorkDetail0TaskCalculoEmblocado">calcular tapa y contratapa estandar</label></div>                </div>
-																				<div class="task troquelado" taskname="Troquelado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_troquelado]" class="inputIsOn" id="WorkDetail0TaskCheckedTroquelado"><label for="WorkDetail0TaskTroquelados">Troquelado</label><select name="data[WorkDetail][0][Task][troquelados]" class="inline-block" title="B16" id="WorkDetail0TaskTroquelados">
-																						<option value="">--select--</option>
-																						<option value="1">Con troquel</option>
-																						<option value="5">Sin troquel</option>
-																						<option value="6">Plotter de corte</option>
-																					</select><div class="input"><label for="WorkDetail0TaskTroqueladon">Nro. Troquel</label><input name="data[WorkDetail][0][Task][troqueladon]" class="inline-block" title="B9" value="" type="text" id="WorkDetail0TaskTroqueladon"></div><div class="input"><label for="Troquel0Bocas">Bocas</label><input name="data[Troquel][0][Bocas]" class="inline-block" title="B10" readonly="readonly" type="text" id="Troquel0Bocas"></div>                    
-																					<div style="margin-top:10px;"><a href="#troquels/index" target="_blank">Lista de Troqueles</a></div>
-
-																					<div id="troquel-0-search-box-results"></div>
-
-																					<script type="text/javascript">
-																						$("#WorkDetail0TaskTroqueladon").on('keypress', function (e) {
-																						if (e.which === 13){
-																						e.preventDefault();
-																						var self = this;
-																						//Disable textbox to prevent multiple submit
-																						$(self).attr("disabled", "disabled");
-																						$.ajax({
-																						async: true,
-																								data: {codigo: $('#WorkDetail0TaskTroqueladon').val(), index: '0'},
-																								dataType:"html",
-																								success:function (data, textStatus) {
-																								$("#troquel-0-search-box-results").html(data);
-																								//Enable the textbox again if needed.
-																								$(self).removeAttr("disabled");
-																								},
-																								type:"GET",
-																								url:"/troquels/searchBox"
-																						});
-																						}
-																						});
-																					</script>
-																				</div>
-																				<!--<div class="task barniz-al-agua" taskname='Barniz al Agua'>
-																									</div>-->
-																				<div class="task barniz-uv" taskname="Barniz UV">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_barniz_UV]" class="inputIsOn" id="WorkDetail0TaskCheckedBarnizUV"><label for="WorkDetail0TaskBarnizuv">Barniz UV</label><select name="data[WorkDetail][0][Task][barnizuv]" class="inline-block" title="B6" id="WorkDetail0TaskBarnizuv">
-																						<option value="">--select--</option>
-																						<option value="1">Solo Frente</option>
-																						<option value="2">Solo Dorso</option>
-																						<option value="3">Frente y Dorso</option>
-																					</select>                </div>
-																				<div class="task barniz-sectorizado" taskname="Barniz Sectorizado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_barniz_sectorizado]" class="inputIsOn" id="WorkDetail0TaskCheckedBarnizSectorizado"><label for="WorkDetail0TaskBarvizsec">Barniz sectorizado</label><select name="data[WorkDetail][0][Task][barvizsec]" class="inline-block" id="WorkDetail0TaskBarvizsec">
-																						<option value="">--select--</option>
-																						<option value="1">Solo Frente</option>
-																						<option value="2">Solo Dorso</option>
-																						<option value="3">Frente y Dorso</option>
-																					</select>                </div>
-																				<div class="task laminado" taskname="Laminado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_laminado]" class="inputIsOn" id="WorkDetail0TaskCheckedLaminado"><label for="WorkDetail0TaskLaminadol">Laminado</label><select name="data[WorkDetail][0][Task][laminadol]" class="inline-block" otro="Otro" id="WorkDetail0TaskLaminadol">
-																						<option value="">--select--</option>
-																						<option value="1">Laminado brillo 33 cms</option>
-																						<option value="2">Laminado brillo 45 cms</option>
-																						<option value="3">Laminado mate 33 cms</option>
-																						<option value="4">Laminado mate 45 cms</option>
-																						<option value="5">Laminado Almaplast.</option>
-																					</select><label for="WorkDetail0TaskLaminadof"></label><select name="data[WorkDetail][0][Task][laminadof]" class="inline-block" id="WorkDetail0TaskLaminadof">
-																						<option value="">--select--</option>
-																						<option value="1">Solo frente</option>
-																						<option value="2">Solo Dorso</option>
-																						<option value="3">Frente y Dorso</option>
-																					</select>                </div>
-																				<div class="task marcado" taskname="Marcado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_marcado]" class="inputIsOn" id="WorkDetail0TaskCheckedMarcado"><label for="WorkDetail0TaskMarcado">Marcado</label><select name="data[WorkDetail][0][Task][marcado]" class="inline-block" disabled="disabled" id="WorkDetail0TaskMarcado">
-																						<option value="">--select--</option>
-																						<option value="1">Marcardo manual</option>
-																						<option value="2">Marcado de máquina</option>
-																					</select>                </div>
-																				<div class="task doblado" taskname="Doblado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][doblado]" class="inputIsOn" id="WorkDetail0TaskDoblado"><div class="input"><label for="WorkDetail0TaskDobladoTipo">Tipo</label><select name="data[WorkDetail][0][Task][doblado_tipo]" class="inline-block" title="B7" otro="Otro" id="WorkDetail0TaskDobladoTipo">
-																							<option value="">--select--</option>
-																							<option value="diptico">Díptico</option>
-																							<option value="triptico">Tríptico</option>
-																							<option value="cuatriptico">Cuatríptico</option>
-																							<option value="dobleparalelo">Doble paralelo</option>
-																							<option value="dobleparalelomedio">Doble paralelo y al medio</option>
-																							<option value="zigzag">Zigzag</option>
-																						</select></div>                </div>
-																				<div class="task falso-cosido" taskname="Falso cosido">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_falso_cosido]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedFalsoCosido"><div class="input"><label for="WorkDetail0TaskFalsocosido">Falso cosido</label><select name="data[WorkDetail][0][Task][falsocosido]" class="inline-block" title="B13" id="WorkDetail0TaskFalsocosido">
-																							<option value="">--select--</option>
-																							<option value="cabeza" selected="selected">Cabeza</option>
-																							<option value="lomo">Lomo</option>
-																							<option value="pie">Pie</option>
-																						</select></div><div class="input"><input type="checkbox" name="data[WorkDetail][0][Task][calculo_falsocosido]" class="inline-block" title="B14" value="1" checked="checked" id="WorkDetail0TaskCalculoFalsocosido"><label for="WorkDetail0TaskCalculoFalsocosido">calcular tapa y contratapa estandar</label></div>                </div>
-																				<div class="task espiral" taskname="Espiral">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_espiral]" class="inputIsOn" id="WorkDetail0TaskCheckedEspiral"><label for="WorkDetail0TaskEspiral">espiral</label><select name="data[WorkDetail][0][Task][espiral]" class="inline-block" id="WorkDetail0TaskEspiral">
-																						<option value="">--select--</option>
-																						<option value="1">Espiral de alambre</option>
-																						<option value="2">Espiral de plástico</option>
-																					</select>                </div>
-																				<div class="task pegado" taskname="Pegado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_pegado]" class="inputIsOn" id="WorkDetail0TaskCheckedPegado"><label for="WorkDetail0TaskPegado">Pegado</label><select name="data[WorkDetail][0][Task][pegado]" class="inline-block" id="WorkDetail0TaskPegado">
-																						<option value="">--select--</option>
-																						<option value="1">Cinta doble faz</option>
-																						<option value="2">Común</option>
-																						<option value="3">Contraencolado</option>
-																						<option value="4">Común grande</option>
-																						<option value="5">Común mediano</option>
-																						<option value="6">Fondo automático mediano</option>
-																						<option value="7">Fondo automático grande</option>
-																						<option value="8">Refuerzos</option>
-																						<option value="9">Sobre semilla</option>
-																						<option value="10">Con fuelle</option>
-																						<option value="11">Con velcro</option>
-																					</select>                </div>
-																				<div class="task plastificado" taskname="Plastificado">
-																					<input type="hidden" name="data[WorkDetail][0][Task][checked_plastificado]" class="inputIsOn" id="WorkDetail0TaskCheckedPlastificado"><label for="WorkDetail0TaskPlastificado">Plastificado</label><select name="data[WorkDetail][0][Task][plastificado]" class="inline-block" title="B8" id="WorkDetail0TaskPlastificado">
-																						<option value="">--select--</option>
-																						<option value="1">Plastificado A5</option>
-																						<option value="2">Plastificado A4</option>
-																						<option value="3">Plastificado A3</option>
-																					</select>                </div>
-																				<div class="task solapa-de-stock" taskname="Solapa de stock">
-																					Hacer solapa-de-stock<input type="hidden" name="data[WorkDetail][0][Task][solapa]" class="inputIsOn" id="WorkDetail0TaskSolapa">                </div>
-																				<div class="task hot-stamping" taskname="Hot Stamping">
-																					Hacer hot-stamping<input type="hidden" name="data[WorkDetail][0][Task][hstamping]" class="inputIsOn" id="WorkDetail0TaskHstamping">                </div>
-																				<div class="task envarillado" taskname="Envarillado">
-																					Hacer envarillado<input type="hidden" name="data[WorkDetail][0][Task][envarillado]" class="inputIsOn" id="WorkDetail0TaskEnvarillado">                </div>
-																				<div class="task polipropileno" taskname="Polipropeno">
-																					Hacer polipropeno<input type="hidden" name="data[WorkDetail][0][Task][polipropileno]" class="inputIsOn" id="WorkDetail0TaskPolipropileno">                </div>
-																				<div class="task tratamiento-laminado" taskname="Tratamiento laminado">
-																					Hacer tratamiento laminado<input type="hidden" name="data[WorkDetail][0][Task][tratlaminado]" class="inputIsOn" id="WorkDetail0TaskTratlaminado">                </div>
+																	<!-- Gramaje -->
+																	<div class="col-5 col-sm-3">
+																		<div class="row">
+																			<label class="col-auto" for="WorkDetail0NoField0">grs.</label>
+																			<div class="dropdown col" id="WorkDetail0NoField1Wrapper">
+																				<select class="col" name="data[WorkDetail][0][NoField1]" title="A9" cs-identifier="gramos-0" id="WorkDetail0NoField1">
+																					<option value="60" selected="selected">60</option>
+																					<option value="80" selected="selected">80</option>
+																					<option value="90" selected="selected">90</option>
+																					<option value="100" selected="selected">100</option>
+																				</select>
 																			</div>
-
 																		</div>
+																	</div><!--/*Gramaje -->
 
+																	<!-- Tamaño -->
+																	<div class="col-6 col-sm-5">
+																		<div class="row">
+																			<label class="col-auto" for="WorkDetail0NoField1">cms.</label>
+																			<div class="dropdown col" id="WorkDetail0MaterialIdWrapper">
+																				<select class="col" name="data[WorkDetail][0][material_id]" title="A10" onchange="salenCalculation(0);" cs-identifier="formatos-0" id="WorkDetail0MaterialId">
+																					<option value="1" selected="selected">14.8 x 21 (stoc.)</option>
+																					<option value="2" selected="selected">21 x 29.7 (stoc.)</option>
+																					<option value="3" selected="selected">22.5 x 32  (stoc.)</option>
+																					<option value="4" selected="selected">29.7 x 42 (stoc.)</option>
+																					<option value="5" selected="selected">32 x 45 (stoc.)</option>
+																				</select>
+																			</div>
+																		</div>
+																	</div><!-- /*Tamaño -->
+
+																	<!-- Definición de tareas -->
+																	<div class="col-6">
+																		<div class="row">
+																			<label class="col-auto" for="WorkDetail0MaterialId">Definición de tareas</label>
+																			<button type="button" id="definir-tareas" class="popup duties" onclick="seleccionTareas0.open();"></button>																			
+																		</div>																		
+																	</div><!-- /*Definición de tareas -->
+																	<!-- Selección de tareas -->
+																	<div id="seleccion-tareas-0" class="popup tareas">
+																		<div class="mask"></div>
+																		<div class="box">
+																			<div class="popup-title">Seleccione la Tarea</div>
+																			<div class="popup-body">
+																				<div class="titles">
+																					<span class="title selected" task="numerado" description="Numerado" tareaid="CheckedNumerado" >
+																					<span class="del">x</span>Numerado</span>
+																					<span class="title selected" task="intercalado" description="Intercalado" tareaid="Intercalado" >
+																					<span class="del">x</span>Intercalado</span>
+																					<span class="title " task="grapado" description="Grapado" tareaid="CheckedGrapado">Grapado</span>
+																					<span class="title " task="perforado" description="Perforado" tareaid="CheckedPerforado" onclick="seleccionTareas0.show( & quot; perforado & quot; , & quot; Perforado & quot; , & quot; CheckedPerforado & quot; ); updateResumenTareas();">Perforado</span>
+																					<span class="title " task="emblocado" description="Emblocado" tareaid="CheckedEmblocado" onclick="seleccionTareas0.show( & quot; emblocado & quot; , & quot; Emblocado & quot; , & quot; CheckedEmblocado & quot; ); updateResumenTareas();">Emblocado</span>
+																					<span class="title " task="troquelado" description="Troquelado" tareaid="CheckedTroquelado" onclick="seleccionTareas0.show( & quot; troquelado & quot; , & quot; Troquelado & quot; , & quot; CheckedTroquelado & quot; ); updateResumenTareas();">Troquelado</span>
+																					<span class="title " task="barniz-uv" description="Barniz UV" tareaid="CheckedBarnizUV" onclick="seleccionTareas0.show( & quot; barniz - uv & quot; , & quot; Barniz UV & quot; , & quot; CheckedBarnizUV & quot; ); updateResumenTareas();">Barniz UV</span>
+																					<span class="title " task="barniz-sectorizado" description="Barniz sectorizado" tareaid="CheckedBarnizSectorizado" onclick="seleccionTareas0.show( & quot; barniz - sectorizado & quot; , & quot; Barniz sectorizado & quot; , & quot; CheckedBarnizSectorizado & quot; ); updateResumenTareas();">Barniz sectorizado</span>
+																					<span class="title " task="laminado" description="Laminado" tareaid="CheckedLaminado" onclick="seleccionTareas0.show( & quot; laminado & quot; , & quot; Laminado & quot; , & quot; CheckedLaminado & quot; ); updateResumenTareas();">Laminado</span>
+																					<span class="title " task="marcado" description="Marcado" tareaid="CheckedMarcado" onclick="seleccionTareas0.show( & quot; marcado & quot; , & quot; Marcado & quot; , & quot; CheckedMarcado & quot; ); updateResumenTareas();">Marcado</span>
+																					<span class="title " task="doblado" description="Doblado" tareaid="Doblado" onclick="seleccionTareas0.show( & quot; doblado & quot; , & quot; Doblado & quot; , & quot; Doblado & quot; ); updateResumenTareas();">Doblado</span>
+																					<span class="title selected" task="falso-cosido" description="Falso cosido" tareaid="CheckedFalsoCosido" onclick="seleccionTareas0.show( & quot; falso - cosido & quot; , & quot; Falso cosido & quot; , & quot; CheckedFalsoCosido & quot; ); updateResumenTareas();">
+																					<span class="del">x</span>Falso cosido</span>
+																					<span class="title " task="espiral" description="Espiral" tareaid="CheckedEspiral" onclick="seleccionTareas0.show( & quot; espiral & quot; , & quot; Espiral & quot; , & quot; CheckedEspiral & quot; ); updateResumenTareas();">Espiral</span>
+																					<span class="title " task="pegado" description="Pegado" tareaid="CheckedPegado" onclick="seleccionTareas0.show( & quot; pegado & quot; , & quot; Pegado & quot; , & quot; CheckedPegado & quot; ); updateResumenTareas();">Pegado</span>
+																					<span class="title " task="plastificado" description="Plastificado" tareaid="CheckedPlastificado" onclick="seleccionTareas0.show( & quot; plastificado & quot; , & quot; Plastificado & quot; , & quot; CheckedPlastificado & quot; ); updateResumenTareas();">Plastificado</span>
+																					<span class="title " task="solapa-de-stock" description="Solapa de stock" tareaid="Solapa" onclick="seleccionTareas0.show( & quot; solapa - de - stock & quot; , & quot; Solapa de stock & quot; , & quot; Solapa & quot; ); updateResumenTareas();">Solapa de stock</span>
+																					<span class="title " task="hot-stamping" description="Hot stamping" tareaid="Hstamping" onclick="seleccionTareas0.show( & quot; hot - stamping & quot; , & quot; Hot stamping & quot; , & quot; Hstamping & quot; ); updateResumenTareas();">Hot stamping</span>
+																					<span class="title " task="envarillado" description="Envarillado" tareaid="Envarillado" onclick="seleccionTareas0.show( & quot; envarillado & quot; , & quot; Envarillado & quot; , & quot; Envarillado & quot; ); updateResumenTareas();">Envarillado</span>
+																					<span class="title " task="polipropileno" description="Polipropileno" tareaid="Polipropileno" onclick="seleccionTareas0.show( & quot; polipropileno & quot; , & quot; Polipropileno & quot; , & quot; Polipropileno & quot; ); updateResumenTareas();">Polipropileno</span>
+																					<span class="title " task="tratamiento-laminado" description="Tratamiento laminado" tareaid="Tratlaminado" onclick="seleccionTareas0.show( & quot; tratamiento - laminado & quot; , & quot; Tratamiento laminado & quot; , & quot; Tratlaminado & quot; ); updateResumenTareas();">Tratamiento laminado</span>
+																				</div>
+																				<div class="task-mask-layer"></div>
+																				<div class="task-divs">
+																					<div class="task numerado" taskname="Numerado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][id]" class="inline-block" value="20337" id="WorkDetail0TaskId">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_numerado]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedNumerado">
+																						<div class="input">
+																							<label for="WorkDetail0TaskNumeradon"></label>
+																							<input name="data[WorkDetail][0][Task][numeradon]" class="inline-block" value="" type="text" id="WorkDetail0TaskNumeradon"></div>
+																							<div class="input">
+																								<label for="WorkDetail0TaskNumerados"></label>
+																								<select name="data[WorkDetail][0][Task][numerados]" class="inline-block" id="WorkDetail0TaskNumerados">
+																									<option value="">--select--</option>
+																									<option value="1" selected="selected">Nomerada/s</option>
+																									<option value="2">Datos Variables</option>
+																								</select>
+																							</div>
+																						</div>
+																					<div class="task intercalado" taskname="Intercalado">
+																						Hacer intercalado<input type="hidden" name="data[WorkDetail][0][Task][intercalado]" class="inputIsOn" value="1" id="WorkDetail0TaskIntercalado">
+																					</div>
+																					<div class="task grapado" taskname="Grapado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_grapado]" class="inputIsOn" id="WorkDetail0TaskCheckedGrapado">
+																						<label for="WorkDetail0TaskGrapado">Grapado</label>
+																						<select name="data[WorkDetail][0][Task][grapado]" class="inline-block" title="B1" id="WorkDetail0TaskGrapado">
+																							<option value="">--select--</option>
+																							<option value="1">Grapa en ángulo</option>
+																							<option value="2">2 grapas de lomo</option>
+																							<option value="3">2 grapas de cabeza</option>
+																							<option value="4">2 grapas de caballete</option>
+																							<option value="5">1 grapa de lomo</option>
+																							<option value="6">1 grapa de cabeza</option>
+																							<option value="7">1 grapa de caballete</option>
+																						</select>
+																						<div class="input">
+																							<input type="checkbox" name="data[WorkDetail][0][Task][calculo_grapado]" class="inline-block" title="B11" value="1" id="WorkDetail0TaskCalculoGrapado">
+																							<label for="WorkDetail0TaskCalculoGrapado">calcular tapa y contratapa estandar</label>
+																						</div>
+																					</div>
+																					<div class="task perforado" taskname="Perforado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_perforado]" class="inputIsOn" id="WorkDetail0TaskCheckedPerforado">
+																						<label for="WorkDetail0TaskPerforadoTipo"></label>
+																						<select name="data[WorkDetail][0][Task][perforado_tipo]" class="inline-block" title="B2" id="WorkDetail0TaskPerforadoTipo">
+																							<option value="">--select--</option>
+																							<option value="1">Archivo</option>
+																							<option value="2">Cabeza</option>
+																							<option value="3">Otro</option>
+																						</select>
+																						<div class="input">
+																							<label for="WorkDetail0TaskPerforadoCantidad">Cantidad</label>
+																							<input name="data[WorkDetail][0][Task][perforado_cantidad]" class="inline-block" title="B3" value="2" type="text" id="WorkDetail0TaskPerforadoCantidad">
+																						</div>
+																						<div class="input">
+																							<label for="WorkDetail0TaskPerforadost">Diámetro</label>
+																							<input name="data[WorkDetail][0][Task][perforadost]" class="inline-block" title="B4" value="4" type="text" id="WorkDetail0TaskPerforadost">
+																						</div>
+																						<div class="input">
+																							<label for="WorkDetail0TaskPerforados"></label>
+																							<input name="data[WorkDetail][0][Task][perforados]" class="inline-block" title="B5" value="" type="text" id="WorkDetail0TaskPerforados">
+																						</div>
+																					</div>
+																					<div class="task emblocado" taskname="Emblocado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_emblocado]" class="inputIsOn" id="WorkDetail0TaskCheckedEmblocado">
+																						<div class="input">
+																							<label for="WorkDetail0TaskEmblocadoTipo">Emblocado</label>
+																							<select name="data[WorkDetail][0][Task][emblocado_tipo]" class="inline-block" id="WorkDetail0TaskEmblocadoTipo">
+																								<option value="">--select--</option>
+																								<option value="cabeza">Cabeza</option>
+																								<option value="lomo">Lomo</option>
+																								<option value="pie">Pie</option>
+																							</select>
+																						</div>
+																						<div class="input">
+																							<input type="checkbox" name="data[WorkDetail][0][Task][calculo_emblocado]" class="inline-block" title="B12" value="1" id="WorkDetail0TaskCalculoEmblocado">
+																							<label for="WorkDetail0TaskCalculoEmblocado">calcular tapa y contratapa estandar</label>
+																						</div>
+																					</div>
+																					<div class="task troquelado" taskname="Troquelado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_troquelado]" class="inputIsOn" id="WorkDetail0TaskCheckedTroquelado">
+																						<label for="WorkDetail0TaskTroquelados">Troquelado</label>
+																						<select name="data[WorkDetail][0][Task][troquelados]" class="inline-block" title="B16" id="WorkDetail0TaskTroquelados">
+																							<option value="">--select--</option>
+																							<option value="1">Con troquel</option>
+																							<option value="5">Sin troquel</option>
+																							<option value="6">Plotter de corte</option>
+																						</select>
+																						<div class="input">
+																							<label for="WorkDetail0TaskTroqueladon">Nro. Troquel</label>
+																							<input name="data[WorkDetail][0][Task][troqueladon]" class="inline-block" title="B9" value="" type="text" id="WorkDetail0TaskTroqueladon"></div><div class="input"><label for="Troquel0Bocas">Bocas</label><input name="data[Troquel][0][Bocas]" class="inline-block" title="B10" readonly="readonly" type="text" id="Troquel0Bocas"></div>                    
+																						<div style="margin-top:10px;">
+																							<a href="#troquels/index" target="_blank">Lista de Troqueles</a>
+																						</div>
+
+																						<div id="troquel-0-search-box-results"></div>
+
+																						<script type="text/javascript">
+																							$("#WorkDetail0TaskTroqueladon").on('keypress', function (e) {
+																							if (e.which === 13){
+																							e.preventDefault();
+																							var self = this;
+																							//Disable textbox to prevent multiple submit
+																							$(self).attr("disabled", "disabled");
+																							$.ajax({
+																							async: true,
+																									data: {codigo: $('#WorkDetail0TaskTroqueladon').val(), index: '0'},
+																									dataType:"html",
+																									success:function (data, textStatus) {
+																									$("#troquel-0-search-box-results").html(data);
+																									//Enable the textbox again if needed.
+																									$(self).removeAttr("disabled");
+																									},
+																									type:"GET",
+																									url:"/troquels/searchBox"
+																							});
+																							}
+																							});
+																						</script>
+																					</div>
+																					<!--<div class="task barniz-al-agua" taskname='Barniz al Agua'>
+																										</div>-->
+																					<div class="task barniz-uv" taskname="Barniz UV">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_barniz_UV]" class="inputIsOn" id="WorkDetail0TaskCheckedBarnizUV"><label for="WorkDetail0TaskBarnizuv">Barniz UV</label><select name="data[WorkDetail][0][Task][barnizuv]" class="inline-block" title="B6" id="WorkDetail0TaskBarnizuv">
+																							<option value="">--select--</option>
+																							<option value="1">Solo Frente</option>
+																							<option value="2">Solo Dorso</option>
+																							<option value="3">Frente y Dorso</option>
+																						</select>                </div>
+																					<div class="task barniz-sectorizado" taskname="Barniz Sectorizado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_barniz_sectorizado]" class="inputIsOn" id="WorkDetail0TaskCheckedBarnizSectorizado"><label for="WorkDetail0TaskBarvizsec">Barniz sectorizado</label><select name="data[WorkDetail][0][Task][barvizsec]" class="inline-block" id="WorkDetail0TaskBarvizsec">
+																							<option value="">--select--</option>
+																							<option value="1">Solo Frente</option>
+																							<option value="2">Solo Dorso</option>
+																							<option value="3">Frente y Dorso</option>
+																						</select>                </div>
+																					<div class="task laminado" taskname="Laminado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_laminado]" class="inputIsOn" id="WorkDetail0TaskCheckedLaminado"><label for="WorkDetail0TaskLaminadol">Laminado</label><select name="data[WorkDetail][0][Task][laminadol]" class="inline-block" otro="Otro" id="WorkDetail0TaskLaminadol">
+																							<option value="">--select--</option>
+																							<option value="1">Laminado brillo 33 cms</option>
+																							<option value="2">Laminado brillo 45 cms</option>
+																							<option value="3">Laminado mate 33 cms</option>
+																							<option value="4">Laminado mate 45 cms</option>
+																							<option value="5">Laminado Almaplast.</option>
+																						</select><label for="WorkDetail0TaskLaminadof"></label><select name="data[WorkDetail][0][Task][laminadof]" class="inline-block" id="WorkDetail0TaskLaminadof">
+																							<option value="">--select--</option>
+																							<option value="1">Solo frente</option>
+																							<option value="2">Solo Dorso</option>
+																							<option value="3">Frente y Dorso</option>
+																						</select>                </div>
+																					<div class="task marcado" taskname="Marcado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_marcado]" class="inputIsOn" id="WorkDetail0TaskCheckedMarcado"><label for="WorkDetail0TaskMarcado">Marcado</label><select name="data[WorkDetail][0][Task][marcado]" class="inline-block" disabled="disabled" id="WorkDetail0TaskMarcado">
+																							<option value="">--select--</option>
+																							<option value="1">Marcardo manual</option>
+																							<option value="2">Marcado de máquina</option>
+																						</select>                </div>
+																					<div class="task doblado" taskname="Doblado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][doblado]" class="inputIsOn" id="WorkDetail0TaskDoblado"><div class="input"><label for="WorkDetail0TaskDobladoTipo">Tipo</label><select name="data[WorkDetail][0][Task][doblado_tipo]" class="inline-block" title="B7" otro="Otro" id="WorkDetail0TaskDobladoTipo">
+																								<option value="">--select--</option>
+																								<option value="diptico">Díptico</option>
+																								<option value="triptico">Tríptico</option>
+																								<option value="cuatriptico">Cuatríptico</option>
+																								<option value="dobleparalelo">Doble paralelo</option>
+																								<option value="dobleparalelomedio">Doble paralelo y al medio</option>
+																								<option value="zigzag">Zigzag</option>
+																							</select></div>                </div>
+																					<div class="task falso-cosido" taskname="Falso cosido">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_falso_cosido]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedFalsoCosido"><div class="input"><label for="WorkDetail0TaskFalsocosido">Falso cosido</label><select name="data[WorkDetail][0][Task][falsocosido]" class="inline-block" title="B13" id="WorkDetail0TaskFalsocosido">
+																								<option value="">--select--</option>
+																								<option value="cabeza" selected="selected">Cabeza</option>
+																								<option value="lomo">Lomo</option>
+																								<option value="pie">Pie</option>
+																							</select></div><div class="input"><input type="checkbox" name="data[WorkDetail][0][Task][calculo_falsocosido]" class="inline-block" title="B14" value="1" checked="checked" id="WorkDetail0TaskCalculoFalsocosido"><label for="WorkDetail0TaskCalculoFalsocosido">calcular tapa y contratapa estandar</label></div>                </div>
+																					<div class="task espiral" taskname="Espiral">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_espiral]" class="inputIsOn" id="WorkDetail0TaskCheckedEspiral"><label for="WorkDetail0TaskEspiral">espiral</label><select name="data[WorkDetail][0][Task][espiral]" class="inline-block" id="WorkDetail0TaskEspiral">
+																							<option value="">--select--</option>
+																							<option value="1">Espiral de alambre</option>
+																							<option value="2">Espiral de plástico</option>
+																						</select>                </div>
+																					<div class="task pegado" taskname="Pegado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_pegado]" class="inputIsOn" id="WorkDetail0TaskCheckedPegado"><label for="WorkDetail0TaskPegado">Pegado</label><select name="data[WorkDetail][0][Task][pegado]" class="inline-block" id="WorkDetail0TaskPegado">
+																							<option value="">--select--</option>
+																							<option value="1">Cinta doble faz</option>
+																							<option value="2">Común</option>
+																							<option value="3">Contraencolado</option>
+																							<option value="4">Común grande</option>
+																							<option value="5">Común mediano</option>
+																							<option value="6">Fondo automático mediano</option>
+																							<option value="7">Fondo automático grande</option>
+																							<option value="8">Refuerzos</option>
+																							<option value="9">Sobre semilla</option>
+																							<option value="10">Con fuelle</option>
+																							<option value="11">Con velcro</option>
+																						</select>                </div>
+																					<div class="task plastificado" taskname="Plastificado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_plastificado]" class="inputIsOn" id="WorkDetail0TaskCheckedPlastificado"><label for="WorkDetail0TaskPlastificado">Plastificado</label><select name="data[WorkDetail][0][Task][plastificado]" class="inline-block" title="B8" id="WorkDetail0TaskPlastificado">
+																							<option value="">--select--</option>
+																							<option value="1">Plastificado A5</option>
+																							<option value="2">Plastificado A4</option>
+																							<option value="3">Plastificado A3</option>
+																						</select>                </div>
+																					<div class="task solapa-de-stock" taskname="Solapa de stock">
+																						Hacer solapa-de-stock<input type="hidden" name="data[WorkDetail][0][Task][solapa]" class="inputIsOn" id="WorkDetail0TaskSolapa">                </div>
+																					<div class="task hot-stamping" taskname="Hot Stamping">
+																						Hacer hot-stamping<input type="hidden" name="data[WorkDetail][0][Task][hstamping]" class="inputIsOn" id="WorkDetail0TaskHstamping">                </div>
+																					<div class="task envarillado" taskname="Envarillado">
+																						Hacer envarillado<input type="hidden" name="data[WorkDetail][0][Task][envarillado]" class="inputIsOn" id="WorkDetail0TaskEnvarillado">                </div>
+																					<div class="task polipropileno" taskname="Polipropeno">
+																						Hacer polipropeno<input type="hidden" name="data[WorkDetail][0][Task][polipropileno]" class="inputIsOn" id="WorkDetail0TaskPolipropileno">                </div>
+																					<div class="task tratamiento-laminado" taskname="Tratamiento laminado">
+																						Hacer tratamiento laminado<input type="hidden" name="data[WorkDetail][0][Task][tratlaminado]" class="inputIsOn" id="WorkDetail0TaskTratlaminado">                </div>
+																				</div>
+																			</div><!-- /*popup-body -->
+																		</div><!-- /*box -->
+																		<script>
+																			(function(){
+																			var addDelButton = function($taskTitle) {
+																			var $delButton = $('<span class="del">x</span>');
+																			$taskTitle.prepend($delButton);
+																			$($delButton).click(function(event) {
+																			event.stopImmediatePropagation();
+																			var $taskElement = $($(event.currentTarget).parents('span.title'));
+																			seleccionTareas0.resetTask($taskElement.attr('task'), $taskElement.attr('description'), $taskElement.attr('tareaId'));
+																			});
+																			};
+																			$("#seleccion-tareas-0 .titles span").click(function() {
+																			if (!$(this).hasClass('selected')) {
+																			$(this).addClass('selected');
+																			addDelButton($(this));
+																			}
+																			});
+																			$("#seleccion-tareas-0 .titles .title.selected").each(function() {
+																			addDelButton($(this));
+																			});
+																			})();
+																		</script>
+																		<script>
+																			var seleccionTareas0 = new SeleccionTareas(0);
+																		</script>
+																	</div><!-- /*seleccion-tareas-0 -->																	
+																</div><!-- /*row -->
+															</div><!-- /*Definición inicial del trabajo -->
+
+															<!-- Vias, formato y sangrado -->
+															<div class="input">
+																<div class="row">
+																	<div class="col-auto row">
+																		<input name="data[WorkDetail][0][recomendado]" class="form-control recomendado col" title="A11" size="10" value="Vías" maxlength="45" type="text" id="WorkDetail0Recomendado">
+																		<input name="data[WorkDetail][0][especificacion]" class="form-control especificacion col-auto" title="A12" size="8" value="1-2" onkeyup="sonCalculation(0)" maxlength="45" type="text" id="WorkDetail0Especificacion">																	
 																	</div>
 
+																	<div class="col-auto row">
+																		<label for="WorkDetail0FormatoAncho" class="label-formato">Formato (cms)&nbsp;</label>
+																		<input name="data[WorkDetail][0][formato_ancho]" class="form-control measure" style="width: 40px" title="A13" value="14" step="any" type="number" id="WorkDetail0FormatoAncho">
+																		<label for="WorkDetail0FormatoAlto" class="no-margin">&nbsp;x&nbsp;</label>
+																		<input name="data[WorkDetail][0][formato_alto]" class="form-control measure" style="width: 40px" title="A14" value="20.5" step="any" type="number" id="WorkDetail0FormatoAlto">
+																	</div>
+
+																	<div class="col-auto row">
+																		<label for="WorkDetail0SangradoX">&nbsp;Sangrado (mm) x</label>
+																		<input name="data[WorkDetail][0][sangrado_x]" class="form-control measure" title="A15" value="2" onchange="dobleCorteCalculation(0);" step="any" type="number" id="WorkDetail0SangradoX">
+																		<label for="WorkDetail0SangradoY" class="shrink">; y</label>
+																		<input name="data[WorkDetail][0][sangrado_y]" class="form-control measure shrink" title="A16" value="2" onchange="dobleCorteCalculation(0);" step="any" type="number" id="WorkDetail0SangradoY">
+																	</div>																	
 																</div>
+															</div><!--/*Vias, formato y sangrado -->
 
-																<script>
-																	(function(){
-																	var addDelButton = function($taskTitle) {
-																	var $delButton = $('<span class="del">x</span>');
-																	$taskTitle.prepend($delButton);
-																	$($delButton).click(function(event) {
-																	event.stopImmediatePropagation();
-																	var $taskElement = $($(event.currentTarget).parents('span.title'));
-																	seleccionTareas0.resetTask($taskElement.attr('task'), $taskElement.attr('description'), $taskElement.attr('tareaId'));
-																	});
-																	};
-																	$("#seleccion-tareas-0 .titles span").click(function() {
-																	if (!$(this).hasClass('selected')) {
-																	$(this).addClass('selected');
-																	addDelButton($(this));
-																	}
-																	});
-																	$("#seleccion-tareas-0 .titles .title.selected").each(function() {
-																	addDelButton($(this));
-																	});
-																	})();
-																</script>
-
-
-
-																<script>
-																	var seleccionTareas0 = new SeleccionTareas(0);
-																</script>
-
-															</div>
-															<div class="input">
-																<input name="data[WorkDetail][0][recomendado]" class="recomendado" title="A11" size="10" value="Vías" maxlength="45" type="text" id="WorkDetail0Recomendado"><input name="data[WorkDetail][0][especificacion]" class="especificacion" title="A12" size="8" value="1-2" onkeyup="sonCalculation(0)" maxlength="45" type="text" id="WorkDetail0Especificacion"><label for="WorkDetail0FormatoAncho" class="label-formato">Formato (cms)</label><input name="data[WorkDetail][0][formato_ancho]" class="measure" title="A13" value="14" step="any" type="number" id="WorkDetail0FormatoAncho"><label for="WorkDetail0FormatoAlto">x</label><input name="data[WorkDetail][0][formato_alto]" class="measure" title="A14" value="20.5" step="any" type="number" id="WorkDetail0FormatoAlto"><label for="WorkDetail0SangradoX">Sangrado (mm) x</label><input name="data[WorkDetail][0][sangrado_x]" class="measure" title="A15" value="2" onchange="dobleCorteCalculation(0);" step="any" type="number" id="WorkDetail0SangradoX"><label for="WorkDetail0SangradoY" class="shrink">; y</label><input name="data[WorkDetail][0][sangrado_y]" class="measure shrink" title="A16" value="2" onchange="dobleCorteCalculation(0);" step="any" type="number" id="WorkDetail0SangradoY">        </div>
+															<!-- Colores -->
 															<div class="input">
 																<div id="color-selector-frente-0" class="color-selector">
 																	<div>
@@ -1194,16 +1294,69 @@
 																</div>
 																<div class="calculator">
 																</div>
-															</div>
+															</div><!-- /*Colores -->
+
+															<!-- Chapas, cortes e impresoras -->
 															<div class="input">
-																<label for="WorkDetail0Chapas">Chapas</label><input name="data[WorkDetail][0][chapas]" class="measure" title="A17" type="number" id="WorkDetail0Chapas"><label for="WorkDetail0Sobrante" class="label-sobrante">Sobrante</label><input name="data[WorkDetail][0][sobrante]" class="measure" title="A18" value="2" onkeyup="sonCalculation(0)" type="number" id="WorkDetail0Sobrante"><label for="WorkDetail0FrenteYDorso" class="label-frente-dorso">F&amp;D</label><div class="dropdown fyd" id="WorkDetail0FrenteYDorsoWrapper"><select name="data[WorkDetail][0][frente_y_dorso]" title="A19" onchange="calcChapas(0);" id="WorkDetail0FrenteYDorso">
-																		<option value="R.NORMAL">Retiracion normal con misma chapa</option>
-																		<option value="NO" selected="selected">Retiracion normal con distinta chapa</option>
-																		<option value="R.ITALIANA">Retiracion Italiana con distinta chapa</option>
-																		<option value="R.ITALIANA.MISMA">Retiracion Italiana con la misma chapa</option>
-																	</select></div><label for="WorkDetail0FormaDe" class="label-forma-de">Forma de</label><input name="data[WorkDetail][0][forma_de]" class="measure" title="A20" onkeyup="sonCalculation(0); calculoJuegos();" type="text" id="WorkDetail0FormaDe"><label for="WorkDetail0FormaDeAncho">en</label><input name="data[WorkDetail][0][forma_de_ancho]" class="measure" title="A21" type="text" id="WorkDetail0FormaDeAncho"><label for="WorkDetail0FormaDeAlto">x</label><input name="data[WorkDetail][0][forma_de_alto]" class="measure" title="A22" type="text" id="WorkDetail0FormaDeAlto">        </div>
+																<div class="form-group row">
+
+																	<!-- Chapa y sobrante -->
+																	<div class="col-md-12 col-lg-4 row">
+																		<label class="col-auto" for="WorkDetail0Chapas">Chapas&nbsp;</label>
+																		<input name="data[WorkDetail][0][chapas]" class="form-control measure" title="A17" type="number" id="WorkDetail0Chapas">
+																		<label for="WorkDetail0Sobrante" class="label-sobrante">Sobrante&nbsp;</label>
+																		<input name="data[WorkDetail][0][sobrante]" class="form-control measure" title="A18" value="2" onkeyup="sonCalculation(0)" type="number" id="WorkDetail0Sobrante">																	
+																	</div><!-- /*Chapa y sobrante -->
+																	
+																	<!-- Frente y Dorso -->
+																	<div class="col-md-12 col-lg-8 row">
+																		<label for="WorkDetail0FrenteYDorso" class="col-auto">F&amp;D</label>
+																		<div class="dropdown fyd col-9 col-md-auto" id="WorkDetail0FrenteYDorsoWrapper">
+																			<select class="col" name="data[WorkDetail][0][frente_y_dorso]" title="A19" onchange="calcChapas(0);" id="WorkDetail0FrenteYDorso">
+																				<option value="R.NORMAL">Retiracion normal con misma chapa</option>
+																				<option value="NO" selected="selected">Retiracion normal con distinta chapa</option>
+																				<option value="R.ITALIANA">Retiracion Italiana con distinta chapa</option>
+																				<option value="R.ITALIANA.MISMA">Retiracion Italiana con la misma chapa</option>
+																			</select>
+																		</div>
+																	</div><!-- /*Frente y Dorso -->
+
+																	<!-- Cantidad de formas -->
+																	<div class="col-12 col-md-auto row">
+																		<label for="WorkDetail0FormaDe" class="control-label label-forma-de">Forma de&nbsp;</label>
+																		<input name="data[WorkDetail][0][forma_de]" class="form-control measure" title="A20" onkeyup="sonCalculation(0); calculoJuegos();" type="text" id="WorkDetail0FormaDe">
+																		<label for="WorkDetail0FormaDeAncho" class="control-label">en&nbsp;</label>
+																		<input name="data[WorkDetail][0][forma_de_ancho]" class="form-control measure" title="A21" type="text" id="WorkDetail0FormaDeAncho">
+																		<label for="WorkDetail0FormaDeAlto" class="control-label no-margin">&nbsp;x&nbsp;</label>
+																		<input name="data[WorkDetail][0][forma_de_alto]" class="form-control measure" title="A22" type="text" id="WorkDetail0FormaDeAlto">
+																	</div>
+																	<!-- /*Cantidad de formas -->
+
+																	<!-- Doble corte -->
+																	<div class="col-12 col-md-auto row">
+																		<label for="WorkDetail0DobleCorteAncho" class="control-label label-doble-corte">Doble corte (mm) x</label>
+																		<input name="data[WorkDetail][0][doble_corte_ancho]" class="form-control measure" title="A23" value="4" step="any" type="number" id="WorkDetail0DobleCorteAncho">
+																		<label for="WorkDetail0DobleCorteAlto" class="control-label">; y</label>
+																		<input name="data[WorkDetail][0][doble_corte_alto]" class="form-control measure" title="A24" value="4" step="any" type="number" id="WorkDetail0DobleCorteAlto">
+																	</div><!-- /*Doble corte -->
+
+																	<!-- Pinza y cola -->
+																	<div class="col-12 col-md-auto row">
+																		<label for="WorkDetail0Pinza" class="control-label pinza">Pinza (mm)</label>
+																		<input name="data[WorkDetail][0][pinza]" class="form-control measure" title="A25" value="15" step="any" type="number" id="WorkDetail0Pinza">
+																		<label for="WorkDetail0Cola" class="control-label">Cola (mm)</label>
+																		<input name="data[WorkDetail][0][cola]" class="form-control measure" title="A26" value="10" step="any" type="number" id="WorkDetail0Cola">																
+																	</div><!-- /*Pinza y cola -->
+																</div>
+
+
+																
+															</div><!-- /*Chapas, cortes e impresoras -->
+															
 															<div class="input">
-																<label for="WorkDetail0DobleCorteAncho" class="label-doble-corte">Doble corte (mm) x</label><input name="data[WorkDetail][0][doble_corte_ancho]" class="measure" title="A23" value="4" step="any" type="number" id="WorkDetail0DobleCorteAncho"><label for="WorkDetail0DobleCorteAlto">; y</label><input name="data[WorkDetail][0][doble_corte_alto]" class="measure" title="A24" value="4" step="any" type="number" id="WorkDetail0DobleCorteAlto"><label for="WorkDetail0Pinza">Pinza (mm)</label><input name="data[WorkDetail][0][pinza]" class="measure" title="A25" value="15" step="any" type="number" id="WorkDetail0Pinza"><label for="WorkDetail0Cola">Cola (mm)</label><input name="data[WorkDetail][0][cola]" class="measure" title="A26" value="10" step="any" type="number" id="WorkDetail0Cola"><label for="WorkDetail0CorteAncho">Corte (cm)</label><input name="data[WorkDetail][0][corte_ancho]" class="measure" title="A27" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAncho"><label for="WorkDetail0CorteAlto" class="shrink">x</label><input name="data[WorkDetail][0][corte_alto]" class="measure" title="A28" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAlto"><label for="WorkDetail0Salen" class="shrink">Salen</label><input name="data[WorkDetail][0][salen]" class="measure shrink" title="A29" value="0" onkeyup="sonCalculation(0)" type="number" id="WorkDetail0Salen">        </div>
+
+
+																<label for="WorkDetail0CorteAncho">Corte (cm)</label><input name="data[WorkDetail][0][corte_ancho]" class="measure" title="A27" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAncho"><label for="WorkDetail0CorteAlto" class="shrink">x</label><input name="data[WorkDetail][0][corte_alto]" class="measure" title="A28" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAlto"><label for="WorkDetail0Salen" class="shrink">Salen</label><input name="data[WorkDetail][0][salen]" class="measure shrink" title="A29" value="0" onkeyup="sonCalculation(0)" type="number" id="WorkDetail0Salen">        </div>
 															<div class="input">
 																<label for="WorkDetail0Hojas">Son</label><input name="data[WorkDetail][0][hojas]" class="measure exnumeric" title="A30" value="0" onkeyup="pliegosCalculation(0)" type="text" id="WorkDetail0Hojas"><label for="WorkDetail0Hojas">hojas</label><label for="WorkDetail0Pliegos">Pliegos</label><input name="data[WorkDetail][0][pliegos]" class="measure exnumeric" title="A31" value="0" style="width: 39px" type="text" id="WorkDetail0Pliegos"><div class="dropdown impresora" id="WorkDetail0Printer1IdWrapper"><select name="data[WorkDetail][0][printer_1_id]" title="A32" id="WorkDetail0Printer1Id">
 																		<option value="">Impresora 1 --</option>
@@ -1258,23 +1411,65 @@
 													</script>
 
 												</div>
-											</div>
-										</div>
-										<!-- Fin detalle de la orden -->
+											</div><!-- /*panel-body -->
+										</div><!-- Fin detalle de la orden -->
+									</div><!-- /*panel-wrapper -->
+								</div><!-- /*row r1 -->
+							</div><!-- /*col-inner -->
+						</div><!-- /*COLUMNA DEL MEDIO -->
 
-									</div>
-								</div>
+						<div class="col-sm-12 col-md-2" style="background: #cacaca;border: 1px solid blue;">
+							Columna Derecha
+						</div>
+
+						<!-- Botones -->
+						<div class="col-12">
+							<div class="form-actions text-center row">
+								<input name="save" class="btn btn-lg action-button col main" id="save-btn" type="submit" value="Guardar">                                    
+								<a href="#orders/main" class="btn btn-lg action-button col" id="create-btn">Crear orden</a>   
+								<a href="#orders/toPresupuesto/59738" class="btn btn-lg action-button" id="create-presupuesto">Pasar a Presupuesto</a>
+								<a href="#orders/duplicate/59738" class="btn btn-lg action-button col" id="duplicate-btn">Duplicar orden</a>                              
+								<a class="btn btn-lg action-button col" data-fancybox="" data-type="iframe" data-src="/archivos/uploader/59738/0" href="javascript:;">Adjuntos</a>
+								<a class="btn btn-lg action-button col" data-fancybox="" data-type="iframe" data-src="/archivos/uploader/59738/1" href="javascript:;">Muestras</a>
+									<script type="text/javascript">
+										$(function() {
+										$('[data-fancybox]').fancybox({
+										toolbar  : false,
+												smallBtn : true,
+												iframe : {
+												preload : true
+												}
+										});
+										});
+									</script>
+								<button name="Imprimir" type="button" class="btn btn-lg action-button col" onclick="Order.print_order();">Imprimir</button>
+							</div>                            
+						</div><!-- /*Botones -->
+					</div><!-- /*orders form row -->
+
+					<HR><HR>
+
+					<!-- **************************************************
+					HASTA AQUI VA YA TERMINADO
+					*************************************************** -->             
+
+					<div class="orders form">
+
+						<div id="mid-col">
+							<div class="col-inner">
+								
 								<div class="row r2">
 									<div class="panel-wrapper">
 
 
 										<div id="disenio-tareas-tabs" class="panel vertical collapsable disenio-orden tareas-orden opened ui-tabs ui-widget ui-widget-content ui-corner-all">
+
 											<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
 												<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-tareas" aria-labelledby="ui-id-1" aria-selected="true"><a href="#orders/main/59738#tabs-tareas" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Tareas</a></li>
 												<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-disenio" aria-labelledby="ui-id-2" aria-selected="false"><a href="#orders/main/59738#tabs-disenio" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Diseño</a></li>
 											</ul>
 
-											<div id="tabs-disenio" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+											<div id="tabs-disenio" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" >
 												<div class="panel-content">
 													<div class="input documents" style="display: table-row;">
 														<label for="OrderDesignConstancia">Constancia</label><input name="data[OrderDesign][constancia]" class="inline-block" maxlength="20" type="text" id="OrderDesignConstancia"><label for="OrderDesignDireccion">Dirección</label><input name="data[OrderDesign][direccion]" class="inline-block" value="" maxlength="200" type="text" id="OrderDesignDireccion"><div class="dropdown inline-block" id="OrderDesignTipoAutDgiWrapper"><select name="data[OrderDesign][tipo_aut_dgi]" default="A" id="OrderDesignTipoAutDgi">
@@ -1313,7 +1508,7 @@
 												</div>
 											</div>
 
-											<div id="tabs-tareas" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="true" aria-hidden="false">
+											<div id="tabs-tareas" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: none;">
 												<!-- Tareas content is written here -->
 												<div class="panel-content"><div><ul><li><span class="name">Numerado</span>: T1:   Nomerada/s</li><li><span class="name">Intercalado</span>: T1:  </li><li><span class="name">Falso cosido</span>: T1:   Cabeza Son 2 encuadernaciones de 50 juegos</li></ul></div></div>
 
