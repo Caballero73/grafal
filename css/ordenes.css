@@ -6,7 +6,7 @@
 #content {
     padding-top: 20px;
 }
-@media (max-width: 576px) {
+@media (max-width: 577px) {
     #content {
         padding-top: 7px;
     }
@@ -22,8 +22,24 @@
     vertical-align: top;
 }
 
+#content #left-col .panel-wrapper { 
+    height: 100% !important;
+}
+
+
+@media (max-width: 767px) {
+    #mid-col {
+        margin-top: 15px;
+    }    
+}
+
 #mid-col .panel-content {
-    max-height: 400px !important;
+    max-height: 56vh !important;
+}
+@media (max-width: 767px) {
+        #mid-col .panel-content {
+        height: 100% !important;
+    }
 }
 
 #content .col-inner > .row.r1 {
@@ -31,8 +47,10 @@
 }
 
 #content .col-inner > .row.r2 {
-    /*height: 100px;*/
-    /*background-color: #888;*/
+    /*! height: 100px; */
+    /*! background-color: #888; */
+    margin-left: 0px;
+    padding-right: 6px;
 }
 
 #content .col-inner > .row.r3 {
@@ -72,7 +90,7 @@
 }
 
 #content .panel .panel-body .input > input {
-    /*width: 30px;*/
+    width: auto;
 }
 
 /*
@@ -99,6 +117,11 @@
 
 #content .panel.datos-orden {
     height: 100%;
+}
+@media (max-width: 767px) {
+    #content .panel.datos-orden {
+        margin-right: 7px;
+    }    
 }
 
 #content .panel.datos-order label[for="OrderNombreFantasia"] {
@@ -203,7 +226,13 @@
 }
 #content .panel.detalles-orden .measure {
     width: 25px;
-    margin-left: 1px;
+    margin-left: 2px;
+}
+@media (max-width: 767px) {
+    #content .panel.detalles-orden .measure {
+        width: 53px;
+        margin-left: 2px;
+    }
 }
 #content .panel.detalles-orden #OrderPagsPorPliego,
 #content #OrderJuegos {
@@ -212,7 +241,7 @@
     width: 25px;
 }
 #content .panel.detalles-orden #OrderPresentationTypeId {
-    width: 166px;
+    width: 100%;
 }
 #content .panel.detalles-orden #OrderCantidadCopias {
     width: 45px;
@@ -229,7 +258,7 @@
 }
 #content .panel.detalles-orden,
 #content .panel.detalles-orden .label-sobrante {
-    margin-left: 12px;
+    margin-left: 8px;
 }
 #content .panel.detalles-orden .label-doble-corte {
     margin-left: 7px;
@@ -280,7 +309,7 @@
 #content .panel.detalles-orden label.label-comentario {
     vertical-align: top;
     word-wrap: break-word;
-    width: 58px;
+    width: 67px;
     display: inline-block;
 }
 
@@ -304,8 +333,8 @@
 }
 
 #content .panel.disenio-orden.opened {
-    /*height: 100%;*/
-    height: 170px;
+    height: 100%;
+    /*! height: 170px; */
 }
 
 #content .panel.tareas-orden .panel-content ul {
@@ -320,44 +349,80 @@
 }
 
 #content .panel.disenio-orden label[for="OrderVencimiento"] {
-    margin-left: 16px;
+    margin-left: 0;
 }
 #content .panel.disenio-orden #OrderDesignDireccion {
-    width: 200px;
+    width: auto;
 }
 #content .panel.disenio-orden #OrderDesignConstancia {
     width: 69px;
+}
+@media (max-width: 767px) {
+    #content .panel.disenio-orden #OrderDesignConstancia {
+        width: auto;
+    }
 }
 #content .panel.disenio-orden #OrderDesignSerieDesde,
 #content .panel.disenio-orden #OrderDesignNumeroDesde,
 #content .panel.disenio-orden #OrderDesignSerieHasta,
 #content .panel.disenio-orden #OrderDesignNumeroHasta {
     margin-left: 2px;
-    width: 35px;
+    max-width: 35px;
+}
+@media (min-width:430px) and (max-width: 992px) {
+    #content .panel.disenio-orden #OrderDesignSerieDesde,
+    #content .panel.disenio-orden #OrderDesignNumeroDesde,
+    #content .panel.disenio-orden #OrderDesignSerieHasta,
+    #content .panel.disenio-orden #OrderDesignNumeroHasta {
+        margin-left: 2px;
+        max-width: 50px;
+    }
 }
 #content .panel.disenio-orden #OrderVencimiento {
-    width: 56px;
+    max-width: 56px;
+}
+@media (min-width:430px) and (max-width: 992px) {
+    #content .panel.disenio-orden #OrderVencimiento {
+        max-width: 96px;
+    }
 }
 #content .panel.disenio-orden #OrderDesignModelo {
-    width: 83px;
+    width: auto;
+    max-width: 80px;
+}
+@media (min-width:430px) and (max-width: 992px) {
+    #content .panel.disenio-orden #OrderDesignModelo {
+        max-width: 121px;
+    }
 }
 #content .panel.disenio-orden #OrderNotificarTelefono {
-    width: 60px;
+    width: auto;
+}
+@media (max-width: 767px) {
+    #content .panel.disenio-orden #OrderNotificarTelefono {
+        max-width: 75px;
+    }
 }
 #OrderDesignTipoAutDgi {
-    width: 100px;
+    width: auto;
 }
 #content .panel.disenio-orden #OrderNotificarEmail {
-    width: 107px;
+    width: auto;
 }
-#content .panel.disenio-orden #OrderDesignAclaracion {
+@media (max-width: 767px) {
+    #content .panel.disenio-orden #OrderNotificarEmail {
+        max-width: 142px;
+    }
+}
+
+#OrderNotifyContactIdWrappercontent .panel.disenio-orden #OrderDesignAclaracion {
     width: 380px;
 }
 #content .panel.disenio-orden #OrderDesignTieneDisenio {
-    width: 109px;
+    width: 100%;
 }
 #content .panel.disenio-orden #OrderNotifyContactId {
-    width: 131px;
+    width: 100%;
 }
 
 
@@ -521,7 +586,23 @@ div.color-selection-box table td:last-child {
     height: 286px;
     left: 0px;
 }
-#WorkDetail0NoField0Wrapper, #WorkDetail0MaterialIdWrapper, #WorkDetail0NoField1Wrapper, #OrderPresentationTypeIdWrapper, #WorkDetail0Especificacion, #WorkDetail0Recomendado, #WorkDetail0Chapas, #WorkDetail0FormaDe {
+#WorkDetail0NoField0Wrapper, #WorkDetail0MaterialIdWrapper, #WorkDetail0NoField1Wrapper, #OrderPresentationTypeIdWrapper, #WorkDetail0Especificacion, #WorkDetail0Recomendado, #WorkDetail0Chapas, #WorkDetail0FormaDe, #WorkDetail0DobleCorteAncho, #WorkDetail0DobleCorteAlto, #WorkDetail0Pinza, #WorkDetail0Cola, #WorkDetail0CorteAncho, #WorkDetail0CorteAlto, #WorkDetail0Salen, #WorkDetail0Hojas, #WorkDetail0Pliegos, #OrderDesignConstancia, #WorkDetail0Printer1IdWrapper, #WorkDetail0Printer2IdWrapper, #WorkDetail0Printer3IdWrapper, #OrderDesignConstancia, #OrderDesignDireccion, #OrderDesignSerieDesde, #OrderDesignSerieHasta, #OrderDesignNumeroHasta, #OrderVencimiento, #OrderDesignModelo, #OrderDesignTieneDisenioWrapper, #OrderNotifyContactIdWrapper, #i #j #k {
     max-height: 24px !important;
     margin-bottom: 7px;
+}
+#WorkDetail0AclaracionCorte, #WorkDetail0AclaracionImpresion {
+    margin-bottom: 7px;    
+}
+
+@media (max-width: 767px){
+    #content .panel.detalles-orden #OrderFormatoFinalX, #content .panel.detalles-orden #OrderFormatoFinalY, #content .panel.detalles-orden #OrderFormatoFinalZ {
+        width: 47px;
+        margin-bottom: 7px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #OrderNotifyContactIdWrapper {
+        max-width: 145px;
+    }
 }

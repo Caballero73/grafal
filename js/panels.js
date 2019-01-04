@@ -467,7 +467,7 @@ var onPanelCollapsed = function() {
         otherPanelsHeight += $(this).outerHeight();
     });
     var height = $('#mid-col').height() - otherPanelsHeight - 27;
-    $centralPanel.css('height', height - 27);
+    $centralPanel.css('height', height - 45);
 };
 /************************************/
 /** Remitos (+, -)                 **/

@@ -132,7 +132,7 @@
 					<div class="orders form row">
 
 						<!-- COLUMNA IZQUIERDA -->
-						<div id="left-col" class="col-sm-12 col-md-4">
+						<div id="left-col" class="col-sm-12 col-md-4 col-lg-3">
 							<div class="panel-wrapper">
 								<!-- Datos de la orden -->
 								<div class="panel vertical datos-orden opened">
@@ -371,7 +371,7 @@
 						</div><!-- /*COLUMNA IZQUIERDA -->
 
 						<!-- COLUMNA DEL MEDIO -->
-						<div id="mid-col" class="col-sm-12 col-md-6">
+						<div id="mid-col" class="col-sm-12 col-md-6 col-lg-7">
 							<div class="col-inner">
 								<div class="row r1">
 									<div class="panel-wrapper">
@@ -379,115 +379,105 @@
 										<!-- Detalles de la orden -->
 										<div class="panel vertical detalles-orden opened">
 											<div class="panel-body">
-												<div class="panel-title">
-													Detalles de la orden                             
-												</div>
-
+												<div class="panel-title">Detalles de la orden</div>
 												<div class="panel-content">
-													<div class="work-detail-loading"></div>
-													
+													<div class="work-detail-loading"></div>													
 													<!-- Cantidad, vias, tipo -->
 													<div class="form-group fields-row row">
-														<!-- Cantidad -->
-														<div class="col-6 col-sm-auto">
-															<label class="control-label" for="OrderCantidadCopias">Cant.</label>
-															<input name="data[Order][cantidad_copias]" class="exnumeric" title="A1" size="7" value="100" onchange="calculoJuegos();" type="text" id="OrderCantidadCopias" required="required">															
-														</div><!-- /*Cantidad -->
-														<div class="col-6 col-sm-auto">
-															<!-- Organizado en -->
-															<div class="dropdown inline-block" id="OrderOrganizadoEnWrapper" style="height: 24px !important;margin-top: -3px">
-																<select class="col" name="data[Order][organizado_en]" title="A2" id="OrderOrganizadoEn">
-																	<option value="Vias" selected="selected">Vías</option>
-																	<option value="Cambios">Cambios</option>
-																	<option value="Paginas">Páginas</option>
-																</select>
-															</div><!-- /*Organizado en -->
-															<!-- Cantidad de pliegos -->
-															<input name="data[Order][cantidad]" class="form-control inline-block" title="A3" value="2" onchange="cantPliego()" type="number" id="OrderCantidad" required="required" readonly="readonly">															
-															<!-- /*Cantidad de pliegos -->															
-														</div>
-														<!-- Formato final -->
-														<div class="col-12 col-sm-auto">
-															<label for="OrderFormatoFinalX">F.Final(cms)</label>
-															<input name="data[Order][formato_final_x]" class="no-margin" title="A4" value="14" size="2" step="any" type="number" id="OrderFormatoFinalX">
-															<label for="OrderFormatoFinalY" class="shrink no-margin">;</label>
-															<input name="data[Order][formato_final_y]" class="no-margin" title="A5" value="20.5" size="2" step="any" type="number" id="OrderFormatoFinalY">
-															<label for="OrderFormatoFinalZ" class="shrink no-margin">;</label>
-															<input name="data[Order][formato_final_z]" class="no-margin" title="A6" size="2" step="any" type="number" id="OrderFormatoFinalZ">
-														</div><!-- /*Formato final -->
-														<!-- Tipo -->
-														<div class="dropdown col-12 col-sm-4 col-md-3" id="OrderPresentationTypeIdWrapper">
-															<select class="col" name="data[Order][presentation_type_id]" title="A7" cs-identifier="presentationtypes" id="OrderPresentationTypeId" required="required">
-																<option value="16">ABIERTO</option>
-																<option value="19">BARNIZ AL AGUA</option>
-																<option value="21">BARNIZ SECTORIZADO</option>
-																<option value="20">BARNIZ UV</option>
-																<option value="3">BLOCK</option>
-																<option value="6">BLOCK PERFORADO</option>
-																<option value="13">CON CINTA DOBLE FAZ</option>
-																<option value="8">COSIDO A HILO</option>
-																<option value="18">DOBLADO</option>
-																<option value="17">ENSOBRADO</option>
-																<option value="25">ESPIRAL</option>
-																<option value="9">FALSO COSIDO</option>
-																<option value="10">GRAPADO</option>
-																<option value="14">LAMINADO</option>
-																<option value="4" selected="selected">LIBRETA</option>
-																<option value="7">LIBRETA PERFORADA</option>
-																<option value="1">OTROS</option>
-																<option value="22">PERFORADO</option>
-																<option value="23">PLANCHAS</option>
-																<option value="15">PLASTIFICADO</option>
-																<option value="27">SIN REFILAR</option>
-																<option value="26">SIN SOLAPA</option>
-																<option value="2">SUELTAS</option>
-																<option value="5">SUELTAS  y PERFORADAS</option>
-																<option value="24">TIRAS</option>
-																<option value="12">TROQ. AL MEDIO PERFORADO</option>
-																<option value="28">TROQUELADO</option>
-																<option value="11">TROQUELADO AL MEDIO</option>
-															</select>
-														</div><!-- /*Tipo -->
-														<!-- Definir Vías -->
-														<div class="col-auto col-sm-8">
-															<div class="row">
-																<label for="OrderPresentationTypeId" class="vias switchable col-auto">Definir Vías</label>
-																<button type="button" id="definir-vias" class="popup switchable vias" onclick="SelectorVias.open();"></button>
-																<label for="OrderPresentationTypeId" class="paginas switchable hidden col-auto">Pág. x Pliego</label>
-																<input name="data[Order][pags_por_pliego]" class="paginas switchable hidden col-auto" onchange="cantPliego();" type="number" id="OrderPagsPorPliego" required="required">
-																<label for="OrderPagsPorPliego" class="paginas switchable hidden col-auto">son</label>
-																<input name="data[Order][cant_pliego]" class="paginas switchable hidden" style="max-width: 55px" size="3" step="any" type="number" id="OrderCantPliego">
-																<label for="OrderCantPliego" class="paginas switchable hidden col-auto">pliegos</label>
+															<!-- Cantidad -->
+															<div class="col-6 col-sm-auto">
+																<label class="control-label" for="OrderCantidadCopias">Cant.</label>
+																<input name="data[Order][cantidad_copias]" class="exnumeric" title="A1" size="7" value="100" onchange="calculoJuegos();" type="text" id="OrderCantidadCopias" required="required">															
+															</div><!-- /*Cantidad -->
+															<div class="col-6 col-sm-auto">
+																<!-- Organizado en -->
+																<div class="dropdown inline-block" id="OrderOrganizadoEnWrapper" style="height: 24px !important;margin-top: -3px">
+																	<select class="col" name="data[Order][organizado_en]" title="A2" id="OrderOrganizadoEn">
+																		<option value="Vias" selected="selected">Vías</option>
+																		<option value="Cambios">Cambios</option>
+																		<option value="Paginas">Páginas</option>
+																	</select>
+																</div><!-- /*Organizado en -->
+																<!-- Cantidad de pliegos -->
+																<input name="data[Order][cantidad]" class="form-control inline-block" title="A3" value="2" onchange="cantPliego()" type="number" id="OrderCantidad" required="required" readonly="readonly">															
+																<!-- /*Cantidad de pliegos -->															
 															</div>
-														</div><!-- /*Definir Vías -->
+															<!-- Formato final -->
+															<div class="col-12 col-sm-auto">
+																<label for="OrderFormatoFinalX">F.Final(cms)</label>
+																<input name="data[Order][formato_final_x]" class="no-margin" title="A4" value="14" size="2" step="any" type="number" id="OrderFormatoFinalX">
+																<label for="OrderFormatoFinalY" class="shrink no-margin">;</label>
+																<input name="data[Order][formato_final_y]" class="no-margin" title="A5" value="20.5" size="2" step="any" type="number" id="OrderFormatoFinalY">
+																<label for="OrderFormatoFinalZ" class="shrink no-margin">;</label>
+																<input name="data[Order][formato_final_z]" class="no-margin" title="A6" size="2" step="any" type="number" id="OrderFormatoFinalZ">
+															</div><!-- /*Formato final -->
+															<!-- Tipo -->
+															<div class="dropdown col-11 col-sm-4 col-md" id="OrderPresentationTypeIdWrapper">
+																<select class="col" name="data[Order][presentation_type_id]" title="A7" cs-identifier="presentationtypes" id="OrderPresentationTypeId" required="required">
+																	<option value="16">ABIERTO</option>
+																	<option value="19">BARNIZ AL AGUA</option>
+																	<option value="21">BARNIZ SECTORIZADO</option>
+																	<option value="20">BARNIZ UV</option>
+																	<option value="3">BLOCK</option>
+																	<option value="6">BLOCK PERFORADO</option>
+																	<option value="13">CON CINTA DOBLE FAZ</option>
+																	<option value="8">COSIDO A HILO</option>
+																	<option value="18">DOBLADO</option>
+																	<option value="17">ENSOBRADO</option>
+																	<option value="25">ESPIRAL</option>
+																	<option value="9">FALSO COSIDO</option>
+																	<option value="10">GRAPADO</option>
+																	<option value="14">LAMINADO</option>
+																	<option value="4" selected="selected">LIBRETA</option>
+																	<option value="7">LIBRETA PERFORADA</option>
+																	<option value="1">OTROS</option>
+																	<option value="22">PERFORADO</option>
+																	<option value="23">PLANCHAS</option>
+																	<option value="15">PLASTIFICADO</option>
+																	<option value="27">SIN REFILAR</option>
+																	<option value="26">SIN SOLAPA</option>
+																	<option value="2">SUELTAS</option>
+																	<option value="5">SUELTAS  y PERFORADAS</option>
+																	<option value="24">TIRAS</option>
+																	<option value="12">TROQ. AL MEDIO PERFORADO</option>
+																	<option value="28">TROQUELADO</option>
+																	<option value="11">TROQUELADO AL MEDIO</option>
+																</select>
+															</div><!-- /*Tipo -->
+															<!-- Definir Vías -->
+															<div class="col-auto col-sm-8">
+																<div class="row">
+																	<label for="OrderPresentationTypeId" class="vias switchable col-auto">Definir Vías</label>
+																	<button type="button" id="definir-vias" class="popup switchable vias" onclick="SelectorVias.open();"></button>
+																	<label for="OrderPresentationTypeId" class="paginas switchable hidden col-auto">Pág. x Pliego</label>
+																	<input name="data[Order][pags_por_pliego]" class="paginas switchable hidden col-auto" onchange="cantPliego();" type="number" id="OrderPagsPorPliego" required="required">
+																	<label for="OrderPagsPorPliego" class="paginas switchable hidden col-auto">son</label>
+																	<input name="data[Order][cant_pliego]" class="paginas switchable hidden" style="max-width: 55px" size="3" step="any" type="number" id="OrderCantPliego">
+																	<label for="OrderCantPliego" class="paginas switchable hidden col-auto">pliegos</label>
+																</div>
+															</div><!-- /*Definir Vías -->
 													</div><!--/*Cantidad, vias, tipo -->
-
-													<div class="separator"></div>                        
-													
+													<div class="separator"></div>
 													<!-- Trabajo -->
 													<div class="trabajo">														
 														<input type="hidden" name="data[WorkDetail][0][id]" class="inline-block" value="85353" id="WorkDetail0Id">    
 														<input type="hidden" name="data[WorkDetail][0][nombre]" class="inline-block" value="" id="WorkDetail0Nombre">    
-														<input type="hidden" name="data[WorkDetail][0][deleted]" class="inline-block" value="0" id="WorkDetail0Deleted">
-														
+														<input type="hidden" name="data[WorkDetail][0][deleted]" class="inline-block" value="0" id="WorkDetail0Deleted">											
 														
 														<!-- Nombre, material y color -->
 														<div>
-
 															<!-- Definición inicial del trabajo -->
 															<div class="input">																
 																<!-- Nombre trabajo -->
 																<div class="work-detail-number">
-																	<label class="edit editable editable-click" data-index="0" data-pk="85353" data-name="nombre" data-url="/workDetails/ajaxUpdateValue">1</label>
+																		<label class="edit editable editable-click" data-index="0" data-pk="85353" data-name="nombre" data-url="/workDetails/ajaxUpdateValue">1</label>
 																</div>
 																<button type="button" onclick="addNewWorkDetail(0);" class="add"></button>
-																<button type="button" onclick="deleteWorkDetail(0);" class="remove hidden"></button>																	
-																<!--/*Nombre trabajo -->            
-																
+																<button type="button" onclick="deleteWorkDetail(0);" class="remove hidden"></button>	
+																<!--/*Nombre trabajo -->
 																<div class="separator"></div>
 
 																<div class="row">
-
 																	<!-- Materiales -->
 																	<div class="dropdown col-7 col-sm-4" id="WorkDetail0NoField0Wrapper">
 																		<select class="col" name="data[WorkDetail][0][NoField0]" title="A8" cs-identifier="material-0" id="WorkDetail0NoField0">
@@ -591,7 +581,6 @@
 																			<option value="TRIPLEX B/B BOARD">TRIPLEX B/B BOARD</option>
 																		</select>
 																	</div><!-- /*Materiales -->
-
 																	<!-- Gramaje -->
 																	<div class="col-5 col-sm-3">
 																		<div class="row">
@@ -606,7 +595,6 @@
 																			</div>
 																		</div>
 																	</div><!--/*Gramaje -->
-
 																	<!-- Tamaño -->
 																	<div class="col-6 col-sm-5">
 																		<div class="row">
@@ -622,7 +610,6 @@
 																			</div>
 																		</div>
 																	</div><!-- /*Tamaño -->
-
 																	<!-- Definición de tareas -->
 																	<div class="col-6">
 																		<div class="row">
@@ -665,21 +652,22 @@
 																				<div class="task-divs">
 																					<div class="task numerado" taskname="Numerado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][id]" class="inline-block" value="20337" id="WorkDetail0TaskId">
-																						<input type="hidden" name="data[WorkDetail][0][Task][checked_numerado]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedNumerado">
+																						<input type="hidden" name="data[WorkDetail][0][Task][checked_numerado]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedNumerado">																						
 																						<div class="input">
-																							<label for="WorkDetail0TaskNumeradon"></label>
-																							<input name="data[WorkDetail][0][Task][numeradon]" class="inline-block" value="" type="text" id="WorkDetail0TaskNumeradon"></div>
-																							<div class="input">
+																								<label for="WorkDetail0TaskNumeradon"></label>
+																								<input name="data[WorkDetail][0][Task][numeradon]" class="inline-block" value="" type="text" id="WorkDetail0TaskNumeradon">
+																						</div>
+																						<div class="input">
 																								<label for="WorkDetail0TaskNumerados"></label>
 																								<select name="data[WorkDetail][0][Task][numerados]" class="inline-block" id="WorkDetail0TaskNumerados">
 																									<option value="">--select--</option>
 																									<option value="1" selected="selected">Nomerada/s</option>
 																									<option value="2">Datos Variables</option>
 																								</select>
-																							</div>
 																						</div>
+																					</div>
 																					<div class="task intercalado" taskname="Intercalado">
-																						Hacer intercalado<input type="hidden" name="data[WorkDetail][0][Task][intercalado]" class="inputIsOn" value="1" id="WorkDetail0TaskIntercalado">
+																							Hacer intercalado<input type="hidden" name="data[WorkDetail][0][Task][intercalado]" class="inputIsOn" value="1" id="WorkDetail0TaskIntercalado">
 																					</div>
 																					<div class="task grapado" taskname="Grapado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_grapado]" class="inputIsOn" id="WorkDetail0TaskCheckedGrapado">
@@ -738,45 +726,48 @@
 																						</div>
 																					</div>
 																					<div class="task troquelado" taskname="Troquelado">
-																						<input type="hidden" name="data[WorkDetail][0][Task][checked_troquelado]" class="inputIsOn" id="WorkDetail0TaskCheckedTroquelado">
-																						<label for="WorkDetail0TaskTroquelados">Troquelado</label>
-																						<select name="data[WorkDetail][0][Task][troquelados]" class="inline-block" title="B16" id="WorkDetail0TaskTroquelados">
-																							<option value="">--select--</option>
-																							<option value="1">Con troquel</option>
-																							<option value="5">Sin troquel</option>
-																							<option value="6">Plotter de corte</option>
-																						</select>
-																						<div class="input">
-																							<label for="WorkDetail0TaskTroqueladon">Nro. Troquel</label>
-																							<input name="data[WorkDetail][0][Task][troqueladon]" class="inline-block" title="B9" value="" type="text" id="WorkDetail0TaskTroqueladon"></div><div class="input"><label for="Troquel0Bocas">Bocas</label><input name="data[Troquel][0][Bocas]" class="inline-block" title="B10" readonly="readonly" type="text" id="Troquel0Bocas"></div>                    
-																						<div style="margin-top:10px;">
-																							<a href="#troquels/index" target="_blank">Lista de Troqueles</a>
-																						</div>
-
-																						<div id="troquel-0-search-box-results"></div>
-
-																						<script type="text/javascript">
-																							$("#WorkDetail0TaskTroqueladon").on('keypress', function (e) {
-																							if (e.which === 13){
-																							e.preventDefault();
-																							var self = this;
-																							//Disable textbox to prevent multiple submit
-																							$(self).attr("disabled", "disabled");
-																							$.ajax({
-																							async: true,
-																									data: {codigo: $('#WorkDetail0TaskTroqueladon').val(), index: '0'},
-																									dataType:"html",
-																									success:function (data, textStatus) {
-																									$("#troquel-0-search-box-results").html(data);
-																									//Enable the textbox again if needed.
-																									$(self).removeAttr("disabled");
-																									},
-																									type:"GET",
-																									url:"/troquels/searchBox"
-																							});
-																							}
-																							});
-																						</script>
+																							<input type="hidden" name="data[WorkDetail][0][Task][checked_troquelado]" class="inputIsOn" id="WorkDetail0TaskCheckedTroquelado">
+																							<label for="WorkDetail0TaskTroquelados">Troquelado</label>
+																							<select name="data[WorkDetail][0][Task][troquelados]" class="inline-block" title="B16" id="WorkDetail0TaskTroquelados">
+																								<option value="">--select--</option>
+																								<option value="1">Con troquel</option>
+																								<option value="5">Sin troquel</option>
+																								<option value="6">Plotter de corte</option>
+																							</select>
+																							<div class="input">
+																								<label for="WorkDetail0TaskTroqueladon">Nro. Troquel</label>
+																								<input name="data[WorkDetail][0][Task][troqueladon]" class="inline-block" title="B9" value="" type="text" id="WorkDetail0TaskTroqueladon">
+																							</div>
+																							<div class="input">
+																								<label for="Troquel0Bocas">Bocas</label>
+																								<input name="data[Troquel][0][Bocas]" class="inline-block" title="B10" readonly="readonly" type="text" id="Troquel0Bocas">
+																							</div>                    
+																							<div style="margin-top:10px;">
+																									<a href="#troquels/index" target="_blank">Lista de Troqueles</a>
+																							</div>
+																							<div id="troquel-0-search-box-results"></div>
+																							<script type="text/javascript">
+																								$("#WorkDetail0TaskTroqueladon").on('keypress', function (e) {
+																								if (e.which === 13){
+																								e.preventDefault();
+																								var self = this;
+																								//Disable textbox to prevent multiple submit
+																								$(self).attr("disabled", "disabled");
+																								$.ajax({
+																								async: true,
+																										data: {codigo: $('#WorkDetail0TaskTroqueladon').val(), index: '0'},
+																										dataType:"html",
+																										success:function (data, textStatus) {
+																										$("#troquel-0-search-box-results").html(data);
+																										//Enable the textbox again if needed.
+																										$(self).removeAttr("disabled");
+																										},
+																										type:"GET",
+																										url:"/troquels/searchBox"
+																								});
+																								}
+																								});
+																							</script>
 																					</div>
 																					<!--<div class="task barniz-al-agua" taskname='Barniz al Agua'>
 																										</div>-->
@@ -786,14 +777,16 @@
 																							<option value="1">Solo Frente</option>
 																							<option value="2">Solo Dorso</option>
 																							<option value="3">Frente y Dorso</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task barniz-sectorizado" taskname="Barniz Sectorizado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_barniz_sectorizado]" class="inputIsOn" id="WorkDetail0TaskCheckedBarnizSectorizado"><label for="WorkDetail0TaskBarvizsec">Barniz sectorizado</label><select name="data[WorkDetail][0][Task][barvizsec]" class="inline-block" id="WorkDetail0TaskBarvizsec">
 																							<option value="">--select--</option>
 																							<option value="1">Solo Frente</option>
 																							<option value="2">Solo Dorso</option>
 																							<option value="3">Frente y Dorso</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task laminado" taskname="Laminado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_laminado]" class="inputIsOn" id="WorkDetail0TaskCheckedLaminado"><label for="WorkDetail0TaskLaminadol">Laminado</label><select name="data[WorkDetail][0][Task][laminadol]" class="inline-block" otro="Otro" id="WorkDetail0TaskLaminadol">
 																							<option value="">--select--</option>
@@ -807,13 +800,15 @@
 																							<option value="1">Solo frente</option>
 																							<option value="2">Solo Dorso</option>
 																							<option value="3">Frente y Dorso</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task marcado" taskname="Marcado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_marcado]" class="inputIsOn" id="WorkDetail0TaskCheckedMarcado"><label for="WorkDetail0TaskMarcado">Marcado</label><select name="data[WorkDetail][0][Task][marcado]" class="inline-block" disabled="disabled" id="WorkDetail0TaskMarcado">
 																							<option value="">--select--</option>
 																							<option value="1">Marcardo manual</option>
 																							<option value="2">Marcado de máquina</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task doblado" taskname="Doblado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][doblado]" class="inputIsOn" id="WorkDetail0TaskDoblado"><div class="input"><label for="WorkDetail0TaskDobladoTipo">Tipo</label><select name="data[WorkDetail][0][Task][doblado_tipo]" class="inline-block" title="B7" otro="Otro" id="WorkDetail0TaskDobladoTipo">
 																								<option value="">--select--</option>
@@ -823,20 +818,23 @@
 																								<option value="dobleparalelo">Doble paralelo</option>
 																								<option value="dobleparalelomedio">Doble paralelo y al medio</option>
 																								<option value="zigzag">Zigzag</option>
-																							</select></div>                </div>
+																							</select></div>
+																					</div>
 																					<div class="task falso-cosido" taskname="Falso cosido">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_falso_cosido]" class="inputIsOn" value="1" id="WorkDetail0TaskCheckedFalsoCosido"><div class="input"><label for="WorkDetail0TaskFalsocosido">Falso cosido</label><select name="data[WorkDetail][0][Task][falsocosido]" class="inline-block" title="B13" id="WorkDetail0TaskFalsocosido">
 																								<option value="">--select--</option>
 																								<option value="cabeza" selected="selected">Cabeza</option>
 																								<option value="lomo">Lomo</option>
 																								<option value="pie">Pie</option>
-																							</select></div><div class="input"><input type="checkbox" name="data[WorkDetail][0][Task][calculo_falsocosido]" class="inline-block" title="B14" value="1" checked="checked" id="WorkDetail0TaskCalculoFalsocosido"><label for="WorkDetail0TaskCalculoFalsocosido">calcular tapa y contratapa estandar</label></div>                </div>
+																							</select></div><div class="input"><input type="checkbox" name="data[WorkDetail][0][Task][calculo_falsocosido]" class="inline-block" title="B14" value="1" checked="checked" id="WorkDetail0TaskCalculoFalsocosido"><label for="WorkDetail0TaskCalculoFalsocosido">calcular tapa y contratapa estandar</label></div>
+																					</div>
 																					<div class="task espiral" taskname="Espiral">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_espiral]" class="inputIsOn" id="WorkDetail0TaskCheckedEspiral"><label for="WorkDetail0TaskEspiral">espiral</label><select name="data[WorkDetail][0][Task][espiral]" class="inline-block" id="WorkDetail0TaskEspiral">
 																							<option value="">--select--</option>
 																							<option value="1">Espiral de alambre</option>
 																							<option value="2">Espiral de plástico</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task pegado" taskname="Pegado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_pegado]" class="inputIsOn" id="WorkDetail0TaskCheckedPegado"><label for="WorkDetail0TaskPegado">Pegado</label><select name="data[WorkDetail][0][Task][pegado]" class="inline-block" id="WorkDetail0TaskPegado">
 																							<option value="">--select--</option>
@@ -851,24 +849,31 @@
 																							<option value="9">Sobre semilla</option>
 																							<option value="10">Con fuelle</option>
 																							<option value="11">Con velcro</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task plastificado" taskname="Plastificado">
 																						<input type="hidden" name="data[WorkDetail][0][Task][checked_plastificado]" class="inputIsOn" id="WorkDetail0TaskCheckedPlastificado"><label for="WorkDetail0TaskPlastificado">Plastificado</label><select name="data[WorkDetail][0][Task][plastificado]" class="inline-block" title="B8" id="WorkDetail0TaskPlastificado">
 																							<option value="">--select--</option>
 																							<option value="1">Plastificado A5</option>
 																							<option value="2">Plastificado A4</option>
 																							<option value="3">Plastificado A3</option>
-																						</select>                </div>
+																						</select>
+																					</div>
 																					<div class="task solapa-de-stock" taskname="Solapa de stock">
-																						Hacer solapa-de-stock<input type="hidden" name="data[WorkDetail][0][Task][solapa]" class="inputIsOn" id="WorkDetail0TaskSolapa">                </div>
+																						Hacer solapa-de-stock<input type="hidden" name="data[WorkDetail][0][Task][solapa]" class="inputIsOn" id="WorkDetail0TaskSolapa">
+																					</div>
 																					<div class="task hot-stamping" taskname="Hot Stamping">
-																						Hacer hot-stamping<input type="hidden" name="data[WorkDetail][0][Task][hstamping]" class="inputIsOn" id="WorkDetail0TaskHstamping">                </div>
+																						Hacer hot-stamping<input type="hidden" name="data[WorkDetail][0][Task][hstamping]" class="inputIsOn" id="WorkDetail0TaskHstamping">
+																					</div>
 																					<div class="task envarillado" taskname="Envarillado">
-																						Hacer envarillado<input type="hidden" name="data[WorkDetail][0][Task][envarillado]" class="inputIsOn" id="WorkDetail0TaskEnvarillado">                </div>
+																						Hacer envarillado<input type="hidden" name="data[WorkDetail][0][Task][envarillado]" class="inputIsOn" id="WorkDetail0TaskEnvarillado">
+																					</div>
 																					<div class="task polipropileno" taskname="Polipropeno">
-																						Hacer polipropeno<input type="hidden" name="data[WorkDetail][0][Task][polipropileno]" class="inputIsOn" id="WorkDetail0TaskPolipropileno">                </div>
+																						Hacer polipropeno<input type="hidden" name="data[WorkDetail][0][Task][polipropileno]" class="inputIsOn" id="WorkDetail0TaskPolipropileno">
+																					</div>
 																					<div class="task tratamiento-laminado" taskname="Tratamiento laminado">
-																						Hacer tratamiento laminado<input type="hidden" name="data[WorkDetail][0][Task][tratlaminado]" class="inputIsOn" id="WorkDetail0TaskTratlaminado">                </div>
+																						Hacer tratamiento laminado<input type="hidden" name="data[WorkDetail][0][Task][tratlaminado]" class="inputIsOn" id="WorkDetail0TaskTratlaminado">
+																					</div>
 																				</div>
 																			</div><!-- /*popup-body -->
 																		</div><!-- /*box -->
@@ -908,14 +913,12 @@
 																		<input name="data[WorkDetail][0][recomendado]" class="form-control recomendado col" title="A11" size="10" value="Vías" maxlength="45" type="text" id="WorkDetail0Recomendado">
 																		<input name="data[WorkDetail][0][especificacion]" class="form-control especificacion col-auto" title="A12" size="8" value="1-2" onkeyup="sonCalculation(0)" maxlength="45" type="text" id="WorkDetail0Especificacion">																	
 																	</div>
-
 																	<div class="col-auto row">
 																		<label for="WorkDetail0FormatoAncho" class="label-formato">Formato (cms)&nbsp;</label>
 																		<input name="data[WorkDetail][0][formato_ancho]" class="form-control measure" style="width: 40px" title="A13" value="14" step="any" type="number" id="WorkDetail0FormatoAncho">
 																		<label for="WorkDetail0FormatoAlto" class="no-margin">&nbsp;x&nbsp;</label>
 																		<input name="data[WorkDetail][0][formato_alto]" class="form-control measure" style="width: 40px" title="A14" value="20.5" step="any" type="number" id="WorkDetail0FormatoAlto">
 																	</div>
-
 																	<div class="col-auto row">
 																		<label for="WorkDetail0SangradoX">&nbsp;Sangrado (mm) x</label>
 																		<input name="data[WorkDetail][0][sangrado_x]" class="form-control measure" title="A15" value="2" onchange="dobleCorteCalculation(0);" step="any" type="number" id="WorkDetail0SangradoX">
@@ -1100,8 +1103,8 @@
 																											<option value="0" selected="selected">NO</option>
 																										</select></div></td></tr>                </tbody>
 																					</table>
-																				</div>
-																			</div>
+																				</div><!-- /*popup-body -->
+																			</div><!-- /*box -->
 																		</div>                    
 																		<script>
 																			var colorSelectionBoxFrente0 = new ColorSelectionBox(0, 'frente', onColorSelectionClosed);
@@ -1285,13 +1288,15 @@
 																					</table>
 																				</div>
 																			</div>
-																		</div>                    <script>
+																		</div>
+																		<script>
 																			var colorSelectionBoxDorso0 = new ColorSelectionBox(0, 'dorso', onColorSelectionClosed);
 																		</script>
 																	</div>
 																	<div class="resumen-colores dorso"></div>
 																	<span class="no-colors-message dorso">Seleccione colores</span>
 																</div>
+
 																<div class="calculator">
 																</div>
 															</div><!-- /*Colores -->
@@ -1345,80 +1350,253 @@
 																		<label for="WorkDetail0Pinza" class="control-label pinza">Pinza (mm)</label>
 																		<input name="data[WorkDetail][0][pinza]" class="form-control measure" title="A25" value="15" step="any" type="number" id="WorkDetail0Pinza">
 																		<label for="WorkDetail0Cola" class="control-label">Cola (mm)</label>
-																		<input name="data[WorkDetail][0][cola]" class="form-control measure" title="A26" value="10" step="any" type="number" id="WorkDetail0Cola">																
+																		<input name="data[WorkDetail][0][cola]" class="form-control measure" title="A26" value="10" step="any" type="number" id="WorkDetail0Cola">
 																	</div><!-- /*Pinza y cola -->
-																</div>
 
+																	<!-- Cortes -->
+																	<div class="col-12 col-md-auto row">
+																		<label for="WorkDetail0CorteAncho" class="control-label ml-7">Corte (cm) </label>
+																		<input name="data[WorkDetail][0][corte_ancho]" class="form-control measure" title="A27" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAncho">
+																		<label for="WorkDetail0CorteAlto" class="control-label shrink no-margin">&nbsp;x&nbsp;</label>
+																		<input name="data[WorkDetail][0][corte_alto]" class="form-control measure" title="A28" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAlto">
+																		<label for="WorkDetail0Salen" class="control-label shrink">Salen</label>
+																		<input name="data[WorkDetail][0][salen]" class="form-control measure shrink" title="A29" value="0" onkeyup="sonCalculation(0)" type="number" id="WorkDetail0Salen">
+																	</div><!-- /*Cortes -->
 
-																
+																	<!-- Pliegos -->
+																	<div class="col-12 col-md-auto row">
+																		<label for="WorkDetail0Hojas" class="control-label ml-7">Son </label>
+																		<input name="data[WorkDetail][0][hojas]" class="form-control measure exnumeric" title="A30" value="0" onkeyup="pliegosCalculation(0)" type="text" id="WorkDetail0Hojas">
+																		<label for="WorkDetail0Hojas" class="control-label">hojas</label>
+																		<label for="WorkDetail0Pliegos" class="control-label">Pliegos</label>
+																		<input name="data[WorkDetail][0][pliegos]" class="form-control measure exnumeric" title="A31" value="0" style="width: 39px" type="text" id="WorkDetail0Pliegos">
+																	</div><!-- /*Pliegos -->
+
+																</div><!-- /*form-group row -->
 															</div><!-- /*Chapas, cortes e impresoras -->
 															
+															<!-- Impresoras -->
 															<div class="input">
+																<div class="form-group row">
+																	<!-- Impresora 1 -->
+																	<div class="dropdown impresora col ml-7" id="WorkDetail0Printer1IdWrapper">
+																		<select class="col" name="data[WorkDetail][0][printer_1_id]" title="A32" id="WorkDetail0Printer1Id">
+																			<option value="">Impresora 1 --</option>
+																			<optgroup label="offset">
+																				<option value="1">GTO 46</option>
+																				<option value="2">GTO 52 (2C)</option>
+																				<option value="3">GTO 52 (4C)</option>
+																			</optgroup>
+																			<optgroup label="digital">
+																				<option value="7">Kyocera 8000</option>
+																				<option value="9" selected="selected">Kyocera 9530</option>
+																				<option value="5">M. Color c6000</option>
+																				<option value="6">M. Negro c6000</option>
+																			</optgroup>
+																			<option value="4">Troqueladora</option>
+																		</select>
+																	</div>
+																	<!-- Impresora 2 -->
+																	<div class="dropdown impresora col ml-7" id="WorkDetail0Printer2IdWrapper">
+																		<select class="col" name="data[WorkDetail][0][printer_2_id]" title="A33" id="WorkDetail0Printer2Id">
+																			<option value="">Impresora 2 --</option>
+																			<optgroup label="offset">
+																				<option value="1">GTO 46</option>
+																				<option value="2">GTO 52 (2C)</option>
+																				<option value="3">GTO 52 (4C)</option>
+																			</optgroup>
+																			<optgroup label="digital">
+																				<option value="7">Kyocera 8000</option>
+																				<option value="9">Kyocera 9530</option>
+																				<option value="5">M. Color c6000</option>
+																				<option value="6">M. Negro c6000</option>
+																			</optgroup>
+																			<option value="4">Troqueladora</option>
+																		</select>
+																	</div>
+																	<!-- Impresora 3 -->
+																	<div class="dropdown impresora col ml-7" id="WorkDetail0Printer3IdWrapper">
+																		<select class="col" name="data[WorkDetail][0][printer_3_id]" title="A34" id="WorkDetail0Printer3Id">
+																			<option value="">Impresora 3 --</option>
+																			<optgroup label="offset">
+																				<option value="1">GTO 46</option>
+																				<option value="2">GTO 52 (2C)</option>
+																				<option value="3">GTO 52 (4C)</option>
+																			</optgroup>
+																			<optgroup label="digital">
+																				<option value="7">Kyocera 8000</option>
+																				<option value="9">Kyocera 9530</option>
+																				<option value="5">M. Color c6000</option>
+																				<option value="6">M. Negro c6000</option>
+																			</optgroup>
+																			<option value="4">Troqueladora</option>
+																		</select>
+																	</div>
+																</div><!-- /*form-group row -->
+															</div><!-- /*Impresoras input -->
 
-
-																<label for="WorkDetail0CorteAncho">Corte (cm)</label><input name="data[WorkDetail][0][corte_ancho]" class="measure" title="A27" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAncho"><label for="WorkDetail0CorteAlto" class="shrink">x</label><input name="data[WorkDetail][0][corte_alto]" class="measure" title="A28" onkeyup="salenCalculation(0);" step="any" type="number" id="WorkDetail0CorteAlto"><label for="WorkDetail0Salen" class="shrink">Salen</label><input name="data[WorkDetail][0][salen]" class="measure shrink" title="A29" value="0" onkeyup="sonCalculation(0)" type="number" id="WorkDetail0Salen">        </div>
-															<div class="input">
-																<label for="WorkDetail0Hojas">Son</label><input name="data[WorkDetail][0][hojas]" class="measure exnumeric" title="A30" value="0" onkeyup="pliegosCalculation(0)" type="text" id="WorkDetail0Hojas"><label for="WorkDetail0Hojas">hojas</label><label for="WorkDetail0Pliegos">Pliegos</label><input name="data[WorkDetail][0][pliegos]" class="measure exnumeric" title="A31" value="0" style="width: 39px" type="text" id="WorkDetail0Pliegos"><div class="dropdown impresora" id="WorkDetail0Printer1IdWrapper"><select name="data[WorkDetail][0][printer_1_id]" title="A32" id="WorkDetail0Printer1Id">
-																		<option value="">Impresora 1 --</option>
-																		<optgroup label="offset">
-																			<option value="1">GTO 46</option>
-																			<option value="2">GTO 52 (2C)</option>
-																			<option value="3">GTO 52 (4C)</option>
-																		</optgroup>
-																		<optgroup label="digital">
-																			<option value="7">Kyocera 8000</option>
-																			<option value="9" selected="selected">Kyocera 9530</option>
-																			<option value="5">M. Color c6000</option>
-																			<option value="6">M. Negro c6000</option>
-																		</optgroup>
-																		<option value="4">Troqueladora</option>
-																	</select></div><div class="dropdown impresora" id="WorkDetail0Printer2IdWrapper"><select name="data[WorkDetail][0][printer_2_id]" title="A33" id="WorkDetail0Printer2Id">
-																		<option value="">Impresora 2 --</option>
-																		<optgroup label="offset">
-																			<option value="1">GTO 46</option>
-																			<option value="2">GTO 52 (2C)</option>
-																			<option value="3">GTO 52 (4C)</option>
-																		</optgroup>
-																		<optgroup label="digital">
-																			<option value="7">Kyocera 8000</option>
-																			<option value="9">Kyocera 9530</option>
-																			<option value="5">M. Color c6000</option>
-																			<option value="6">M. Negro c6000</option>
-																		</optgroup>
-																		<option value="4">Troqueladora</option>
-																	</select></div><div class="dropdown impresora" id="WorkDetail0Printer3IdWrapper"><select name="data[WorkDetail][0][printer_3_id]" title="A34" id="WorkDetail0Printer3Id">
-																		<option value="">Impresora 3 --</option>
-																		<optgroup label="offset">
-																			<option value="1">GTO 46</option>
-																			<option value="2">GTO 52 (2C)</option>
-																			<option value="3">GTO 52 (4C)</option>
-																		</optgroup>
-																		<optgroup label="digital">
-																			<option value="7">Kyocera 8000</option>
-																			<option value="9">Kyocera 9530</option>
-																			<option value="5">M. Color c6000</option>
-																			<option value="6">M. Negro c6000</option>
-																		</optgroup>
-																		<option value="4">Troqueladora</option>
-																	</select></div>        </div>
+															<!-- Acaraciones -->
 															<div class="input top-aligned">
-																<label for="WorkDetail0AclaracionCorte" class="label-comentario">Aclaración Corte</label><textarea name="data[WorkDetail][0][aclaracion_corte]" class="inline-block" rows="4" cols="29" id="WorkDetail0AclaracionCorte"></textarea><label for="WorkDetail0AclaracionImpresion" class="label-comentario">Aclaración Impresión</label><textarea name="data[WorkDetail][0][aclaracion_impresion]" class="inline-block" rows="4" cols="29" id="WorkDetail0AclaracionImpresion"></textarea>        </div>
-														</div>
-													</div>
-													<script>
-														colorSelectionBoxFrente0._generateThumbs();
-														colorSelectionBoxDorso0._generateThumbs();
-													</script>
-
-												</div>
+																<div class="row">
+																	<div class="col-md row">
+																		<label for="WorkDetail0AclaracionCorte" class="control-label ml-7 label-comentario">Aclaración Corte</label>
+																		<textarea name="data[WorkDetail][0][aclaracion_corte]" class="form-control col" rows="4" cols="29" id="WorkDetail0AclaracionCorte"></textarea>
+																	</div>
+																	<div class="col-md row">
+																		<label for="WorkDetail0AclaracionImpresion" class="control-label ml-7 label-comentario">Aclaración Impresión</label>
+																		<textarea name="data[WorkDetail][0][aclaracion_impresion]" class="form-control col" rows="4" cols="29" id="WorkDetail0AclaracionImpresion"></textarea>
+																	</div>
+																</div>
+															</div><!-- /*Acaraciones input top-aligned -->
+															<script>
+																colorSelectionBoxFrente0._generateThumbs();
+																colorSelectionBoxDorso0._generateThumbs();
+															</script>
+														</div><!--/*Nombre, material y color -->
+													</div><!-- /*Trabajo -->
+												</div><!-- /*panel-content -->
 											</div><!-- /*panel-body -->
 										</div><!-- Fin detalle de la orden -->
 									</div><!-- /*panel-wrapper -->
 								</div><!-- /*row r1 -->
+
+								<!-- Sección inferior de la columna del medio -->
+								<div class="row r2">
+									<div class="panel-wrapper">
+										<div id="disenio-tareas-tabs" class="panel vertical collapsable disenio-orden tareas-orden opened ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+											<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+												<li class="ui-state-default ui-corner-top" role="tab" tabindex="0" aria-controls="tabs-tareas" aria-labelledby="ui-id-1" aria-selected="false">
+													<a href="#orders/main/59738#tabs-tareas" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Tareas</a>
+												</li>
+												<!-- Activa -->
+												<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="tabs-disenio" aria-labelledby="ui-id-2" aria-selected="true">
+													<a href="#orders/main/59738#tabs-disenio" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Diseño</a>
+												</li>
+											</ul>
+
+											<!-- Tab Diseño -->
+											<div id="tabs-disenio" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="true" aria-hidden="true" >
+												<div class="panel-content">
+													<!-- Constancia, Dirección y Tipo de Cliente -->
+													<div class="input documents" style="display: table-row;">
+														<div class="row">
+															<label class="control-label col-auto" for="OrderDesignConstancia">Constancia</label>
+															<input name="data[OrderDesign][constancia]" class="form-control col-sm-2 col-md-1" maxlength="20" type="text" id="OrderDesignConstancia">
+															<label class="control-label col-auto" for="OrderDesignDireccion">Dirección</label>
+															<input name="data[OrderDesign][direccion]" class="form-control col" value="" maxlength="200" type="text" id="OrderDesignDireccion">														
+															<div class="dropdown col-auto" id="OrderDesignTipoAutDgiWrapper">
+																<select name="data[OrderDesign][tipo_aut_dgi]" default="A" class="col" id="OrderDesignTipoAutDgi">
+																	<option value="">--Tipo Aut.--</option>
+																	<option value="A" selected="selected">General</option>
+																	<option value="B">Exonerado o no gravado</option>
+																	<option value="C">IVA peq.</option>
+																	<option value="D">Monotributo</option>
+																	<option value="E">E.E. comp. electrónicos</option>
+																	<option value="F">E.E. comp. de contigencia</option>
+																	<option value="G">E.E. comp. no certificados</option>
+																	<option value="H">E.E. periodo de transición</option>
+																	<option value="I">Monotributo MIDES</option>
+																</select>
+															</div>															
+														</div><!-- /*row -->
+													</div><!-- /*Constancia, Dirección y Tipo de Cliente -->
+
+													<!-- Serie, vencimiento y modelo -->
+													<div class="input">
+														<div class="row">
+															
+															<div class="col-12 col-sm-auto">
+																<label class="" for="OrderDesignSerieDesde">Serie</label>
+																<input name="data[OrderDesign][serie_desde]" class="form-control inline-block" value="" maxlength="5" type="text" id="OrderDesignSerieDesde">
+																<label for="OrderDesignNumeroDesde">Nro.</label>
+																<input name="data[OrderDesign][numero_desde]" class="form-control inline-block" value="" type="number" id="OrderDesignNumeroDesde">
+																<label for="OrderDesignSerieHasta">Serie</label>
+																<input name="data[OrderDesign][serie_hasta]" class="form-control inline-block" value="" maxlength="5" type="text" id="OrderDesignSerieHasta">
+																<label for="OrderDesignNumeroHasta">Nro.</label>
+																<input name="data[OrderDesign][numero_hasta]" class="form-control inline-block" value="" type="number" id="OrderDesignNumeroHasta">
+															</div>
+															<div class="col-12 col-sm-auto">
+																<label for="OrderVencimiento" class="documents" style="display: inline;">Vencimiento</label>
+																<input name="data[Order][vencimiento]" value="" class="form-control documents" type="text" id="OrderVencimiento" style="display: inline;">
+																<label for="OrderDesignModelo">Modelo</label>
+																<input name="data[OrderDesign][modelo]" class="form-control inline-block" value="" maxlength="11" type="text" id="OrderDesignModelo">																
+															</div>
+														</div>
+													</div><!-- /*Serie, vencimiento y modelo -->
+
+													<!-- Cambios o modificaciones -->
+													<div class="input">
+														<div class="row">
+															<div class="col-auto col-sm-4 col-lg-3 row">
+																<div class="dropdown col ml-7" id="OrderDesignTieneDisenioWrapper">
+																	<select class="col-auto" name="data[OrderDesign][tiene_disenio]" id="OrderDesignTieneDisenio">
+																		<option value="3" selected="selected">Cambio de pie</option>
+																		<option value="4">Repetición sin cambios</option>
+																		<option value="9">Cliente envía diseño pronto</option>
+																		<option value="5">Repetición con cambios</option>
+																		<option value="6">Cambios al archivo del cliente</option>
+																		<option value="7">Redibujar diseño del cliente</option>
+																		<option value="8">Diseño de 0</option>
+																	</select>
+																</div>																
+															</div>
+
+															<div class="col-12 col-sm-8 col-lg-5 row">
+																<input type="hidden" name="data[OrderDesign][pasar_muestra]" id="OrderDesignPasarMuestra_" value="0">
+																<input type="checkbox" name="data[OrderDesign][pasar_muestra]" class="" value="1" id="OrderDesignPasarMuestra">
+																<label class="col-auto" for="OrderDesignPasarMuestra">Pasar Muestra</label>
+																<div class="dropdown col-auto" id="OrderNotifyContactIdWrapper">
+																	<select class="col" name="data[Order][notify_contact_id]" onchange="onConctactNotificarChanged();" id="OrderNotifyContactId">
+																		<option value="">Confirma ---</option>
+																		<option value="13054">Juan Diego Buffa</option>
+																	</select>
+																</div>
+															</div>
+
+															<div class="col-auto col-sm-12 col-lg-4 row">
+																<label class="col-auto" for="OrderNotificarTelefono">Tel.</label>
+																<input name="data[Order][notificar_telefono]" class="form-control col col-lg-3 gris" readonly="readonly" type="text" id="OrderNotificarTelefono">
+																<label class="col-auto" for="OrderNotificarEmail">Email</label>
+																<input name="data[Order][notificar_email]" class="form-control col col-lg-4 gris" readonly="readonly" type="text" id="OrderNotificarEmail">
+															</div>
+
+														</div><!-- /*row -->
+													</div><!-- /*Cambios o modificaciones -->
+
+														<div class="input">
+															<div class="row">
+																<div class="dropdown inline-block" id="OrderDesignAcetatoWrapper"><select name="data[OrderDesign][acetato]" id="OrderDesignAcetato">
+																		<option value=""></option>
+																		<option value="1">Acetato</option>
+																		<option value="2">CTP</option>
+																	</select>
+																</div>
+																<div class="col-12 mt-1 mb-1 visible-xs">Aclaraciones</div>
+																<label class="control-label hidden-xs" style="margin-right: 4px" for="OrderDesignAclaracion">Aclaraciones</label>
+																<textarea name="data[OrderDesign][aclaracion]" class="form-control col" style="padding: 4px" rows="2" cols="25" id="OrderDesignAclaracion"></textarea>
+																<button type="button" id="special_text_buttom" class="popup documents" onclick="SpecialText.open();" style="display: inline-block;"></button>
+															</div>
+														</div>
+
+												</div><!-- /*panel-content -->
+											</div><!-- /*Tab Diseño -->
+
+											<div id="tabs-tareas" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: none;">
+												<!-- Tareas content is written here -->
+												<div class="panel-content"><div><ul><li><span class="name">Numerado</span>: T1:   Numerada/s</li><li><span class="name">Intercalado</span>: T1:  </li><li><span class="name">Falso cosido</span>: T1:   Cabeza Son 2 encuadernaciones de 50 juegos</li></ul></div></div>
+											</div><!-- /*tabs-tareas -->
+										</div><!-- /*disenio-tareas-tabs -->
+										<script>
+											$("#disenio-tareas-tabs").tabs();
+										</script>
+									</div><!-- /*panel-wrapper -->
+								</div><!-- /*row r2 -->
+								<!-- /* Final de la Sección inferior de la columna del medio -->
 							</div><!-- /*col-inner -->
 						</div><!-- /*COLUMNA DEL MEDIO -->
 
-						<div class="col-sm-12 col-md-2" style="background: #cacaca;border: 1px solid blue;">
+						<div id="right-col" class="col-sm-12 col-md-2 col-lg-2" style="background: #cacaca;border: 1px solid blue;">
 							Columna Derecha
 						</div>
 
@@ -1442,139 +1620,16 @@
 										});
 										});
 									</script>
-								<button name="Imprimir" type="button" class="btn btn-lg action-button col" onclick="Order.print_order();">Imprimir</button>
+								<a name="Imprimir" type="button" class="btn btn-lg action-button col" onclick="Order.print_order();">Imprimir</a>
 							</div>                            
 						</div><!-- /*Botones -->
 					</div><!-- /*orders form row -->
 
-					<HR><HR>
+
 
 					<!-- **************************************************
-					HASTA AQUI VA YA TERMINADO
+					POPPUPS / MODALS
 					*************************************************** -->             
-
-					<div class="orders form">
-
-						<div id="mid-col">
-							<div class="col-inner">
-								
-								<div class="row r2">
-									<div class="panel-wrapper">
-
-
-										<div id="disenio-tareas-tabs" class="panel vertical collapsable disenio-orden tareas-orden opened ui-tabs ui-widget ui-widget-content ui-corner-all">
-
-											<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-												<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-tareas" aria-labelledby="ui-id-1" aria-selected="true"><a href="#orders/main/59738#tabs-tareas" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Tareas</a></li>
-												<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-disenio" aria-labelledby="ui-id-2" aria-selected="false"><a href="#orders/main/59738#tabs-disenio" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Diseño</a></li>
-											</ul>
-
-											<div id="tabs-disenio" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" >
-												<div class="panel-content">
-													<div class="input documents" style="display: table-row;">
-														<label for="OrderDesignConstancia">Constancia</label><input name="data[OrderDesign][constancia]" class="inline-block" maxlength="20" type="text" id="OrderDesignConstancia"><label for="OrderDesignDireccion">Dirección</label><input name="data[OrderDesign][direccion]" class="inline-block" value="" maxlength="200" type="text" id="OrderDesignDireccion"><div class="dropdown inline-block" id="OrderDesignTipoAutDgiWrapper"><select name="data[OrderDesign][tipo_aut_dgi]" default="A" id="OrderDesignTipoAutDgi">
-																<option value="">--Tipo Aut.--</option>
-																<option value="A" selected="selected">General</option>
-																<option value="B">Exonerado o no gravado</option>
-																<option value="C">IVA peq.</option>
-																<option value="D">Monotributo</option>
-																<option value="E">E.E. comp. electrónicos</option>
-																<option value="F">E.E. comp. de contigencia</option>
-																<option value="G">E.E. comp. no certificados</option>
-																<option value="H">E.E. periodo de transición</option>
-																<option value="I">Monotributo MIDES</option>
-															</select></div>                                </div>
-													<div class="input">
-														<label for="OrderDesignSerieDesde">Serie</label><input name="data[OrderDesign][serie_desde]" class="inline-block" value="" maxlength="5" type="text" id="OrderDesignSerieDesde"><label for="OrderDesignNumeroDesde">Nro.</label><input name="data[OrderDesign][numero_desde]" class="inline-block" type="number" id="OrderDesignNumeroDesde"><label for="OrderDesignSerieHasta">Serie</label><input name="data[OrderDesign][serie_hasta]" class="inline-block" value="" maxlength="5" type="text" id="OrderDesignSerieHasta"><label for="OrderDesignNumeroHasta">Nro.</label><input name="data[OrderDesign][numero_hasta]" class="inline-block" type="number" id="OrderDesignNumeroHasta"><label for="OrderVencimiento" class="documents" style="display: inline;">Vencimiento</label><input name="data[Order][vencimiento]" value="" class="documents" type="text" id="OrderVencimiento" style="display: inline-block;"><label for="OrderDesignModelo">Modelo</label><input name="data[OrderDesign][modelo]" class="inline-block" value="" maxlength="11" type="text" id="OrderDesignModelo">                                </div>
-													<div class="input">
-														<div class="dropdown inline-block" id="OrderDesignTieneDisenioWrapper"><select name="data[OrderDesign][tiene_disenio]" id="OrderDesignTieneDisenio">
-																<option value="3" selected="selected">Cambio de pie</option>
-																<option value="4">Repetición sin cambios</option>
-																<option value="9">Cliente envía diseño pronto</option>
-																<option value="5">Repetición con cambios</option>
-																<option value="6">Cambios al archivo del cliente</option>
-																<option value="7">Redibujar diseño del cliente</option>
-																<option value="8">Diseño de 0</option>
-															</select></div><input type="hidden" name="data[OrderDesign][pasar_muestra]" id="OrderDesignPasarMuestra_" value="0"><input type="checkbox" name="data[OrderDesign][pasar_muestra]" class="inline-block" value="1" id="OrderDesignPasarMuestra"><label for="OrderDesignPasarMuestra">Pasar Muestra</label><div class="dropdown inline-block" id="OrderNotifyContactIdWrapper"><select name="data[Order][notify_contact_id]" onchange="onConctactNotificarChanged();" id="OrderNotifyContactId">
-																<option value="">Confirma ---</option>
-																<option value="13054">Juan Diego Buffa</option>
-															</select></div><label for="OrderNotificarTelefono">Tel.</label><input name="data[Order][notificar_telefono]" class="inline-block" readonly="readonly" type="text" id="OrderNotificarTelefono"><label for="OrderNotificarEmail">Email</label><input name="data[Order][notificar_email]" class="inline-block" readonly="readonly" type="text" id="OrderNotificarEmail">                                </div>
-													<div class="input">
-														<div class="dropdown inline-block" id="OrderDesignAcetatoWrapper"><select name="data[OrderDesign][acetato]" id="OrderDesignAcetato">
-																<option value=""></option>
-																<option value="1">Acetato</option>
-																<option value="2">CTP</option>
-															</select></div><label for="OrderDesignAclaracion">Aclaraciones</label><input name="data[OrderDesign][aclaracion]" class="inline-block" value="" maxlength="500" type="text" id="OrderDesignAclaracion"><button type="button" id="special_text_buttom" class="popup documents" onclick="SpecialText.open();" style="display: inline-block;"></button>                                </div>
-												</div>
-											</div>
-
-											<div id="tabs-tareas" class="panel-body ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: none;">
-												<!-- Tareas content is written here -->
-												<div class="panel-content"><div><ul><li><span class="name">Numerado</span>: T1:   Nomerada/s</li><li><span class="name">Intercalado</span>: T1:  </li><li><span class="name">Falso cosido</span>: T1:   Cabeza Son 2 encuadernaciones de 50 juegos</li></ul></div></div>
-
-											</div>
-										</div>
-
-										<script>
-											$("#disenio-tareas-tabs").tabs();
-										</script>
-
-
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<div id="right-col">
-							<div class="col-inner">
-								<div class="row r1">
-									<div class="panel-wrapper">
-
-										<!-- Calculos --> 
-										<div class="panel vertical calculos-orden opened">
-											<div class="panel-body">
-												<div class="panel-title">
-													Calculos                            </div>
-												<div class="panel-content">
-													<div><table class="calculation_table" id="calculation_table"><tbody><tr id="envíos" class=""><td></td><td><div><input type="hidden" name="data[Calculation][8][id]" class="inline-block" value="1912011" id="Calculation8Id"><input type="hidden" name="data[Calculation][8][deleted]" class="inline-block" value="0" id="Calculation8Deleted"><input type="hidden" name="data[Calculation][8][nombre]" class="inline-block" value="Envíos" id="Calculation8Nombre"><label for="Calculation8Monto" style="float: left;">Envíos</label><input name="data[Calculation][8][monto]" class="sum_cost" value="0" step="any" type="number" id="Calculation8Monto"><label for="Calculation8Monto" class="symbol">$</label></div></td></tr><tr id="varios" class=""><td></td><td><div><input type="hidden" name="data[Calculation][9][id]" class="inline-block" value="1912012" id="Calculation9Id"><input type="hidden" name="data[Calculation][9][deleted]" class="inline-block" value="0" id="Calculation9Deleted"><input type="hidden" name="data[Calculation][9][nombre]" class="inline-block" value="Varios" id="Calculation9Nombre"><label for="Calculation9Monto" style="float: left;">Varios</label><input name="data[Calculation][9][monto]" class="sum_cost" value="0" step="any" type="number" id="Calculation9Monto"><label for="Calculation9Monto" class="symbol">$</label></div></td></tr><tr id="diseño" class=""><td></td><td><div><input type="hidden" name="data[Calculation][10][id]" class="inline-block" value="1912013" id="Calculation10Id"><input type="hidden" name="data[Calculation][10][deleted]" class="inline-block" value="0" id="Calculation10Deleted"><input type="hidden" name="data[Calculation][10][nombre]" class="inline-block" value="Diseño" id="Calculation10Nombre"><label for="Calculation10Monto" style="float: left;">Diseño</label><input name="data[Calculation][10][monto]" class="sum_cost" value="0" step="any" type="number" id="Calculation10Monto"><label for="Calculation10Monto" class="symbol">$</label></div></td></tr><tr id="empaquetado" class=""><td></td><td><div><input type="hidden" name="data[Calculation][11][id]" class="inline-block" value="1912014" id="Calculation11Id"><input type="hidden" name="data[Calculation][11][deleted]" class="inline-block" value="0" id="Calculation11Deleted"><input type="hidden" name="data[Calculation][11][nombre]" class="inline-block" value="Empaquetado" id="Calculation11Nombre"><label for="Calculation11Monto" style="float: left;">Empaquetado</label><input name="data[Calculation][11][monto]" class="sum_cost" value="0" step="any" type="number" id="Calculation11Monto"><label for="Calculation11Monto" class="symbol">$</label></div></td></tr><tr id="terminación" class=""><td></td><td><div><input type="hidden" name="data[Calculation][12][id]" class="inline-block" value="1912015" id="Calculation12Id"><input type="hidden" name="data[Calculation][12][deleted]" class="inline-block" value="0" id="Calculation12Deleted"><input type="hidden" name="data[Calculation][12][nombre]" class="inline-block" value="Terminación" id="Calculation12Nombre"><label for="Calculation12Monto" style="float: left;">Terminación</label><input name="data[Calculation][12][monto]" class="sum_cost" value="0" step="any" type="number" id="Calculation12Monto"><label for="Calculation12Monto" class="symbol">$</label></div></td></tr></tbody></table></div><table><tbody><tr><td><label for="calculationName"></label><input name="" class="inline-block" id="calculationName" value="" type=""></td><td><button type="button" id="delete-via" class="add inline-block" onclick="SelectorCalculos.addCalculo(false);"></button></td></tr></tbody></table><div id="work_detail_calculation"><div class="calculation_table_0 work-detail-number"><label for="Calculation12Monto" class="calculation_title" id="calculation_label_0">1</label></div><div><table id="calculation_table_0" class="calculation_table_0 "><tbody><tr id="WorkDetail.0.material" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][0][id]" class="inline-block" value="1911995" id="WorkDetail0Calculation0Id"><input type="hidden" name="data[WorkDetail][0][Calculation][0][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation0Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][0][nombre]" class="inline-block" value="Material" id="WorkDetail0Calculation0Nombre"><label for="WorkDetail0Calculation0Monto" style="float: left;">Material</label><input name="data[WorkDetail][0][Calculation][0][monto]" class="sum_cost" value="0" step="any" type="number" id="WorkDetail0Calculation0Monto"><label for="WorkDetail0Calculation0Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.chapa" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][1][id]" class="inline-block" value="1911996" id="WorkDetail0Calculation1Id"><input type="hidden" name="data[WorkDetail][0][Calculation][1][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation1Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][1][nombre]" class="inline-block" value="Chapa" id="WorkDetail0Calculation1Nombre"><label for="WorkDetail0Calculation1Monto" style="float: left;">Chapa</label><input name="data[WorkDetail][0][Calculation][1][monto]" class="sum_cost" value="0" step="any" type="number" id="WorkDetail0Calculation1Monto"><label for="WorkDetail0Calculation1Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.postura" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][2][id]" class="inline-block" value="1911997" id="WorkDetail0Calculation2Id"><input type="hidden" name="data[WorkDetail][0][Calculation][2][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation2Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][2][nombre]" class="inline-block" value="Postura" id="WorkDetail0Calculation2Nombre"><label for="WorkDetail0Calculation2Monto" style="float: left;">Postura</label><input name="data[WorkDetail][0][Calculation][2][monto]" class="sum_cost" value="0" step="any" type="number" id="WorkDetail0Calculation2Monto"><label for="WorkDetail0Calculation2Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.impresión" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][3][id]" class="inline-block" value="1911998" id="WorkDetail0Calculation3Id"><input type="hidden" name="data[WorkDetail][0][Calculation][3][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation3Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][3][nombre]" class="inline-block" value="Impresión" id="WorkDetail0Calculation3Nombre"><label for="WorkDetail0Calculation3Monto" style="float: left;">Impresión</label><input name="data[WorkDetail][0][Calculation][3][monto]" class="sum_cost" value="0" step="any" type="number" id="WorkDetail0Calculation3Monto"><label for="WorkDetail0Calculation3Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.corte" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][4][id]" class="inline-block" value="1911999" id="WorkDetail0Calculation4Id"><input type="hidden" name="data[WorkDetail][0][Calculation][4][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation4Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][4][nombre]" class="inline-block" value="Corte" id="WorkDetail0Calculation4Nombre"><label for="WorkDetail0Calculation4Monto" style="float: left;">Corte</label><input name="data[WorkDetail][0][Calculation][4][monto]" class="sum_cost" value="0" step="any" type="number" id="WorkDetail0Calculation4Monto"><label for="WorkDetail0Calculation4Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.numerado" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][5][id]" class="inline-block" value="1912000" id="WorkDetail0Calculation5Id"><input type="hidden" name="data[WorkDetail][0][Calculation][5][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation5Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][5][nombre]" class="inline-block" value="Numerado" id="WorkDetail0Calculation5Nombre"><label for="WorkDetail0Calculation5Monto" style="float: left;">Numerado</label><input name="data[WorkDetail][0][Calculation][5][monto]" class="sum_cost" value="110" step="any" type="number" id="WorkDetail0Calculation5Monto"><label for="WorkDetail0Calculation5Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.intercalado" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][6][id]" class="inline-block" value="1912001" id="WorkDetail0Calculation6Id"><input type="hidden" name="data[WorkDetail][0][Calculation][6][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation6Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][6][nombre]" class="inline-block" value="Intercalado" id="WorkDetail0Calculation6Nombre"><label for="WorkDetail0Calculation6Monto" style="float: left;">Intercalado</label><input name="data[WorkDetail][0][Calculation][6][monto]" class="sum_cost" value="0" step="any" type="number" id="WorkDetail0Calculation6Monto"><label for="WorkDetail0Calculation6Monto" class="symbol">$</label></div></td></tr><tr id="WorkDetail.0.falsocosido" class=""><td></td><td><div><input type="hidden" name="data[WorkDetail][0][Calculation][7][id]" class="inline-block" value="1912002" id="WorkDetail0Calculation7Id"><input type="hidden" name="data[WorkDetail][0][Calculation][7][deleted]" class="inline-block" value="0" id="WorkDetail0Calculation7Deleted"><input type="hidden" name="data[WorkDetail][0][Calculation][7][nombre]" class="inline-block" value="Falso cosido" id="WorkDetail0Calculation7Nombre"><label for="WorkDetail0Calculation7Monto" style="float: left;">Falso cosido</label><input name="data[WorkDetail][0][Calculation][7][monto]" class="sum_cost" value="447.49" step="any" type="number" id="WorkDetail0Calculation7Monto"><label for="WorkDetail0Calculation7Monto" class="symbol">$</label></div></td></tr></tbody></table></div></div><div><label for="WorkDetail0Calculation7Monto">---------------------------------------------------------------</label></div><table class="calculation_table"><tbody><tr id="costo" class=""><td></td><td><div><input type="hidden" name="data[Calculation][0][id]" class="inline-block" value="1912003" id="Calculation0Id"><input type="hidden" name="data[Calculation][0][deleted]" class="inline-block" value="0" id="Calculation0Deleted"><input type="hidden" name="data[Calculation][0][nombre]" class="inline-block" value="Costo" id="Calculation0Nombre"><label for="Calculation0Monto" style="float: left;">Costo</label><input name="data[Calculation][0][monto]" class="" value="557.49" step="any" type="number" id="Calculation0Monto"><label for="Calculation0Monto" class="symbol">$</label></div></td></tr><tr id="subtotal" class=""><td></td><td><div><input type="hidden" name="data[Calculation][1][id]" class="inline-block" value="1912004" id="Calculation1Id"><input type="hidden" name="data[Calculation][1][deleted]" class="inline-block" value="0" id="Calculation1Deleted"><input type="hidden" name="data[Calculation][1][nombre]" class="inline-block" value="Subtotal" id="Calculation1Nombre"><label for="Calculation1Monto" style="float: left;">Subtotal</label><input name="data[Calculation][1][monto]" class="" value="557.49" step="any" type="number" id="Calculation1Monto"><label for="Calculation1Monto" class="symbol">$</label></div></td></tr><tr id="ganancia" class=""><td></td><td><div><input type="hidden" name="data[Calculation][2][id]" class="inline-block" value="1912005" id="Calculation2Id"><input type="hidden" name="data[Calculation][2][deleted]" class="inline-block" value="0" id="Calculation2Deleted"><input type="hidden" name="data[Calculation][2][nombre]" class="inline-block" value="Ganancia" id="Calculation2Nombre"><label for="Calculation2Monto" style="float: left;">Ganancia</label><input name="data[Calculation][2][monto]" class="" value="0" step="any" type="number" id="Calculation2Monto"><label for="Calculation2Monto" class="symbol">%</label></div></td></tr><tr id="iva" class=""><td></td><td><div><input type="hidden" name="data[Calculation][3][id]" class="inline-block" value="1912006" id="Calculation3Id"><input type="hidden" name="data[Calculation][3][deleted]" class="inline-block" value="0" id="Calculation3Deleted"><input type="hidden" name="data[Calculation][3][nombre]" class="inline-block" value="IVA" id="Calculation3Nombre"><label for="Calculation3Monto" style="float: left;">IVA</label><input name="data[Calculation][3][monto]" class="" value="122.65" step="any" type="number" id="Calculation3Monto"><label for="Calculation3Monto" class="symbol">$</label></div></td></tr><tr id="total" class=""><td></td><td><div><input type="hidden" name="data[Calculation][4][id]" class="inline-block" value="1912007" id="Calculation4Id"><input type="hidden" name="data[Calculation][4][deleted]" class="inline-block" value="0" id="Calculation4Deleted"><input type="hidden" name="data[Calculation][4][nombre]" class="inline-block" value="Total" id="Calculation4Nombre"><label for="Calculation4Monto" style="float: left;">Total</label><input name="data[Calculation][4][monto]" class="" value="557.49" step="any" type="number" id="Calculation4Monto"><div style="float: right;"><input type="hidden" name="data[Order][precio_confirmado]" id="OrderPrecioConfirmado_" value="0"><input type="checkbox" name="data[Order][precio_confirmado]" class="inline-block" style="width: 13px; float: left;" checked="checked" value="1" id="OrderPrecioConfirmado"><div class="dropdown" style="float: left;"><select name="data[moneda]" class="inline-block" style="width: 54px;" id="moneda">
-																					<option value="1" selected="selected">$U</option>
-																					<option value="2">USD</option>
-																				</select></div></div></div></td></tr><tr id="comisión" class=""><td></td><td><div><input type="hidden" name="data[Calculation][5][id]" class="inline-block" value="1912008" id="Calculation5Id"><input type="hidden" name="data[Calculation][5][deleted]" class="inline-block" value="0" id="Calculation5Deleted"><input type="hidden" name="data[Calculation][5][nombre]" class="inline-block" value="Comisión" id="Calculation5Nombre"><label for="Calculation5Monto" style="float: left;">Comisión</label><input name="data[Calculation][5][monto]" class="" value="0" step="any" type="number" id="Calculation5Monto"><label for="Calculation5Monto" class="symbol">$</label></div></td></tr><tr id="crédito" class=""><td></td><td><div><input type="hidden" name="data[Calculation][6][id]" class="inline-block" value="1912009" id="Calculation6Id"><input type="hidden" name="data[Calculation][6][deleted]" class="inline-block" value="0" id="Calculation6Deleted"><input type="hidden" name="data[Calculation][6][nombre]" class="inline-block" value="Crédito" id="Calculation6Nombre"><label for="Calculation6Monto" style="float: left;">Crédito</label><input name="data[Calculation][6][monto]" class="" value="0" step="any" type="number" id="Calculation6Monto"><label for="Calculation6Monto" class="symbol">$</label></div></td></tr><tr id="cliente" class=""><td></td><td><div><input type="hidden" name="data[Calculation][7][id]" class="inline-block" value="1912010" id="Calculation7Id"><input type="hidden" name="data[Calculation][7][deleted]" class="inline-block" value="0" id="Calculation7Deleted"><input type="hidden" name="data[Calculation][7][nombre]" class="inline-block" value="Cliente" id="Calculation7Nombre"><label for="Calculation7Monto" style="float: left;">Cliente</label><input name="data[Calculation][7][monto]" class="" value="0" step="any" type="number" id="Calculation7Monto"><label for="Calculation7Monto" class="symbol">$</label></div></td></tr></tbody></table>                                <div style="text-align: right; margin: 5px 3px 5px 0px;">
-														<button id="btn-calcular" class="action-button" type="button" onclick="SelectorCalculos.recalcular();">Calcular</button>
-														<button id="btn-calcular-totales" class="action-button" type="button" onclick="SelectorCalculos.calculateTotal();">Totales</button>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- Fin calculos de la orden -->
-
-									</div>
-								</div>
-								<div class="row r2">
-									<div class="panel-wrapper">
-
-										<!-- Comentarios --> 
-										<div class="panel vertical collapsable comentarios-orden opened">
-											<div class="panel-body">
-												<div class="panel-title">
-													Comentarios / Observaciones
-												</div>
-												<div class="panel-content">
-													<textarea name="data[Order][comentarios]" class="inline-block" rows="10" cols="32" id="OrderComentarios"></textarea>                            
-												</div>
-											</div>
-										</div>
-										<!-- Fin comentarios de la orden -->
-
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-					<!-- Fin de paneles -->
-
 
 					<div id="seleccion-vias" class="popup">
 						<div class="mask"></div>
