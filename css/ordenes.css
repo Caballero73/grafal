@@ -431,7 +431,8 @@
 /*****************************************************/
 
 #content .panel.calculos-orden {
-    width: 240px;
+    width: 100%;
+    transform: translateX(8px);
 }
 
 #content .panel.calculos-orden.opened {
@@ -440,9 +441,14 @@
 
 #content .panel.calculos-orden .panel-content {
     display: block;
-    height: 365px;
+    height: 484px;
 }
-
+@media (min-width: 768px) and (max-width: 991px) {
+    #content .panel.calculos-orden .panel-content {
+    display: block;
+    height: 400px;
+    } 
+}
 #content .panel.calculos-orden .panel-body .input {
     display: table-row;
 }
@@ -485,11 +491,11 @@
 /*****************************************************/
 
 #content .panel.comentarios-orden {
-    width: 240px;
+    width: 100%;
 }
 
 #content .panel.comentarios-orden.opened {
-    height: 160px;
+    height: 100%;
 }
 
 #content .panel.comentarios-orden #OrderComentarios {
