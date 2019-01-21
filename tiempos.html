@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Imprenta Express</title>
+        <link href="./favicon.ico" type="image/x-icon" rel="icon">
+        <link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
+        <link rel="stylesheet" type="text/css" href="./css/jquery/flick/jquery-ui-1.10.4.custom.css">
+        <link rel="stylesheet" type="text/css" href="./css/imprenta.css">
+        <link rel="stylesheet" type="text/css" href="./css/jqueryui-editable.css">
+	<link rel="stylesheet" type="text/css" href="./css/ordenes.css">
+	<link rel="stylesheet" type="text/css" href="./css/time_tracker.css">
+        <script type="text/javascript" src="./js/third/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="./js/third/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="./js/third/underscore.js"></script>
+        <script type="text/javascript" src="./js/third/sprintf.min.js"></script>
+        <script type="text/javascript" src="./js/utils.js"></script>
+        <script type="text/javascript" src="./js/layout.js"></script>
+        <script type="text/javascript" src="./js/notification_center.js"></script>
+        <script type="text/javascript" src="./js/third/jqueryui-editable.min.js"></script>
+
+        <script>
+            var BASE_URL = "/";
+            
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $("#flashMessageContainer").animate({top: -40});
+                }, 3500);
+            });
+        </script>
+    </head>
+    <body style="">
+        <div id="container">
+
+            <div id="header-production" class="clearfix">
+                <div id="header-logo">
+                    <img src="./img/express.png" alt="">                
+		</div>
+            </div>
+            <div id="content" class="clearfix">
+
+                                                
+                
+
+<form action="tiempos/index" id="TiemposMainForm" method="post" accept-charset="utf-8">
+<div style="display:none;"><input type="hidden" name="_method" value="POST"></div>
+<div class="orders form">
+    <!--<div id="left-col"></div>-->
+
+    <div id="mid-col">
+        <div class="col-inner">
+            <div class="row r1">
+                <div class="panel-wrapper">
+                    <div class="panel vertical procesos-orden opened">
+                        <div class="panel-body">
+                            <div class="panel-title">
+                                PROCESOS DE PRODUCCION
+                            </div>
+                            <div class="panel-content" style="min-height: 400px;">
+                                <h1 style="font-size: 14px; font-weight: bold; text-align: center;">Ingrese el número de orden</h1>
+                                <input name="data[Tiempo][number]" class="inline-block" value="" style="font-size: 30px; border: 2px solid #006dcc !important; width: 96%; text-align: center;" type="text" id="TiempoNumber">
+                                <br><br>
+                                <input name="save" class="action-button r-float" id="save-tiempos" type="submit" value="INGRESAR">                                <button onclick="window.location.href=&#39;/users/logout&#39;" id="exit-tiempos" class="action-button l-float" type="button">SALIR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+</form>
+<script type="text/javascript">
+    //animateHeader(); // Animate the header!
+</script>
+
+            </div>
+            
+        </div>
+
+                <div style="display:none" class="upload_container" id="upload_container_overlay"></div>
+        <div style="display:none" class="upload_progress" id="upload_container">
+           <div class="progressWindow">Procesando, por favor espere ...</div>
+           <img src="./img/ajax-loader.gif" alt="">        </div>
+    
+    
+</body></html>
