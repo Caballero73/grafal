@@ -44,9 +44,21 @@
 }
 
 #TaskList {
-    height: 332px;
+    height: 33vh;
     overflow-y: auto;
     padding-bottom: 10px;
+}
+@media (max-width: 767px) {
+    #TaskList {
+        height: 15vh;
+        padding-bottom: 5px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #TaskList {
+        height: 18vh;
+        padding-bottom: 5px;
+    }
 }
 #TaskList .timer {
     font-weight: bold !important;
