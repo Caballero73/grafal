@@ -1,152 +1,246 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Imprenta Express</title>
-        <link href="./favicon.ico" type="image/x-icon" rel="icon">
-        <link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
-        <link rel="stylesheet" type="text/css" href="./css/jquery/flick/jquery-ui-1.10.4.custom.css">
-        <link rel="stylesheet" type="text/css" href="./css/imprenta.css">
-        <link rel="stylesheet" type="text/css" href="./css/jqueryui-editable.css">
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Imprenta Express</title>
+	<link href="./favicon.ico" type="image/x-icon" rel="icon">
+	<link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="./css/jquery/flick/jquery-ui-1.10.4.custom.css">
+	<link rel="stylesheet" type="text/css" href="./css/imprenta.css">
+	<link rel="stylesheet" type="text/css" href="./css/jqueryui-editable.css">
 	<link rel="stylesheet" type="text/css" href="./css/ordenes.css">
 	<link rel="stylesheet" type="text/css" href="./css/time_tracker.css">
 
-        <script type="text/javascript" src="./js/third/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="./js/third/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="./js/third/underscore.js"></script>
-        <script type="text/javascript" src="./js/third/sprintf.min.js"></script>
-        <script type="text/javascript" src="./js/utils.js"></script>
-        <script type="text/javascript" src="./js/notification_center.js"></script>
-        <script type="text/javascript" src="./js/third/jqueryui-editable.min.js"></script>
+	<script type="text/javascript" src="./js/third/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="./js/third/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="./js/third/underscore.js"></script>
+	<script type="text/javascript" src="./js/third/sprintf.min.js"></script>
+	<script type="text/javascript" src="./js/utils.js"></script>
+	<script type="text/javascript" src="./js/notification_center.js"></script>
+	<script type="text/javascript" src="./js/third/jqueryui-editable.min.js"></script>
 	<script type="text/javascript" src="./js/time_tracker.js"></script>
 
-        <script>
-            var BASE_URL = "/";
-            
-            $(document).ready(function() {
-                setTimeout(function() {
-                    $("#flashMessageContainer").animate({top: -40});
-                }, 3500);
-            });
-        </script>
-    </head>
-    <body style="">
-        <div id="container">
+	<script>
+		var BASE_URL = "/";
 
-            <div id="header-production" class="clearfix">
-                <div id="header-logo">
-                    <img src="./img/express.png" alt="">                </div>
-            </div>
-            <div id="content" class="clearfix">
+		$(document).ready(function() {
+			setTimeout(function() {
+				$("#flashMessageContainer").animate({top: -40});
+			}, 3500);
+		});
+	</script>
+</head>
+<body style="">
+	<div id="container">
 
-                                                
-                
+		<div id="header-production" class="clearfix">
+			<div id="header-logo">
+				<img src="./img/express.png" alt="">
+			</div>
+		</div>
+		<div id="content" class="clearfix">
 
-<div class="orders form">   
-    
-    <!--<div id="left-col"></div>-->
+			<div class="orders form"> 
+				<!--<div id="left-col"></div>-->
 
-<div id="mid-col">
-    <div class="col-inner">
-        <div class="row r1">
-            <div class="panel-wrapper">
+				<div id="mid-col">
+					<div class="col-inner">
+						<div class="row r1">
+							<div class="panel-wrapper">
 
-                <div class="panel vertical procesos-orden opened">
-                    <div class="panel-body">
-                        <div class="panel-title">
-                                                        PROCESOS DE PRODUCCION <a href="javascript:void(0)" class="bold" style="float:right; color: #000;">#60076</a>
-                        </div>
-                        <div class="panel-content">
-                            <form id="TiemposForm" method="POST" action="tiempos/save">
-                                <div class="fields-row">
-                                    <input id="WorkDetailTimer" type="hidden" value="59730">
-                                    <input id="ContextTimer" name="order_id" type="hidden" value="59730">
-                                    <input id="Info" name="info" type="hidden" value="">
-                                    <input id="StartTimer" type="hidden" value="0">
+								<div class="panel vertical procesos-orden opened">
+									<div class="panel-body">
+										<div class="panel-title">
+											PROCESOS DE PRODUCCION <a href="javascript:void(0)" class="bold" style="float:right; color: #000;">#60076</a>
+										</div>
+										<div class="panel-content">
+											<form id="TiemposForm" method="POST" action="tiempos/save">
+												<div class="fields-row">
+													<input id="WorkDetailTimer" type="hidden" value="59730">
+													<input id="ContextTimer" name="order_id" type="hidden" value="59730">
+													<input id="Info" name="info" type="hidden" value="">
+													<input id="StartTimer" type="hidden" value="0">
 
-                                    <div class="fields-row">
-                                        <label>Cliente </label>
-                                                                                <a href="javascript:void(0)">Gaston Caldeiro</a>
-                                    </div>
+													<div class="fields-row">
+														<label>Cliente </label>
+														<a href="javascript:void(0)">Gaston Caldeiro</a>
+													</div>
 
-                                    
-                                    <div class="fields-row">
-                                        <label>Tareas</label>
-                                        <div class="dropdown">
-                                            <select id="Form_TaskName">
-                                                                                                <option value="numerado">Numerado</option>
-                                                                                                <option value="grapado">Grapado</option>
-                                                                                                <option value="emblocado">Emblocado</option>
-                                                                                                <option value="falso-cosido">Falso cosido</option>
-                                                                                                <option value="impresion">Impresion</option>
-                                                                                                <option value="corte_inicial">Corte inicial</option>
-                                                                                                <option value="corte_terminacion">Corte terminación</option>
-                                                                                            </select>
-                                        </div>
-                                        <!--<button id="AddTaskButton" type="button" class="add"></button>-->
-                                    </div>
-                                    
-                                    <div id="prod-subtareas" class="fields-row">
-                                        <ul>
-                                                                                                                                    <li><button id="sub_postura" data-tag="postura" type="button" class="">Postura</button></li>
-                                                                                        <li><button id="sub_produccion" data-tag="produccion" type="button" class="">Producción</button></li>
-                                                                                        <li><button id="sub_lavado" data-tag="lavado" type="button" class="active">Lavado</button></li>
-                                                                                        <li><button id="sub_mantenimiento" data-tag="mantenimiento" type="button" class="">Mantenimiento</button></li>
-                                                                                        <li><button id="sub_espera_material" data-tag="espera_material" type="button" class="">Espera material</button></li>
-                                                                                        <li><button id="sub_descanso" data-tag="descanso" type="button" class="">Descanso</button></li>
-                                                                                    </ul>
-                                    </div>
-                                </div>
-                                <!--<button id="TrackTimeButton" title="Start new task" type="button"></button>-->
 
-                                <div id="TaskList"><div id="6_main" class="main_task_div" data-taskid="6" draggable="true"><div id="6" class="task_div task_current"><div>Numerado / Lavado</div><div id="6_timer" class="timer hidden">00:00:17</div><div id="6_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG"></div><div id="ballsWaveG_2" class="ballsWaveG"></div><div id="ballsWaveG_3" class="ballsWaveG"></div><div id="ballsWaveG_4" class="ballsWaveG"></div><div id="ballsWaveG_5" class="ballsWaveG"></div></div></div><div id="6_drop" class="drop_target"></div></div><div id="5_main" class="main_task_div" data-taskid="5" draggable="true"><div id="5" class="task_div task_inactive"><div>Numerado / Mantenimiento</div><div id="5_timer" class="timer hidden">00:00:01</div><div id="5_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG paused"></div><div id="ballsWaveG_2" class="ballsWaveG paused"></div><div id="ballsWaveG_3" class="ballsWaveG paused"></div><div id="ballsWaveG_4" class="ballsWaveG paused"></div><div id="ballsWaveG_5" class="ballsWaveG paused"></div></div></div><div id="5_drop" class="drop_target"></div></div><div id="4_main" class="main_task_div" data-taskid="4" draggable="true"><div id="4" class="task_div task_inactive"><div>Numerado / Espera material</div><div id="4_timer" class="timer hidden">00:00:01</div><div id="4_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG paused"></div><div id="ballsWaveG_2" class="ballsWaveG paused"></div><div id="ballsWaveG_3" class="ballsWaveG paused"></div><div id="ballsWaveG_4" class="ballsWaveG paused"></div><div id="ballsWaveG_5" class="ballsWaveG paused"></div></div></div><div id="4_drop" class="drop_target"></div></div><div id="3_main" class="main_task_div" data-taskid="3" draggable="true"><div id="3" class="task_div task_inactive"><div>Numerado / Descanso</div><div id="3_timer" class="timer hidden">00:00:01</div><div id="3_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG paused"></div><div id="ballsWaveG_2" class="ballsWaveG paused"></div><div id="ballsWaveG_3" class="ballsWaveG paused"></div><div id="ballsWaveG_4" class="ballsWaveG paused"></div><div id="ballsWaveG_5" class="ballsWaveG paused"></div></div></div><div id="3_drop" class="drop_target"></div></div><div id="2_main" class="main_task_div" data-taskid="2" draggable="true"><div id="2" class="task_div task_inactive"><div>Corte terminación / Lavado</div><div id="2_timer" class="timer hidden">00:00:19</div><div id="2_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG paused"></div><div id="ballsWaveG_2" class="ballsWaveG paused"></div><div id="ballsWaveG_3" class="ballsWaveG paused"></div><div id="ballsWaveG_4" class="ballsWaveG paused"></div><div id="ballsWaveG_5" class="ballsWaveG paused"></div></div></div><div id="2_drop" class="drop_target"></div></div><div id="1_main" class="main_task_div" data-taskid="1" draggable="true"><div id="1" class="task_div task_inactive"><div>Numerado / Producción</div><div id="1_timer" class="timer hidden">00:00:24</div><div id="1_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG paused"></div><div id="ballsWaveG_2" class="ballsWaveG paused"></div><div id="ballsWaveG_3" class="ballsWaveG paused"></div><div id="ballsWaveG_4" class="ballsWaveG paused"></div><div id="ballsWaveG_5" class="ballsWaveG paused"></div></div></div><div id="1_drop" class="drop_target"></div></div><div id="0_main" class="main_task_div" data-taskid="0" draggable="true"><div id="0" class="task_div task_inactive"><div>Numerado / Postura</div><div id="0_timer" class="timer hidden">00:00:08</div><div id="0_loading" class="ballsWaveGI"><div id="ballsWaveG_1" class="ballsWaveG paused"></div><div id="ballsWaveG_2" class="ballsWaveG paused"></div><div id="ballsWaveG_3" class="ballsWaveG paused"></div><div id="ballsWaveG_4" class="ballsWaveG paused"></div><div id="ballsWaveG_5" class="ballsWaveG paused"></div></div></div><div id="0_drop" class="drop_target"></div></div>
-                                    <div id="top_drop" class="drop_target"></div>
-                                </div>
+													<div class="fields-row">
+														<label>Tareas</label>
+														<div class="dropdown">
+															<select id="Form_TaskName">
+																<option value="numerado">Numerado</option>
+																<option value="grapado">Grapado</option>
+																<option value="emblocado">Emblocado</option>
+																<option value="falso-cosido">Falso cosido</option>
+																<option value="impresion">Impresion</option>
+																<option value="corte_inicial">Corte inicial</option>
+																<option value="corte_terminacion">Corte terminación</option>
+															</select>
+														</div>
+														<!--<button id="AddTaskButton" type="button" class="add"></button>-->
+													</div>
 
-                                <div id="TaskObservaciones">
-                                    <div class="panel-title" style="font-size: 12px;">
-                                        Comentarios / Observaciones
-                                    </div>
-                                    <div class="panel-content">
-                                        <textarea style="width: 90%" placeholder="Tuvo algun problema con el trabajo, algo que lo haya complicado mas de lo normal ? Algun imprevisto ?" name="comentarios" class="inline-block" rows="8" cols="32" id="TimerComentarios"></textarea>
-                                        <button id="save-tiempos" class="action-button r-float" type="button">GUARDAR</button>
-                                        <button onclick="window.location.href=&#39;/tiempos&#39;" id="cancel-tiempos" class="action-button r-float" type="button">VOLVER</button>
-                                        <button onclick="window.location.href=&#39;/users/logout&#39;" id="exit-tiempos" class="action-button l-float" type="button">SALIR</button>
-                                    </div>
-                                </div>
-                            </form>
-                            
-                        </div>
-                    </div>
-                </div>
+													<div id="prod-subtareas" class="fields-row">
+														<ul>
+															<li><button id="sub_postura" data-tag="postura" type="button" class="">Postura</button></li>
+															<li><button id="sub_produccion" data-tag="produccion" type="button" class="">Producción</button></li>
+															<li><button id="sub_lavado" data-tag="lavado" type="button" class="active">Lavado</button></li>
+															<li><button id="sub_mantenimiento" data-tag="mantenimiento" type="button" class="">Mantenimiento</button></li>
+															<li><button id="sub_espera_material" data-tag="espera_material" type="button" class="">Espera material</button></li>
+															<li><button id="sub_descanso" data-tag="descanso" type="button" class="">Descanso</button></li>
+														</ul>
+													</div>
+												</div>
+												<!--<button id="TrackTimeButton" title="Start new task" type="button"></button>-->
 
-            </div>
-        </div>
-    </div>
+												<div id="TaskList">
+													<div id="6_main" class="main_task_div" data-taskid="6" draggable="true">
+														<div id="6" class="task_div task_current">
+															<div>Numerado / Lavado</div>
+															<div id="6_timer" class="timer hidden">00:00:17</div>
+															<div id="6_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG"></div>
+															</div>
+														</div>
+														<div id="6_drop" class="drop_target"></div>
+													</div>
+													<div id="5_main" class="main_task_div" data-taskid="5" draggable="true">
+														<div id="5" class="task_div task_inactive">
+															<div>Numerado / Mantenimiento</div>
+															<div id="5_timer" class="timer hidden">00:00:01</div>
+															<div id="5_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG paused"></div>
+															</div>
+														</div>
+														<div id="5_drop" class="drop_target"></div>
+													</div>
+													<div id="4_main" class="main_task_div" data-taskid="4" draggable="true">
+														<div id="4" class="task_div task_inactive">
+															<div>Numerado / Espera material</div>
+															<div id="4_timer" class="timer hidden">00:00:01</div>
+															<div id="4_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG paused"></div>
+															</div>
+														</div>
+														<div id="4_drop" class="drop_target"></div>
+													</div>
+													<div id="3_main" class="main_task_div" data-taskid="3" draggable="true">
+														<div id="3" class="task_div task_inactive">
+															<div>Numerado / Descanso</div>
+															<div id="3_timer" class="timer hidden">00:00:01</div>
+															<div id="3_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG paused"></div>
+															</div>
+														</div>
+														<div id="3_drop" class="drop_target"></div>
+													</div>
+													<div id="2_main" class="main_task_div" data-taskid="2" draggable="true">
+														<div id="2" class="task_div task_inactive">
+															<div>Corte terminación / Lavado</div>
+															<div id="2_timer" class="timer hidden">00:00:19</div>
+															<div id="2_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG paused"></div>
+															</div>
+														</div>
+														<div id="2_drop" class="drop_target"></div>
+													</div>
+													<div id="1_main" class="main_task_div" data-taskid="1" draggable="true">
+														<div id="1" class="task_div task_inactive">
+															<div>Numerado / Producción</div>
+															<div id="1_timer" class="timer hidden">00:00:24</div>
+															<div id="1_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG paused"></div>
+															</div>
+														</div>
+														<div id="1_drop" class="drop_target"></div>
+													</div>
+													<div id="0_main" class="main_task_div" data-taskid="0" draggable="true">
+														<div id="0" class="task_div task_inactive">
+															<div>Numerado / Postura</div>
+															<div id="0_timer" class="timer hidden">00:00:08</div>
+															<div id="0_loading" class="ballsWaveGI">
+																<div id="ballsWaveG_1" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_2" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_3" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_4" class="ballsWaveG paused"></div>
+																<div id="ballsWaveG_5" class="ballsWaveG paused"></div>
+															</div>
+														</div>
+														<div id="0_drop" class="drop_target"></div>
+													</div>
+												<div id="top_drop" class="drop_target"></div>
+											</div>
+
+											<div id="TaskObservaciones">
+												<div class="panel-title" style="font-size: 12px;">
+													Comentarios / Observaciones
+												</div>
+												<div class="panel-content">
+													<textarea style="width: 90%" placeholder="Tuvo algun problema con el trabajo, algo que lo haya complicado mas de lo normal ? Algun imprevisto ?" name="comentarios" class="inline-block" rows="8" cols="32" id="TimerComentarios"></textarea>
+													<button id="save-tiempos" class="action-button r-float" type="button">GUARDAR</button>
+													<button onclick="window.location.href=&#39;/tiempos&#39;" id="cancel-tiempos" class="action-button r-float" type="button">VOLVER</button>
+													<button onclick="window.location.href=&#39;/users/logout&#39;" id="exit-tiempos" class="action-button l-float" type="button">SALIR</button>
+												</div>
+											</div>
+										</form>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			dbstorage = JSON.parse(null);
+		</script>
+	</div>
 </div>
-   
-    
+<div style="display:none" class="upload_container" id="upload_container_overlay"></div>
+<div style="display:none" class="upload_progress" id="upload_container">
+	<div class="progressWindow">Procesando, por favor espere ...</div>
+	<img src="./img/ajax-loader.gif" alt="">
 </div>
-
-
 
 <script type="text/javascript">
-    dbstorage = JSON.parse(null);
+	//<![CDATA[
+	$(document).ready(function () {$("#save-btn").bind("click", function (event) {$.ajax({async:true, data:$("#OrderMainForm").serialize(), dataType:"json", error:function (XMLHttpRequest, textStatus, errorThrown) {onAjaxError();}, success:function (data, textStatus) {onSubmitSuccess(data);}, type:"POST", url:"/orders/save"});
+		return false;});});
+	//]]>
 </script>
-
-            </div>
-            
-        </div>
-
-                <div style="display:none" class="upload_container" id="upload_container_overlay"></div>
-        <div style="display:none" class="upload_progress" id="upload_container">
-           <div class="progressWindow">Procesando, por favor espere ...</div>
-           <img src="./img/ajax-loader.gif" alt="">        </div>
-    
-    <script type="text/javascript">
-//<![CDATA[
-$(document).ready(function () {$("#save-btn").bind("click", function (event) {$.ajax({async:true, data:$("#OrderMainForm").serialize(), dataType:"json", error:function (XMLHttpRequest, textStatus, errorThrown) {onAjaxError();}, success:function (data, textStatus) {onSubmitSuccess(data);}, type:"POST", url:"/orders/save"});
-return false;});});
-//]]>
-</script>
-</body></html>
+</body>
+</html>
