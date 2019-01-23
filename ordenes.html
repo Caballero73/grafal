@@ -1,301 +1,315 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Imprenta Express</title>
-        <link href="./favicon.ico" type="image/x-icon" rel="icon">
-        <link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
-        <link rel="stylesheet" type="text/css" href="./css/jquery/flick/jquery-ui-1.10.4.custom.css">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./css/imprenta.css">
-        <link rel="stylesheet" type="text/css" href="./css/jqueryui-editable.css">
-        <script type="text/javascript" src="./js/third/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="./js/third/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="./js/third/underscore.js"></script>
-        <script type="text/javascript" src="./js/third/sprintf.min.js"></script>
-        <script type="text/javascript" src="./js/utils.js"></script>
-        <script type="text/javascript" src="./js/layout.js"></script>
-        <script type="text/javascript" src="./js/notification_center.js"></script>
-        <script type="text/javascript" src="./js/third/jqueryui-editable.min.js"></script>
-        <script>
-            var BASE_URL = "/";
-        </script>
-    </head>
-    <body style="">
-        <div id="container">
-            <div id="search-bar">
-            </div>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Imprenta Express</title>
+	<link href="./favicon.ico" type="image/x-icon" rel="icon">
+	<link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="./css/jquery/flick/jquery-ui-1.10.4.custom.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/imprenta.css">
+	<link rel="stylesheet" type="text/css" href="./css/jqueryui-editable.css">
+	<script type="text/javascript" src="./js/third/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="./js/third/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="./js/third/underscore.js"></script>
+	<script type="text/javascript" src="./js/third/sprintf.min.js"></script>
+	<script type="text/javascript" src="./js/utils.js"></script>
+	<script type="text/javascript" src="./js/layout.js"></script>
+	<script type="text/javascript" src="./js/notification_center.js"></script>
+	<script type="text/javascript" src="./js/third/jqueryui-editable.min.js"></script>
+	<script>
+		var BASE_URL = "/";
+	</script>
+</head>
+<body style="">
+	<div id="container">
+		<div id="search-bar">
+		</div>
 
-            
-            <div id="header" class="clearfix">
-                <div id="header-logo" class="hidden visible-xs">
-                    <img class="center-block logo-mobile" src="./img/express.png" alt="Logotipo">                
-                </div>
-                <div id="header-logo" class="hidden-xs">
-                    <img src="./img/express.png" alt="Logotipo">                
-                </div>
-                <div id="top-menu">
-                    <div id="top-menu-inner">
-                        <div class="menu-option ordenes ">
-                            <a href="#/orders/presupuestos">
-                                <div class="icon"></div>
-                                <div class="caption">Presupuestos</div>
-                            </a>
-                        </div>
-                        <div class="menu-option ordenes current">
-                            <a href="#orders/">
-                                <div class="icon"></div>
-                                <div class="caption">Ordenes</div>
-                            </a>
-                        </div>
-                        <div class="menu-option clientes ">
-                            <a href="#clients/">
-                                <div class="icon"></div>
-                                <div class="caption">Clientes</div>
-                            </a>
 
-                        </div>
-                        <div class="menu-option admin ">
-                            <a href="#users/admin">
-                                <div class="icon"></div>
-                                <div class="caption">Admin</div>
-                            </a>
-                        </div>
-                        <div class="menu-option caja ">
-                            <a href="#clients/caja/-1">
-                                <div class="icon"></div>
-                                <div class="caption">Caja</div>
-                            </a>
-                        </div>
-                        <div class="menu-option admin">
-                            <a href="#users/logout">
-                                <div class="icon"></div>
-                                <div class="caption">Salir</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="top-tools" class="clearfix">
-                    <ul>
-                        <li><a href="detalle.html"><i class="nuevo"></i></a></li>                    
-                    </ul>
-                </div>
-            </div>
+		<div id="header" class="clearfix">
+			<div id="header-logo" class="hidden visible-xs">
+				<img class="center-block logo-mobile" src="./img/express.png" alt="Logotipo">                
+			</div>
+			<div id="header-logo" class="hidden-xs">
+				<img src="./img/express.png" alt="Logotipo">                
+			</div>
+			<div id="top-menu">
+				<div id="top-menu-inner">
+					<div class="menu-option ordenes ">
+						<a href="#/orders/presupuestos">
+							<div class="icon"></div>
+							<div class="caption">Presupuestos</div>
+						</a>
+					</div>
+					<div class="menu-option ordenes current">
+						<a href="#orders/">
+							<div class="icon"></div>
+							<div class="caption">Ordenes</div>
+						</a>
+					</div>
+					<div class="menu-option clientes ">
+						<a href="#clients/">
+							<div class="icon"></div>
+							<div class="caption">Clientes</div>
+						</a>
 
-            <div id="content" class="clearfix">
+					</div>
+					<div class="menu-option admin ">
+						<a href="#users/admin">
+							<div class="icon"></div>
+							<div class="caption">Admin</div>
+						</a>
+					</div>
+					<div class="menu-option caja ">
+						<a href="#clients/caja/-1">
+							<div class="icon"></div>
+							<div class="caption">Caja</div>
+						</a>
+					</div>
+					<div class="menu-option admin">
+						<a href="#users/logout">
+							<div class="icon"></div>
+							<div class="caption">Salir</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="top-tools" class="clearfix">
+				<ul>
+					<li><a href="detalle.html"><i class="nuevo"></i></a></li>                    
+				</ul>
+			</div>
+		</div>
 
-                <div id="flashMessage" style="top: -40px;">
-                    <div id="flashMessageWrapper">
-                    </div>
-                </div>
+		<div id="content" class="clearfix">
 
-                <div class="orders index">
-                    <form action="#orders" id="OrderIndexForm" method="get" accept-charset="utf-8" >    
-                        <input type="hidden" name="presupuesto" value="0,2">
-                        <!-- <h2>Ordenes</h2> -->
-                        <div class="table-responsive" style="max-width: 95vw">   
-                            <table class="table results">
-                                <thead>
-                                    <tr>
-                                        <th class="actions"><a href="#orders/index/sort:numero/direction:asc">Nro. de Orden</a></th>
-                                        <th><a href="#orders/index/sort:Client.razon_social/direction:asc">Cliente (Razón Social)</a></th>
-                                        <th><a href="#orders/index/sort:WorkType.descripcion/direction:asc">Tipo de trabajo</a></th>
-                                        <th><a href="#orders/index/sort:WorkSubtype.descripcion/direction:asc">Subtipo de trabajo</a></th>
-                                        <th>Descripción</th>
-                                        <th>Fecha de terminación</th>
-                                        <th width="100">Estado actual</th>
-                                        <th>Precio confirmado</th>
-                                        <th>Facturar</th>
-                                        <th>Diseño</th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input name="numero" size="3" type="text" id="FilterNumero">
-                                        </td>
-                                        <td>
-                                            <input name="cliente" type="text" id="FilterCliente">                
-                                        </td>
-                                        <td>
-                                            <input name="tipo_trabajo" type="text" id="FilterTipoTrabajo">
-                                        </td>
-                                        <td>
-                                            <input name="subtipo_trabajo" type="text" id="FilterSubtipoTrabajo">
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="detalle.html">60082</a></td>
-                                        <td>BUFFA BARBAT JUAN DIEGO (12074)</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td>DOS MODELOS</td>
-                                        <td>-----</td>
-                                        <td class="">Haciendo diseño</td>
-                                        <td class="">$U 557,49</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Repetición sin cambios</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60081</a></td>
-                                        <td>BUFFA BARBAT JUAN DIEGO (12074)</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td>P/IMPRESORA</td>
-                                        <td>-----</td>
-                                        <td class="">
-                                            En espera                    
-                                        </td>
-                                        <td class="noconfirmado">$U 350,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Cliente envía diseño pronto</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60080</a></td>
-                                        <td>BUFFA BARBAT JUAN DIEGO (12074)</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td></td>
-                                        <td>-----</td>
-                                        <td class="">
-                                            En espera                    
-                                        </td>
-                                        <td class="noconfirmado">$U 0,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Repetición con cambios</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60079</a></td>
-                                        <td>BUFFA BARBAT JUAN DIEGO (12074)</td>
-                                        <td>Documentos</td>
-                                        <td>Contados</td>
-                                        <td>COMPROBANTE DE PAGO DE SEÑA</td>
-                                        <td>-----</td>
-                                        <td class="">Haciendo diseño</td>
-                                        <td class="noconfirmado">$U 960,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Cambios al archivo del cliente</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60078</a></td>
-                                        <td>BUFFA BARBAT JUAN DIEGO (12074)</td>
-                                        <td>Documentos</td>
-                                        <td>Contados</td>
-                                        <td></td>
-                                        <td>-----</td>
-                                        <td class="">
-                                            En espera                    
-                                        </td>
-                                        <td class="noconfirmado">$U 1490,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Diseño de 0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60077</a></td>
-                                        <td>BUFFA BARBAT JUAN DIEGO (12074)</td>
-                                        <td>Documentos</td>
-                                        <td>Contados</td>
-                                        <td></td>
-                                        <td>15-11-2018</td>
-                                        <td class="">
-                                            En espera                    
-                                        </td>
-                                        <td class="noconfirmado">$U 1490,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Cliente envía diseño pronto</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60076</a></td>
-                                        <td>Gaston Caldeiro</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td></td>
-                                        <td>-----</td>
-                                        <td class="">
-                                            En espera                    
-                                        </td>
-                                        <td class="noconfirmado">$U 835,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Diseño de 0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60075</a></td>
-                                        <td>Gaston Caldeiro</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td></td>
-                                        <td>-----</td>
-                                        <td class="orderimpresa">
-                                            En espera                    
-                                        </td>
-                                        <td class="noconfirmado">$U 8977,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Redibujar diseño del cliente</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60074</a></td>
-                                        <td>Gaston Caldeiro</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td></td>
-                                        <td>-----</td>
-                                        <td class="orderimpresa">Espera impresión</td>
-                                        <td class="noconfirmado">$U 4967,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Cambio de pie</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="detalle.html">60073</a></td>
-                                        <td>Gaston Caldeiro</td>
-                                        <td>Otros</td>
-                                        <td>Otros</td>
-                                        <td>AROCENA (OT 5711) SECCION SERVICIO</td>
-                                        <td>-----</td>
-                                        <td class="orderimpresa">Espera impresión</td>
-                                        <td class="noconfirmado">$U 4967,00</td>
-                                        <td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
-                                        <td title="">Cambio de pie</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+			<div id="flashMessage" style="top: -40px;">
+				<div id="flashMessageWrapper">
+				</div>
+			</div>
 
-                        <div class="nav">
-                            <div class="paging">
-                                <span class="prev disabled">&lt; Anterior</span><span class="current">1</span> <span><a href="#orders/index/page:2">2</a></span> <span><a href="#orders/index/page:3">3</a></span> <span><a href="#orders/index/page:4">4</a></span> <span><a href="#orders/index/page:5">5</a></span> <span><a href="#orders/index/page:6">6</a></span> <span><a href="#orders/index/page:7">7</a></span> <span><a href="#orders/index/page:8">8</a></span> <span><a href="#orders/index/page:9">9</a></span><span class="next"><a href="#orders/index/page:2" rel="next">Siguiente &gt;</a></span>
-                            </div>
-                            <div>
-                                Página 1 de 595, mostrando 10 ordenes de 5942        
-                            </div>
-                        </div>
-                    </form>
+			<div class="orders index">
+				<form action="#orders" id="OrderIndexForm" method="get" accept-charset="utf-8" >    
+					<input type="hidden" name="presupuesto" value="0,2">
+					<!-- <h2>Ordenes</h2> -->
+					<div class="table-responsive" style="max-width: 95vw">   
+						<table class="table results">
+							<thead>
+								<tr>
+									<th class="actions"><a href="#orders/index/sort:numero/direction:asc">Nro. de Orden</a></th>
+									<th><a href="#orders/index/sort:Client.razon_social/direction:asc">Cliente (Razón Social)</a></th>
+									<th><a href="#orders/index/sort:Client.razon_social/direction:asc">Nombre de fantasía</a></th>
+									<th><a href="#orders/index/sort:WorkType.descripcion/direction:asc">Tipo de trabajo</a></th>
+									<th><a href="#orders/index/sort:WorkSubtype.descripcion/direction:asc">Subtipo de trabajo</a></th>
+									<th>Descripción</th>
+									<th>Fecha de terminación</th>
+									<th>Estado actual</th>
+									<th>Entrega</th>
+									<th>Precio confirmado</th>
+									<th>Facturar</th>
+									<th>Diseño</th>
+								</tr>
+								<tr>
+									<td>
+										<input name="numero" size="3" type="text" id="FilterNumero">
+									</td>
+									<td>
+										<input name="cliente" type="text" id="FilterCliente">                
+									</td>
+									<td>
+										<input name="fantasia" type="text" id="FilterFantasia">                
+									</td>
+									<td>
+										<input name="tipo_trabajo" type="text" id="FilterTipoTrabajo">
+									</td>
+									<td>
+										<input name="subtipo_trabajo" type="text" id="FilterSubtipoTrabajo">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="detalle.html">60082</a></td>
+									<td><a href="detalle.html"><div class="elipse">BUFFA BARBAT JUAN DIEGO (12074)</div></a></td>
+									<td><a href="detalle.html"><div class="elipse">HOTEL BUFFA</a></div></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse">DOS MODELOS</div></td>
+									<td>-----</td>
+									<td class="">Haciendo diseño</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Retira de Av. Libertador</div></a></td>
+									<td class="">$U 557,49</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Repetición sin cambios</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60081</a></td>
+									<td><a href="detalle.html"><div class="elipse">BUFFA BARBAT JUAN DIEGO (12074)</div></a></td>
+									<td><a href="detalle.html"><div class="elipse">BUFFA CREACIONES</div></a></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse">P/IMPRESORA</div></td>
+									<td>-----</td>
+									<td class="">En espera</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega Red Distr. RONDEAU 1999</div></a></td>
+									<td class="">$U 350,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Cliente envía diseño pronto</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60080</a></td>
+									<td><a href="detalle.html"><div class="elipse">BUFFA BARBAT JUAN DIEGO (12074)</div></a></td>
+									<td><a href="detalle.html"><div class="elipse"></div></a></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse"></div></td>
+									<td>-----</td>
+									<td class="">En espera</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega Red Distr. Haití 1500 - PTI CERRO</div></a></td>
+									<td class="noconfirmado">$U 0,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Repetición con cambios</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60079</a></td>
+									<td><a href="detalle.html"><div class="elipse">OSTEICOECHEA GARRIDO EDUARDO RAFAEL (13025)</div></a></td>
+									<td><a href="detalle.html"><div class="elipse"></div></a></td>
+									<td>Documentos</td>
+									<td>Contados</td>
+									<td><div class="elipse">COMPROBANTE DE PAGO DE SEÑA</div></td>
+									<td>-----</td>
+									<td class="">Haciendo diseño</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega GRAFAL Cambara 1625</div></a></td>
+									<td class="noconfirmado">$U 960,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Cambios al archivo del cliente</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60078</a></td>
+									<td><a href="detalle.html"><div class="elipse">BUFFA BARBAT JUAN DIEGO (12074)</div></a></td>
+									<td><a href="detalle.html"><div class="elipse">BARBATSNACKS</div></a></td>
+									<td>Documentos</td>
+									<td>Contados</td>
+									<td><div class="elipse"></div></td>
+									<td>-----</td>
+									<td class="">En espera</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega Red Distr.</div></a></td>
+									<td class="noconfirmado">$U 1490,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Diseño de 0</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60077</a></td>
+									<td><a href="detalle.html"><div class="elipse">BUFFA BARBAT JUAN DIEGO (12074)</div></a></td>
+									<td><a href="detalle.html"><div class="elipse"></div></a></td>
+									<td>Documentos</td>
+									<td>Contados</td>
+									<td><div class="elipse"></div></td>
+									<td>15-11-2018</td>
+									<td class="">En espera</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega Red Distr.</div></a></td>
+									<td class="noconfirmado">$U 1490,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Cliente envía diseño pronto</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60076</a></td>
+									<td><a href="detalle.html"><div class="elipse">Gaston Caldeiro</div></a></td>
+									<td><a href="detalle.html"><div class="elipse">PENSION GASTON</div></a></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse"></div></td>
+									<td>-----</td>
+									<td class="">En espera</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega GRAFAL ZABALA 1372 / 43</div></a></td>
+									<td class="noconfirmado">$U 835,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Diseño de 0</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60075</a></td>
+									<td><a href="detalle.html"><div class="elipse">Gaston Caldeiro</div></a></td>
+									<td><a href="detalle.html"><div class="elipse"></div></a></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse"></div></td>
+									<td>-----</td>
+									<td class="">En espera</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Retira de Av. Libertador</div></a></td>
+									<td class="noconfirmado">$U 8977,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Redibujar diseño del cliente</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60074</a></td>
+									<td><a href="detalle.html"><div class="elipse">Gaston Caldeiro</div></a></td>
+									<td><a href="detalle.html"><div class="elipse">GASTON HOUSE-RESTAURANT</div></a></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse"></div></td>
+									<td>-----</td>
+									<td class="orderimpresa"><div class="elipse">Espera impresión</div></td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Entrega GRAFAL GUADALUPE 1721</div></a></td>
+									<td class="noconfirmado">$U 4967,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Cambio de pie</div></td>
+								</tr>
+								<tr>
+									<td><a href="detalle.html">60073</a></td>
+									<td><a href="detalle.html"><div class="elipse">Gaston Caldeiro</div></a></td>
+									<td><a href="detalle.html"></a><div class="elipse"></div></td>
+									<td>Otros</td>
+									<td>Otros</td>
+									<td><div class="elipse">AROCENA (OT 5711) SECCION SERVICIO</div></td>
+									<td>-----</td>
+									<td class="orderimpresa">Espera impresión</td>
+									<td class=""><a href=""><div class="elipse btn-entrega">Retira de Av. Libertador</div></a></td>
+									<td class="noconfirmado">$U 4967,00</td>
+									<td title=""><center><input type="checkbox" name="facturar" value="1"></center></td>
+									<td title=""><div class="elipse text-center">Cambio de pie</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
-                </div>
-                <script>
-                    $("input").keypress(function (event) {
-                        if (event.which === 13) {
-                            event.preventDefault();
-                            $("form").submit();
-                        }
-                    });
-                </script>
-            </div>
-        </div>
+					<div class="nav">
+						<div class="paging">
+							<span class="prev disabled">&lt; Anterior</span><span class="current">1</span> <span><a href="#orders/index/page:2">2</a></span> <span><a href="#orders/index/page:3">3</a></span> <span><a href="#orders/index/page:4">4</a></span> <span><a href="#orders/index/page:5">5</a></span> <span><a href="#orders/index/page:6">6</a></span> <span><a href="#orders/index/page:7">7</a></span> <span><a href="#orders/index/page:8">8</a></span> <span><a href="#orders/index/page:9">9</a></span><span class="next"><a href="#orders/index/page:2" rel="next">Siguiente &gt;</a></span>
+						</div>
+						<div>
+							Página 1 de 595, mostrando 10 ordenes de 5942        
+						</div>
+					</div>
+				</form>
 
-        <div style="display:none" class="upload_container" id="upload_container_overlay"></div>
-        <div style="display:none" class="upload_progress" id="upload_container">
-            <div class="progressWindow">Procesando, por favor espere ...</div>
-            <img src="./img/ajax-loader.gif" alt="">        
-        </div>
-    </body>
+			</div>
+			<script>
+				$("input").keypress(function (event) {
+					if (event.which === 13) {
+						event.preventDefault();
+						$("form").submit();
+					}
+				});
+			</script>
+		</div>
+	</div>
+
+	<div style="display:none" class="upload_container" id="upload_container_overlay"></div>
+	<div style="display:none" class="upload_progress" id="upload_container">
+		<div class="progressWindow">Procesando, por favor espere ...</div>
+		<img src="./img/ajax-loader.gif" alt="">        
+	</div>
+</body>
 </html>
