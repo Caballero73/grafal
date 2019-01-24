@@ -610,7 +610,7 @@ input[enabled='0'] {
 }
 @media (min-width: 768px) and (max-width: 991px) {
     #content .panel .panel-body .panel-content {
-        padding: 5px 6px 0px 2px;
+        padding: 5px 10px 0px 2px;
     }
 }
 

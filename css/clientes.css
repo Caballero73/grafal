@@ -1,4 +1,6 @@
-
+a {
+  text-decoration: none;
+}
 #search-bar {
     height: 0px;
 }
@@ -11,15 +13,8 @@
     margin-bottom: 20px;
 }
 
-#content #left-col,
-#content #right-col {
-    height: 580px;
-    display: inline-block;
-    vertical-align: top;
-}
-
 #content #left-col {
-    width: 320px;
+    height: 97vh;
 }
 
 #content #right-col {
@@ -28,7 +23,7 @@
 }
 
 #content #left-col .panel {
-    height: 100%;
+    height: auto;
 }
 
 #content #right-col .row.r1 .panel-wrapper {
@@ -52,7 +47,7 @@
 /************************/
 
 #content .panel.datos-cliente .panel-content {
-    max-height: 540px;
+    max-height: 88vh;
 }
 
 /*button#search-client {
@@ -68,7 +63,6 @@
     margin-left: 30px;
 }
 #content #ClientRut {
-    width: 136px;
 }
 #content #ClientEsquina1 {
     width: 249px;
@@ -114,7 +108,7 @@
 #content #added-addresses span.direccion {
     padding-top: 7px;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 #content .added-contact,
@@ -275,3 +269,4 @@ li.active a, li.active a:hover {
 div.upload_progress img{
   margin-top: 25px;
 }
+.space {height: 10px;width: 100%;}
