@@ -538,7 +538,7 @@ input[enabled='0'] {
 }
 
 #content .row > .panel-wrapper {
-    padding-bottom: 15px;
+    /*! padding-bottom: 15px; */
 }
 
 #content .row:last-child > .panel-wrapper {

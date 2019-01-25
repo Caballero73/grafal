@@ -18,8 +18,8 @@ a {
 }
 
 #content #right-col {
-    width: 870px;
-    margin-left: 10px;
+    /*! width: 870px; */
+    /*! margin-left: 10px; */
 }
 
 #content #left-col .panel {
@@ -27,11 +27,11 @@ a {
 }
 
 #content #right-col .row.r1 .panel-wrapper {
-    height: 200px;
+    /*! height: 200px; */
 }
 
 #content #right-col .row.r2 {
-    height: 100%;
+    /*! height: 100%; */
 }
 
 #content .panel .panel-body .section-title-bold {
@@ -92,7 +92,8 @@ a {
     width: 214px;
 }
 #content #ClientObservaciones {
-    width: 257px;
+    width: 100%;
+    padding: 5px;
 }
 #content #ClientAaa {
     width: 148px;
@@ -149,7 +150,7 @@ a {
 }
 
 #content .panel.ordenes-en-curso .grid { /* prueba */
-    height: 200px;
+    height: 28vh;
 }
 
 #content .panel.ordenes-en-curso .caja{ /* prueba */
@@ -171,7 +172,7 @@ a {
 #content .panel.historial-ordenes .panel-content {
     padding: 0;
     overflow-y: auto;
-    max-height: 315px;
+    max-height: 57VH;
 }
 
 #content .panel.historial-ordenes .panel-body {
